@@ -6,10 +6,10 @@ import HomeFeatured from '@/components/HomeFeatured';
 import HomeVisit from '@/components/HomeVisit';
 export default function Home() {
   return (
-    <div className='w-full max-w-[1920px] mx-auto relative flex flex-col gap-12'>
+    <div className='w-full max-w-[1920px] mx-auto relative flex flex-col gap-16'>
       <Hero />
       <HomeText />
-      <div className='grid md:grid-cols-3 gap-12 mt-6'>
+      <div className='grid md:grid-cols-3 gap-12'>
         <HomeDepartments
           department='Interior Design'
           content='Designing your dreams'
@@ -33,7 +33,7 @@ export default function Home() {
         />
       </div>
       <HomeFeatured />
-      <div className='grid md:grid-cols-3 gap-12 mt-6'>
+      <div className='grid md:grid-cols-3 gap-12'>
         <HomeDepartments
           department=''
           content=''
