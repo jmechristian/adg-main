@@ -2,32 +2,13 @@ import './globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-
+import Nav from '@/components/Nav';
 export const metadata = {
   title: 'Akseizer Design Group',
   description: 'Akseizer Design Group',
 };
 
 export default function RootLayout({ children }) {
-  const links = [
-    {
-      label: 'Projects',
-      href: '/projects',
-    },
-    {
-      label: 'Services',
-      href: '/services',
-    },
-    {
-      label: 'Studio',
-      href: '/studio',
-    },
-    {
-      label: 'Inquire',
-      href: '/inquire',
-    },
-  ];
-
   const footerLinks = [
     {
       label: 'Home',
@@ -81,39 +62,11 @@ export default function RootLayout({ children }) {
       href: '/residential',
     },
   ];
+
   return (
     <html lang='en'>
       <body className='relative'>
-        <nav className='w-full py-20 absolute top-0 left-0 z-10 pt-6 '>
-          <div className='w-full max-w-5xl mx-auto flex items-center justify-between'>
-            {links.slice(0, 2).map((link) => (
-              <a
-                href={link.href}
-                key={link.label}
-                className='text-white text-3xl font-brand italic'
-              >
-                {link.label}
-              </a>
-            ))}
-            <div>
-              <Image
-                src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/adg-logo.png'
-                alt='ADG'
-                width={148}
-                height={107}
-              />
-            </div>
-            {links.slice(2, 4).map((link) => (
-              <a
-                href={link.href}
-                key={link.label}
-                className='text-white text-3xl font-brand italic'
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </nav>
+        <Nav />
         <main>{children}</main>
         <footer className='w-full py-20 bg-brand-peach'>
           <div className='flex flex-col gap-8'>
