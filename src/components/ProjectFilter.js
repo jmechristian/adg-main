@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
+import Image from 'next/image';
 import { getDepartments, getSubcategoriesByDepartment } from '@/helpers/api';
+import FilterItem from './FilterItem';
 const ProjectFilter = ({ projects }) => {
   const [departments, setDepartments] = useState([]);
   const [departmentFilters, setDepartmentFilters] = useState([]);
@@ -64,7 +66,7 @@ const ProjectFilter = ({ projects }) => {
   }, [projects, departmentFilters, subcategoryFilters]);
 
   return (
-    <div className='w-full max-w-6xl mx-auto flex flex-col gap-16 pb-24'>
+    <div className='w-full max-w-6xl mx-auto flex flex-col gap-10 pb-24'>
       <div className='w-full flex items-center justify-between'>
         {departments &&
           departments
@@ -74,8 +76,8 @@ const ProjectFilter = ({ projects }) => {
                 className={`cursor-pointer ${
                   departmentFilters.id === department.id
                     ? 'text-brand-brown'
-                    : 'text-brand-gray'
-                }`}
+                    : 'text-neutral-300'
+                } font-brand-book font-light tracking-wide uppercase text-xl`}
                 key={department.id}
                 onClick={() => {
                   setDepartmentFilters({
@@ -89,30 +91,79 @@ const ProjectFilter = ({ projects }) => {
               </div>
             ))}
       </div>
-      <div className='w-full flex items-center justify-between'>
-        {subcategories &&
-          subcategories
-            .sort((a, b) => a.displayOrder - b.displayOrder)
-            .map((subcategory) => (
-              <div
-                key={subcategory.id}
-                className={`cursor-pointer ${
-                  subcategoryFilters?.id === subcategory.subcategory.id
-                    ? 'text-brand-brown'
-                    : 'text-brand-gray'
-                }`}
-                onClick={() =>
-                  setSubcategoryFilters({
-                    id: subcategory.subcategory.id,
-                    name: subcategory.subcategory.name,
-                  })
-                }
-              >
-                {subcategory.subcategory.name}
-              </div>
-            ))}
+      <div className='w-full flex items-center justify-between border-b border-neutral-200 relative'>
+        <div className='flex flex-1 items-center gap-6'>
+          {subcategories &&
+            subcategories
+              .sort((a, b) => a.displayOrder - b.displayOrder)
+              .map((subcategory) => (
+                <div
+                  key={subcategory.id}
+                  className={`cursor-pointer relative ${
+                    subcategoryFilters?.id === subcategory.subcategory.id
+                      ? 'text-brand-brown after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[3px] after:bg-brand-brown'
+                      : 'text-neutral-300'
+                  } font-brand-book font-light tracking-wide text-lg pb-2`}
+                  onClick={() =>
+                    setSubcategoryFilters({
+                      id: subcategory.subcategory.id,
+                      name: subcategory.subcategory.name,
+                    })
+                  }
+                >
+                  {subcategory.subcategory.name}
+                </div>
+              ))}
+        </div>
+        <div className='flex items-center gap-2 border-l border-neutral-200 pl-4 pb-2 pr-1'>
+          <div className='cursor-pointer'>
+            <Image
+              src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-icon.png'
+              alt='Filter'
+              width={28}
+              height={28}
+            />
+          </div>
+          <div className='cursor-pointer text-brand-brown font-brand-book font-light tracking-wide text-lg'>
+            Map
+          </div>
+        </div>
       </div>
-      <div>Projects {filteredProjects.length}</div>
+      <div className='w-full flex flex-col gap-10'>
+        <div className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'>
+          <div className='w-full col-span-8 h-full'>
+            <div className='w-full h-full'>
+              <FilterItem project={filteredProjects[0]} />
+            </div>
+          </div>
+          <div className='w-full col-span-4 flex flex-col gap-6'>
+            <div className='w-full aspect-video'>
+              <FilterItem project={filteredProjects[1]} />
+            </div>
+            <div className='w-full aspect-video'>
+              <FilterItem project={filteredProjects[2]} />
+            </div>
+          </div>
+          <div className='w-full col-span-12'>
+            <div className='w-full h-full aspect-[6/3]'>
+              <FilterItem project={filteredProjects[3]} />
+            </div>
+          </div>
+          <div className='w-full col-span-4 flex flex-col gap-6'>
+            <div className='w-full aspect-video'>
+              <FilterItem project={filteredProjects[4]} />
+            </div>
+            <div className='w-full aspect-video'>
+              <FilterItem project={filteredProjects[5]} />
+            </div>
+          </div>
+          <div className='w-full col-span-8 h-full'>
+            <div className='w-full  h-full'>
+              <FilterItem project={filteredProjects[6]} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

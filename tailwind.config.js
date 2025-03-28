@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         'brand-book': 'Gotham Book',
         'brand-book-bold': 'Gotham Bold',
+        'brand-medium': 'Gotham Medium',
         brand: 'calluna',
       },
     },

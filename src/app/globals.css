@@ -24,6 +24,18 @@
   font-display: auto;
 }
 
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('/fonts/Gotham-Medium.eot');
+  src: url('/fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Gotham-Medium.woff2') format('woff2'),
+    url('/fonts/Gotham-Medium.woff') format('woff'),
+    url('/fonts/Gotham-Medium.svg#Gotham-Medium') format('svg');
+  font-weight: medium;
+  font-style: normal;
+  font-display: auto;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
