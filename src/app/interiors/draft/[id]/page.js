@@ -65,7 +65,7 @@ const Page = () => {
 
   useEffect(() => {
     setDarkNavTrue();
-  }, []);
+  }, [setDarkNavTrue]);
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -164,7 +164,7 @@ const Page = () => {
                   : []
               }
               quotes={
-                project.quotes && project.quotes.items
+                project.quotes?.items
                   ? project.quotes.items.sort(
                       (a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)
                     )

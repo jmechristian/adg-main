@@ -67,7 +67,6 @@ const ProjectFilter = ({ projects }) => {
     });
   }, [projects, departmentFilters, subcategoryFilters]);
 
-  console.log(filteredProjects);
   return (
     <div className='w-full max-w-6xl mx-auto flex flex-col gap-10 pb-24'>
       <div className='w-full flex items-center justify-between'>
