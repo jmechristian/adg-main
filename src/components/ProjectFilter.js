@@ -131,38 +131,54 @@ const ProjectFilter = ({ projects }) => {
           </div>
         </div>
       </div>
-      <div className='w-full flex flex-col gap-10'>
+      <div className='w-full flex flex-col gap-6'>
         {(() => {
-          // Calculate how many complete patterns we need
-          const patternLength = 7; // 3 projects in first grid, 1 in full width, 3 in second grid
-          const numPatterns = Math.ceil(
-            filteredProjects.length / patternLength
-          );
+          // Create a new array that will hold our layout pattern
+          const layout = [];
 
-          const result = [];
+          // Process projects in groups of 8 (3 for first grid, 1 for full width, 3 for second grid, 1 for second full width)
+          for (let i = 0; i < filteredProjects.length; i += 8) {
+            const group = filteredProjects.slice(i, i + 8);
 
-          for (let i = 0; i < numPatterns; i++) {
-            const startIdx = i * patternLength;
-            const patternProjects = filteredProjects.slice(
-              startIdx,
-              startIdx + patternLength
-            );
+            // First grid: large on left, two small on right
+            if (group[0] || group[1] || group[2]) {
+              layout.push({
+                type: 'grid1',
+                projects: [group[0], group[1], group[2]],
+              });
+            }
 
-            // Check if we have any projects for this pattern
-            const hasProjects = patternProjects.some((project) => project);
+            // First full width
+            if (group[3]) {
+              layout.push({
+                type: 'full',
+                projects: [group[3]],
+              });
+            }
 
-            if (!hasProjects) continue; // Skip this pattern if no projects
+            // Second grid: two small on left, large on right
+            if (group[4] || group[5] || group[6]) {
+              layout.push({
+                type: 'grid2',
+                projects: [group[4], group[5], group[6]],
+              });
+            }
 
-            // First row: Grid with large on left, two small on right
-            // Only render if we have at least one project for this row
-            if (
-              patternProjects[0] ||
-              patternProjects[1] ||
-              patternProjects[2]
-            ) {
-              result.push(
+            // Second full width
+            if (group[7]) {
+              layout.push({
+                type: 'full',
+                projects: [group[7]],
+              });
+            }
+          }
+
+          // Render the layout
+          return layout.map((item, index) => {
+            if (item.type === 'grid1') {
+              return (
                 <div
-                  key={`grid1-${i}`}
+                  key={`grid1-${index}`}
                   className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
                 >
                   {/* Large project on left */}
@@ -170,15 +186,15 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full h-full'
                       onClick={() => {
-                        if (patternProjects[0]) {
+                        if (item.projects[0]) {
                           router.push(
-                            `/interiors/draft/${patternProjects[0].id}`
+                            `/interiors/draft/${item.projects[0].id}`
                           );
                         }
                       }}
                     >
-                      {patternProjects[0] ? (
-                        <FilterItem project={patternProjects[0]} />
+                      {item.projects[0] ? (
+                        <FilterItem project={item.projects[0]} />
                       ) : (
                         <div className='w-full h-full bg-white'></div>
                       )}
@@ -190,15 +206,15 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full aspect-video'
                       onClick={() => {
-                        if (patternProjects[1]) {
+                        if (item.projects[1]) {
                           router.push(
-                            `/interiors/draft/${patternProjects[1].id}`
+                            `/interiors/draft/${item.projects[1].id}`
                           );
                         }
                       }}
                     >
-                      {patternProjects[1] ? (
-                        <FilterItem project={patternProjects[1]} />
+                      {item.projects[1] ? (
+                        <FilterItem project={item.projects[1]} />
                       ) : (
                         <div className='w-full h-full bg-white'></div>
                       )}
@@ -206,15 +222,15 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full aspect-video'
                       onClick={() => {
-                        if (patternProjects[2]) {
+                        if (item.projects[2]) {
                           router.push(
-                            `/interiors/draft/${patternProjects[2].id}`
+                            `/interiors/draft/${item.projects[2].id}`
                           );
                         }
                       }}
                     >
-                      {patternProjects[2] ? (
-                        <FilterItem project={patternProjects[2]} />
+                      {item.projects[2] ? (
+                        <FilterItem project={item.projects[2]} />
                       ) : (
                         <div className='w-full h-full bg-white'></div>
                       )}
@@ -222,42 +238,28 @@ const ProjectFilter = ({ projects }) => {
                   </div>
                 </div>
               );
-            }
-
-            // Second row: Full width
-            // Only render if we have a project for this row
-            if (patternProjects[3]) {
-              result.push(
+            } else if (item.type === 'full') {
+              return (
                 <div
-                  key={`full-${i}`}
+                  key={`full-${index}`}
                   className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
                 >
                   <div className='w-full col-span-12'>
                     <div
                       className='w-full h-full aspect-[6/3]'
                       onClick={() => {
-                        router.push(
-                          `/interiors/draft/${patternProjects[3].id}`
-                        );
+                        router.push(`/interiors/draft/${item.projects[0].id}`);
                       }}
                     >
-                      <FilterItem project={patternProjects[3]} />
+                      <FilterItem project={item.projects[0]} />
                     </div>
                   </div>
                 </div>
               );
-            }
-
-            // Third row: Grid with two small on left, large on right
-            // Only render if we have at least one project for this row
-            if (
-              patternProjects[4] ||
-              patternProjects[5] ||
-              patternProjects[6]
-            ) {
-              result.push(
+            } else if (item.type === 'grid2') {
+              return (
                 <div
-                  key={`grid2-${i}`}
+                  key={`grid2-${index}`}
                   className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
                 >
                   {/* Two small projects on left */}
@@ -265,15 +267,15 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full aspect-video'
                       onClick={() => {
-                        if (patternProjects[4]) {
+                        if (item.projects[0]) {
                           router.push(
-                            `/interiors/draft/${patternProjects[4].id}`
+                            `/interiors/draft/${item.projects[0].id}`
                           );
                         }
                       }}
                     >
-                      {patternProjects[4] ? (
-                        <FilterItem project={patternProjects[4]} />
+                      {item.projects[0] ? (
+                        <FilterItem project={item.projects[0]} />
                       ) : (
                         <div className='w-full h-full bg-white'></div>
                       )}
@@ -281,15 +283,15 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full aspect-video'
                       onClick={() => {
-                        if (patternProjects[5]) {
+                        if (item.projects[1]) {
                           router.push(
-                            `/interiors/draft/${patternProjects[5].id}`
+                            `/interiors/draft/${item.projects[1].id}`
                           );
                         }
                       }}
                     >
-                      {patternProjects[5] ? (
-                        <FilterItem project={patternProjects[5]} />
+                      {item.projects[1] ? (
+                        <FilterItem project={item.projects[1]} />
                       ) : (
                         <div className='w-full h-full bg-white'></div>
                       )}
@@ -301,15 +303,15 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full h-full'
                       onClick={() => {
-                        if (patternProjects[6]) {
+                        if (item.projects[2]) {
                           router.push(
-                            `/interiors/draft/${patternProjects[6].id}`
+                            `/interiors/draft/${item.projects[2].id}`
                           );
                         }
                       }}
                     >
-                      {patternProjects[6] ? (
-                        <FilterItem project={patternProjects[6]} />
+                      {item.projects[2] ? (
+                        <FilterItem project={item.projects[2]} />
                       ) : (
                         <div className='w-full h-full bg-white'></div>
                       )}
@@ -318,9 +320,9 @@ const ProjectFilter = ({ projects }) => {
                 </div>
               );
             }
-          }
 
-          return result;
+            return null;
+          });
         })()}
       </div>
     </div>
