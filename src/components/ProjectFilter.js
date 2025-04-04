@@ -67,6 +67,7 @@ const ProjectFilter = ({ projects }) => {
     });
   }, [projects, departmentFilters, subcategoryFilters]);
 
+  console.log(filteredProjects);
   return (
     <div className='w-full max-w-6xl mx-auto flex flex-col gap-10 pb-24'>
       <div className='w-full flex items-center justify-between'>
@@ -132,74 +133,126 @@ const ProjectFilter = ({ projects }) => {
         </div>
       </div>
       <div className='w-full flex flex-col gap-10'>
-        <div className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'>
-          <div className='w-full col-span-8 h-full'>
-            <div
-              className='w-full h-full'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[0].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[0]} />
-            </div>
-          </div>
-          <div className='w-full col-span-4 flex flex-col gap-6'>
-            <div
-              className='w-full aspect-video'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[1].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[1]} />
-            </div>
-            <div
-              className='w-full aspect-video'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[2].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[2]} />
-            </div>
-          </div>
-          <div className='w-full col-span-12'>
-            <div
-              className='w-full h-full aspect-[6/3]'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[3].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[3]} />
-            </div>
-          </div>
-          <div className='w-full col-span-4 flex flex-col gap-6'>
-            <div
-              className='w-full aspect-video'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[4].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[4]} />
-            </div>
-            <div
-              className='w-full aspect-video'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[5].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[5]} />
-            </div>
-          </div>
-          <div className='w-full col-span-8 h-full'>
-            <div
-              className='w-full  h-full'
-              onClick={() => {
-                router.push(`/interiors/draft/${filteredProjects[6].id}`);
-              }}
-            >
-              <FilterItem project={filteredProjects[6]} />
-            </div>
-          </div>
-        </div>
+        {Array.from({ length: Math.ceil(filteredProjects.length / 7) }).map(
+          (_, groupIndex) => {
+            const startIndex = groupIndex * 7;
+            const projectsInGroup = filteredProjects.slice(
+              startIndex,
+              startIndex + 7
+            );
+
+            return (
+              <div
+                key={groupIndex}
+                className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
+              >
+                {/* First project (large) */}
+                {projectsInGroup[0] && (
+                  <div className='w-full col-span-8 h-full'>
+                    <div
+                      className='w-full h-full'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[0].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[0]} />
+                    </div>
+                  </div>
+                )}
+
+                {/* Second and third projects (small) */}
+                <div className='w-full col-span-4 flex flex-col gap-6'>
+                  {projectsInGroup[1] && (
+                    <div
+                      className='w-full aspect-video'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[1].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[1]} />
+                    </div>
+                  )}
+                  {projectsInGroup[2] && (
+                    <div
+                      className='w-full aspect-video'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[2].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[2]} />
+                    </div>
+                  )}
+                </div>
+
+                {/* Fourth project (full width) */}
+                {projectsInGroup[3] && (
+                  <div className='w-full col-span-12'>
+                    <div
+                      className='w-full h-full aspect-[6/3]'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[3].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[3]} />
+                    </div>
+                  </div>
+                )}
+
+                {/* Fifth and sixth projects (small) */}
+                <div className='w-full col-span-4 flex flex-col gap-6'>
+                  {projectsInGroup[4] && (
+                    <div
+                      className='w-full aspect-video'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[4].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[4]} />
+                    </div>
+                  )}
+                  {projectsInGroup[5] && (
+                    <div
+                      className='w-full aspect-video'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[5].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[5]} />
+                    </div>
+                  )}
+                </div>
+
+                {/* Seventh project (large) */}
+                {projectsInGroup[6] && (
+                  <div className='w-full col-span-8 h-full'>
+                    <div
+                      className='w-full h-full'
+                      onClick={() => {
+                        router.push(
+                          `/interiors/draft/${projectsInGroup[6].id}`
+                        );
+                      }}
+                    >
+                      <FilterItem project={projectsInGroup[6]} />
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          }
+        )}
       </div>
     </div>
   );
