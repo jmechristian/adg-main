@@ -47,7 +47,7 @@ const Page = () => {
 
   return (
     <div className='relative'>
-      <div className='h-40'></div>
+      <div className='h-24 lg:h-48'></div>
       {project && (
         <div className='flex flex-col gap-8 max-w-6xl mx-auto py-8 w-full'>
           <div className='flex flex-col gap-8'>
@@ -76,27 +76,33 @@ const Page = () => {
                 handleModalImage(imageId);
               }}
             />
-            <TwoColIntro
-              id={project.id}
-              description={project.description || ''}
-              collaborators={project.collaborators || ''}
-              size={project.size || ''}
-              subcategory={
-                project.subcategories?.items.length > 0
-                  ? project.subcategories?.items.map((s) => s.subcategory.name)
-                  : null
-              }
-              project_type={
-                project.project_type?.items.length > 0
-                  ? project.project_type?.items.map((p) => p.projectType.name)
-                  : null
-              }
-              building_type={
-                project.building_type?.items.length > 0
-                  ? project.building_type?.items.map((b) => b.buildingType.name)
-                  : null
-              }
-            />
+            <div className='px-5 lg:px-0'>
+              <TwoColIntro
+                id={project.id}
+                description={project.description || ''}
+                collaborators={project.collaborators || ''}
+                size={project.size || ''}
+                subcategory={
+                  project.subcategories?.items.length > 0
+                    ? project.subcategories?.items.map(
+                        (s) => s.subcategory.name
+                      )
+                    : null
+                }
+                project_type={
+                  project.project_type?.items.length > 0
+                    ? project.project_type?.items.map((p) => p.projectType.name)
+                    : null
+                }
+                building_type={
+                  project.building_type?.items.length > 0
+                    ? project.building_type?.items.map(
+                        (b) => b.buildingType.name
+                      )
+                    : null
+                }
+              />
+            </div>
           </div>
           <CascadingGallery
             images={
