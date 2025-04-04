@@ -1,11 +1,28 @@
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/api';
-import awsconfig from '../aws-exports';
 import {
   listProjects,
   listDepartments,
   listDepartmentSubcategories,
 } from '@/graphql/queries';
+
+// Handle both development and production environments
+let awsconfig;
+try {
+  // Try to import the aws-exports file (works in development)
+  awsconfig = require('../aws-exports').default;
+} catch (error) {
+  // Fallback for production environment
+  awsconfig = {
+    aws_project_region: process.env.NEXT_PUBLIC_AWS_REGION || 'us-east-1',
+    aws_appsync_graphqlEndpoint: process.env.NEXT_PUBLIC_APPSYNC_ENDPOINT,
+    aws_appsync_region: process.env.NEXT_PUBLIC_AWS_REGION || 'us-east-1',
+    aws_appsync_authenticationType: 'API_KEY',
+    aws_appsync_apiKey: process.env.NEXT_PUBLIC_APPSYNC_API_KEY,
+    // Add other necessary configuration properties as needed
+  };
+}
+
 Amplify.configure(awsconfig);
 
 const client = generateClient({
