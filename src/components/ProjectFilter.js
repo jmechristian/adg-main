@@ -132,126 +132,196 @@ const ProjectFilter = ({ projects }) => {
         </div>
       </div>
       <div className='w-full flex flex-col gap-10'>
-        {Array.from({ length: Math.ceil(filteredProjects.length / 7) }).map(
-          (_, groupIndex) => {
-            const startIndex = groupIndex * 7;
-            const projectsInGroup = filteredProjects.slice(
-              startIndex,
-              startIndex + 7
+        {(() => {
+          // Calculate how many complete patterns we need
+          const patternLength = 7; // 3 projects in first grid, 1 in full width, 3 in second grid
+          const numPatterns = Math.ceil(
+            filteredProjects.length / patternLength
+          );
+
+          const result = [];
+
+          for (let i = 0; i < numPatterns; i++) {
+            const startIdx = i * patternLength;
+            const patternProjects = filteredProjects.slice(
+              startIdx,
+              startIdx + patternLength
             );
 
-            return (
-              <div
-                key={groupIndex}
-                className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
-              >
-                {/* First project (large) */}
-                {projectsInGroup[0] && (
+            // Check if we have any projects for this pattern
+            const hasProjects = patternProjects.some((project) => project);
+
+            if (!hasProjects) continue; // Skip this pattern if no projects
+
+            // First row: Grid with large on left, two small on right
+            // Only render if we have at least one project for this row
+            if (
+              patternProjects[0] ||
+              patternProjects[1] ||
+              patternProjects[2]
+            ) {
+              result.push(
+                <div
+                  key={`grid1-${i}`}
+                  className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
+                >
+                  {/* Large project on left */}
                   <div className='w-full col-span-8 h-full'>
                     <div
                       className='w-full h-full'
                       onClick={() => {
-                        router.push(
-                          `/interiors/draft/${projectsInGroup[0].id}`
-                        );
+                        if (patternProjects[0]) {
+                          router.push(
+                            `/interiors/draft/${patternProjects[0].id}`
+                          );
+                        }
                       }}
                     >
-                      <FilterItem project={projectsInGroup[0]} />
+                      {patternProjects[0] ? (
+                        <FilterItem project={patternProjects[0]} />
+                      ) : (
+                        <div className='w-full h-full bg-white'></div>
+                      )}
                     </div>
                   </div>
-                )}
 
-                {/* Second and third projects (small) */}
-                <div className='w-full col-span-4 flex flex-col gap-6'>
-                  {projectsInGroup[1] && (
+                  {/* Two small projects on right */}
+                  <div className='w-full col-span-4 flex flex-col gap-6'>
                     <div
                       className='w-full aspect-video'
                       onClick={() => {
-                        router.push(
-                          `/interiors/draft/${projectsInGroup[1].id}`
-                        );
+                        if (patternProjects[1]) {
+                          router.push(
+                            `/interiors/draft/${patternProjects[1].id}`
+                          );
+                        }
                       }}
                     >
-                      <FilterItem project={projectsInGroup[1]} />
+                      {patternProjects[1] ? (
+                        <FilterItem project={patternProjects[1]} />
+                      ) : (
+                        <div className='w-full h-full bg-white'></div>
+                      )}
                     </div>
-                  )}
-                  {projectsInGroup[2] && (
                     <div
                       className='w-full aspect-video'
                       onClick={() => {
-                        router.push(
-                          `/interiors/draft/${projectsInGroup[2].id}`
-                        );
+                        if (patternProjects[2]) {
+                          router.push(
+                            `/interiors/draft/${patternProjects[2].id}`
+                          );
+                        }
                       }}
                     >
-                      <FilterItem project={projectsInGroup[2]} />
+                      {patternProjects[2] ? (
+                        <FilterItem project={patternProjects[2]} />
+                      ) : (
+                        <div className='w-full h-full bg-white'></div>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
+              );
+            }
 
-                {/* Fourth project (full width) */}
-                {projectsInGroup[3] && (
+            // Second row: Full width
+            // Only render if we have a project for this row
+            if (patternProjects[3]) {
+              result.push(
+                <div
+                  key={`full-${i}`}
+                  className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
+                >
                   <div className='w-full col-span-12'>
                     <div
                       className='w-full h-full aspect-[6/3]'
                       onClick={() => {
                         router.push(
-                          `/interiors/draft/${projectsInGroup[3].id}`
+                          `/interiors/draft/${patternProjects[3].id}`
                         );
                       }}
                     >
-                      <FilterItem project={projectsInGroup[3]} />
+                      <FilterItem project={patternProjects[3]} />
                     </div>
                   </div>
-                )}
-
-                {/* Fifth and sixth projects (small) */}
-                <div className='w-full col-span-4 flex flex-col gap-6'>
-                  {projectsInGroup[4] && (
-                    <div
-                      className='w-full aspect-video'
-                      onClick={() => {
-                        router.push(
-                          `/interiors/draft/${projectsInGroup[4].id}`
-                        );
-                      }}
-                    >
-                      <FilterItem project={projectsInGroup[4]} />
-                    </div>
-                  )}
-                  {projectsInGroup[5] && (
-                    <div
-                      className='w-full aspect-video'
-                      onClick={() => {
-                        router.push(
-                          `/interiors/draft/${projectsInGroup[5].id}`
-                        );
-                      }}
-                    >
-                      <FilterItem project={projectsInGroup[5]} />
-                    </div>
-                  )}
                 </div>
+              );
+            }
 
-                {/* Seventh project (large) */}
-                {projectsInGroup[6] && (
+            // Third row: Grid with two small on left, large on right
+            // Only render if we have at least one project for this row
+            if (
+              patternProjects[4] ||
+              patternProjects[5] ||
+              patternProjects[6]
+            ) {
+              result.push(
+                <div
+                  key={`grid2-${i}`}
+                  className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
+                >
+                  {/* Two small projects on left */}
+                  <div className='w-full col-span-4 flex flex-col gap-6'>
+                    <div
+                      className='w-full aspect-video'
+                      onClick={() => {
+                        if (patternProjects[4]) {
+                          router.push(
+                            `/interiors/draft/${patternProjects[4].id}`
+                          );
+                        }
+                      }}
+                    >
+                      {patternProjects[4] ? (
+                        <FilterItem project={patternProjects[4]} />
+                      ) : (
+                        <div className='w-full h-full bg-white'></div>
+                      )}
+                    </div>
+                    <div
+                      className='w-full aspect-video'
+                      onClick={() => {
+                        if (patternProjects[5]) {
+                          router.push(
+                            `/interiors/draft/${patternProjects[5].id}`
+                          );
+                        }
+                      }}
+                    >
+                      {patternProjects[5] ? (
+                        <FilterItem project={patternProjects[5]} />
+                      ) : (
+                        <div className='w-full h-full bg-white'></div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Large project on right */}
                   <div className='w-full col-span-8 h-full'>
                     <div
                       className='w-full h-full'
                       onClick={() => {
-                        router.push(
-                          `/interiors/draft/${projectsInGroup[6].id}`
-                        );
+                        if (patternProjects[6]) {
+                          router.push(
+                            `/interiors/draft/${patternProjects[6].id}`
+                          );
+                        }
                       }}
                     >
-                      <FilterItem project={projectsInGroup[6]} />
+                      {patternProjects[6] ? (
+                        <FilterItem project={patternProjects[6]} />
+                      ) : (
+                        <div className='w-full h-full bg-white'></div>
+                      )}
                     </div>
                   </div>
-                )}
-              </div>
-            );
+                </div>
+              );
+            }
           }
-        )}
+
+          return result;
+        })()}
       </div>
     </div>
   );
