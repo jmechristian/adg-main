@@ -6,6 +6,7 @@ import {
   HeadingHero,
   TwoColIntro,
   CascadingGallery,
+  ModalGallery,
 } from '@jmechristian/adg-component-library';
 import '@jmechristian/adg-component-library/styles.css';
 import useLayoutStore from '@/store/useLayoutStore';
@@ -14,6 +15,7 @@ const Page = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const { setDarkNavTrue } = useLayoutStore();
+  const [modalImage, setModalImage] = useState({ open: false, index: null });
 
   useEffect(() => {
     setDarkNavTrue();
@@ -28,8 +30,23 @@ const Page = () => {
     fetchProject();
   }, [id]);
 
+  const handleModalImage = (imageId) => {
+    const image = project.gallery.images.items.find(
+      (image) => image.id === imageId
+    );
+
+    // Find the index of the image in the gallery
+    const imageIndex = project.gallery.images.items.findIndex(
+      (image) => image.id === imageId
+    );
+
+    // Now you can use imageIndex which will be -1 if not found, or the actual index if found
+    console.log(imageIndex);
+    setModalImage({ open: true, index: imageIndex });
+  };
+
   return (
-    <div>
+    <div className='relative'>
       <div className='h-40'></div>
       {project && (
         <div className='flex flex-col gap-8 max-w-6xl mx-auto py-8 w-full'>
@@ -54,6 +71,9 @@ const Page = () => {
                   project.gallery.images.items.sort(
                     (a, b) => (a.order || 0) - (b.order || 0)
                   )[0]?.caption ?? 'Hero Image',
+              }}
+              setModalImage={(imageId) => {
+                handleModalImage(imageId);
               }}
             />
             <TwoColIntro
@@ -89,10 +109,24 @@ const Page = () => {
             quotes={project.quotes.items.sort(
               (a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)
             )}
+            setModalImage={(imageId) => {
+              handleModalImage(imageId);
+            }}
           />
         </div>
       )}
       {loading && <div>Loading...</div>}
+      {project &&
+        modalImage.open &&
+        project.gallery &&
+        project.gallery.images && (
+          <ModalGallery
+            images={project.gallery.images.items}
+            closeModal={() => setModalImage({ open: false, index: null })}
+            currentIndex={modalImage.index}
+            projectName={project.name}
+          />
+        )}
     </div>
   );
 };
