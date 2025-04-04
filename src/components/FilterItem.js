@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { getFullImageUrl } from '@/helpers/api';
 
 const FilterItem = ({ project }) => {
-  console.log(project);
   const [isHovered, setIsHovered] = useState(false);
   const heroImage =
     project &&
@@ -26,7 +25,7 @@ const FilterItem = ({ project }) => {
             <div className='absolute inset-0 flex flex-col justify-end z-20 py-3 pl-6 gap-0.5'>
               <h2 className='text-white text-2xl font-brand'>{project.name}</h2>
               <div className='uppercase text-white text-sm font-brand-book tracking-wide'>
-                {project.locationString}
+                {project.previewLocation || project.locationString}
               </div>
             </div>
           </>

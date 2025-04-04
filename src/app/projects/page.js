@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { getAllProjects } from '@/helpers/api';
+import { getPublishedProjects } from '@/helpers/api';
 import useLayoutStore from '@/store/useLayoutStore';
 import ProjectFilter from '@/components/ProjectFilter';
 const Page = () => {
@@ -14,9 +14,9 @@ const Page = () => {
 
   useEffect(() => {
     const getProjects = async () => {
-      const projects = await getAllProjects();
-      console.log(projects.listProjects.items);
-      setProjects(projects.listProjects.items);
+      const projects = await getPublishedProjects();
+      console.log(projects);
+      setProjects(projects);
       setLoading(false);
     };
     getProjects();

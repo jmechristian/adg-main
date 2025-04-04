@@ -47,9 +47,10 @@ type Project @model {
   createdBy: User @hasOne
   lastUpdatedBy: User @hasOne
   featured: Boolean
-  link: String!
+  link: String! @index(name: "projectBySlug", queryField: "projectBySlug")
   quote: String
   quoteAttribution: String
+  quotes: [Quote] @hasMany
   collaborators: String
   size: String
   gridOrder: Int
@@ -60,6 +61,15 @@ type Project @model {
   building_type: [BuildingType]
     @manyToMany(relationName: "ProjectBuildingTypes")
   project_type: [ProjectType] @manyToMany(relationName: "ProjectProjectTypes")
+  displayOrder: Int
+  previewLocation: String
+}
+
+type Quote @model {
+  id: ID!
+  text: String!
+  attribution: String
+  project: Project @belongsTo
   displayOrder: Int
 }
 
@@ -79,6 +89,9 @@ type ImageObject @model {
   caption: String
   gallery: Gallery @belongsTo
   order: Int
+  centerX: Float
+  centerY: Float
+  zoom: Float
 }
 
 type Subcategory @model {

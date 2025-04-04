@@ -109,6 +109,7 @@ export const onCreateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -121,6 +122,9 @@ export const onCreateGallery = /* GraphQL */ `
             galleryProjectId
           }
           order
+          centerX
+          centerY
+          zoom
           createdAt
           updatedAt
           galleryImagesId
@@ -163,6 +167,41 @@ export const onCreateGallery = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -176,6 +215,9 @@ export const onCreateGallery = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -218,6 +260,9 @@ export const onCreateGallery = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -241,6 +286,7 @@ export const onCreateGallery = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -272,6 +318,7 @@ export const onCreateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -311,6 +358,7 @@ export const onCreateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -350,6 +398,7 @@ export const onCreateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -389,6 +438,7 @@ export const onCreateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -409,6 +459,7 @@ export const onCreateGallery = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -452,6 +503,7 @@ export const onUpdateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -464,6 +516,9 @@ export const onUpdateGallery = /* GraphQL */ `
             galleryProjectId
           }
           order
+          centerX
+          centerY
+          zoom
           createdAt
           updatedAt
           galleryImagesId
@@ -506,6 +561,41 @@ export const onUpdateGallery = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -519,6 +609,9 @@ export const onUpdateGallery = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -561,6 +654,9 @@ export const onUpdateGallery = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -584,6 +680,7 @@ export const onUpdateGallery = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -615,6 +712,7 @@ export const onUpdateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -654,6 +752,7 @@ export const onUpdateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -693,6 +792,7 @@ export const onUpdateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -732,6 +832,7 @@ export const onUpdateGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -752,6 +853,7 @@ export const onUpdateGallery = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -795,6 +897,7 @@ export const onDeleteGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -807,6 +910,9 @@ export const onDeleteGallery = /* GraphQL */ `
             galleryProjectId
           }
           order
+          centerX
+          centerY
+          zoom
           createdAt
           updatedAt
           galleryImagesId
@@ -849,6 +955,41 @@ export const onDeleteGallery = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -862,6 +1003,9 @@ export const onDeleteGallery = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -904,6 +1048,9 @@ export const onDeleteGallery = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -927,6 +1074,7 @@ export const onDeleteGallery = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -958,6 +1106,7 @@ export const onDeleteGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -997,6 +1146,7 @@ export const onDeleteGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -1036,6 +1186,7 @@ export const onDeleteGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -1075,6 +1226,7 @@ export const onDeleteGallery = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -1095,6 +1247,7 @@ export const onDeleteGallery = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -1146,6 +1299,88 @@ export const onCreateProject = /* GraphQL */ `
       link
       quote
       quoteAttribution
+      quotes {
+        items {
+          id
+          text
+          attribution
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectQuotesId
+        }
+        nextToken
+      }
       collaborators
       size
       gridOrder
@@ -1165,6 +1400,9 @@ export const onCreateProject = /* GraphQL */ `
               galleryProjectId
             }
             order
+            centerX
+            centerY
+            zoom
             createdAt
             updatedAt
             galleryImagesId
@@ -1207,6 +1445,18 @@ export const onCreateProject = /* GraphQL */ `
           link
           quote
           quoteAttribution
+          quotes {
+            items {
+              id
+              text
+              attribution
+              displayOrder
+              createdAt
+              updatedAt
+              projectQuotesId
+            }
+            nextToken
+          }
           collaborators
           size
           gridOrder
@@ -1231,6 +1481,7 @@ export const onCreateProject = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -1283,6 +1534,7 @@ export const onCreateProject = /* GraphQL */ `
             nextToken
           }
           displayOrder
+          previewLocation
           createdAt
           updatedAt
           projectLocationId
@@ -1335,6 +1587,9 @@ export const onCreateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -1358,6 +1613,7 @@ export const onCreateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -1424,6 +1680,9 @@ export const onCreateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -1447,6 +1706,7 @@ export const onCreateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -1513,6 +1773,9 @@ export const onCreateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -1536,6 +1799,7 @@ export const onCreateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -1599,6 +1863,9 @@ export const onCreateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -1622,6 +1889,7 @@ export const onCreateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -1645,6 +1913,7 @@ export const onCreateProject = /* GraphQL */ `
         nextToken
       }
       displayOrder
+      previewLocation
       createdAt
       updatedAt
       projectLocationId
@@ -1692,6 +1961,88 @@ export const onUpdateProject = /* GraphQL */ `
       link
       quote
       quoteAttribution
+      quotes {
+        items {
+          id
+          text
+          attribution
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectQuotesId
+        }
+        nextToken
+      }
       collaborators
       size
       gridOrder
@@ -1711,6 +2062,9 @@ export const onUpdateProject = /* GraphQL */ `
               galleryProjectId
             }
             order
+            centerX
+            centerY
+            zoom
             createdAt
             updatedAt
             galleryImagesId
@@ -1753,6 +2107,18 @@ export const onUpdateProject = /* GraphQL */ `
           link
           quote
           quoteAttribution
+          quotes {
+            items {
+              id
+              text
+              attribution
+              displayOrder
+              createdAt
+              updatedAt
+              projectQuotesId
+            }
+            nextToken
+          }
           collaborators
           size
           gridOrder
@@ -1777,6 +2143,7 @@ export const onUpdateProject = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -1829,6 +2196,7 @@ export const onUpdateProject = /* GraphQL */ `
             nextToken
           }
           displayOrder
+          previewLocation
           createdAt
           updatedAt
           projectLocationId
@@ -1881,6 +2249,9 @@ export const onUpdateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -1904,6 +2275,7 @@ export const onUpdateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -1970,6 +2342,9 @@ export const onUpdateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -1993,6 +2368,7 @@ export const onUpdateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2059,6 +2435,9 @@ export const onUpdateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2082,6 +2461,7 @@ export const onUpdateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2145,6 +2525,9 @@ export const onUpdateProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2168,6 +2551,7 @@ export const onUpdateProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2191,6 +2575,7 @@ export const onUpdateProject = /* GraphQL */ `
         nextToken
       }
       displayOrder
+      previewLocation
       createdAt
       updatedAt
       projectLocationId
@@ -2238,6 +2623,88 @@ export const onDeleteProject = /* GraphQL */ `
       link
       quote
       quoteAttribution
+      quotes {
+        items {
+          id
+          text
+          attribution
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectQuotesId
+        }
+        nextToken
+      }
       collaborators
       size
       gridOrder
@@ -2257,6 +2724,9 @@ export const onDeleteProject = /* GraphQL */ `
               galleryProjectId
             }
             order
+            centerX
+            centerY
+            zoom
             createdAt
             updatedAt
             galleryImagesId
@@ -2299,6 +2769,18 @@ export const onDeleteProject = /* GraphQL */ `
           link
           quote
           quoteAttribution
+          quotes {
+            items {
+              id
+              text
+              attribution
+              displayOrder
+              createdAt
+              updatedAt
+              projectQuotesId
+            }
+            nextToken
+          }
           collaborators
           size
           gridOrder
@@ -2323,6 +2805,7 @@ export const onDeleteProject = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -2375,6 +2858,7 @@ export const onDeleteProject = /* GraphQL */ `
             nextToken
           }
           displayOrder
+          previewLocation
           createdAt
           updatedAt
           projectLocationId
@@ -2427,6 +2911,9 @@ export const onDeleteProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2450,6 +2937,7 @@ export const onDeleteProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2516,6 +3004,9 @@ export const onDeleteProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2539,6 +3030,7 @@ export const onDeleteProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2605,6 +3097,9 @@ export const onDeleteProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2628,6 +3123,7 @@ export const onDeleteProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2691,6 +3187,9 @@ export const onDeleteProject = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2714,6 +3213,7 @@ export const onDeleteProject = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2737,12 +3237,1060 @@ export const onDeleteProject = /* GraphQL */ `
         nextToken
       }
       displayOrder
+      previewLocation
       createdAt
       updatedAt
       projectLocationId
       projectCreatedById
       projectLastUpdatedById
       projectGalleryId
+    }
+  }
+`;
+export const onCreateQuote = /* GraphQL */ `
+  subscription OnCreateQuote {
+    onCreateQuote {
+      id
+      text
+      attribution
+      project {
+        id
+        oldId
+        name
+        description
+        location {
+          id
+          name
+          address
+          description
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        locationString
+        createdBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        lastUpdatedBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        featured
+        link
+        quote
+        quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
+        collaborators
+        size
+        gridOrder
+        status
+        gallery {
+          id
+          images {
+            items {
+              id
+              url
+              alt
+              caption
+              order
+              centerX
+              centerY
+              zoom
+              createdAt
+              updatedAt
+              galleryImagesId
+            }
+            nextToken
+          }
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          createdAt
+          updatedAt
+          galleryProjectId
+        }
+        departments {
+          items {
+            id
+            projectID
+            departmentID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategories {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        building_type {
+          items {
+            id
+            projectID
+            buildingTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            buildingType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        project_type {
+          items {
+            id
+            projectID
+            projectTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            projectType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        previewLocation
+        createdAt
+        updatedAt
+        projectLocationId
+        projectCreatedById
+        projectLastUpdatedById
+        projectGalleryId
+      }
+      displayOrder
+      createdAt
+      updatedAt
+      projectQuotesId
+    }
+  }
+`;
+export const onUpdateQuote = /* GraphQL */ `
+  subscription OnUpdateQuote {
+    onUpdateQuote {
+      id
+      text
+      attribution
+      project {
+        id
+        oldId
+        name
+        description
+        location {
+          id
+          name
+          address
+          description
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        locationString
+        createdBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        lastUpdatedBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        featured
+        link
+        quote
+        quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
+        collaborators
+        size
+        gridOrder
+        status
+        gallery {
+          id
+          images {
+            items {
+              id
+              url
+              alt
+              caption
+              order
+              centerX
+              centerY
+              zoom
+              createdAt
+              updatedAt
+              galleryImagesId
+            }
+            nextToken
+          }
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          createdAt
+          updatedAt
+          galleryProjectId
+        }
+        departments {
+          items {
+            id
+            projectID
+            departmentID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategories {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        building_type {
+          items {
+            id
+            projectID
+            buildingTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            buildingType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        project_type {
+          items {
+            id
+            projectID
+            projectTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            projectType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        previewLocation
+        createdAt
+        updatedAt
+        projectLocationId
+        projectCreatedById
+        projectLastUpdatedById
+        projectGalleryId
+      }
+      displayOrder
+      createdAt
+      updatedAt
+      projectQuotesId
+    }
+  }
+`;
+export const onDeleteQuote = /* GraphQL */ `
+  subscription OnDeleteQuote {
+    onDeleteQuote {
+      id
+      text
+      attribution
+      project {
+        id
+        oldId
+        name
+        description
+        location {
+          id
+          name
+          address
+          description
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        locationString
+        createdBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        lastUpdatedBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        featured
+        link
+        quote
+        quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
+        collaborators
+        size
+        gridOrder
+        status
+        gallery {
+          id
+          images {
+            items {
+              id
+              url
+              alt
+              caption
+              order
+              centerX
+              centerY
+              zoom
+              createdAt
+              updatedAt
+              galleryImagesId
+            }
+            nextToken
+          }
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          createdAt
+          updatedAt
+          galleryProjectId
+        }
+        departments {
+          items {
+            id
+            projectID
+            departmentID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategories {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        building_type {
+          items {
+            id
+            projectID
+            buildingTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            buildingType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        project_type {
+          items {
+            id
+            projectID
+            projectTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            projectType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        previewLocation
+        createdAt
+        updatedAt
+        projectLocationId
+        projectCreatedById
+        projectLastUpdatedById
+        projectGalleryId
+      }
+      displayOrder
+      createdAt
+      updatedAt
+      projectQuotesId
     }
   }
 `;
@@ -2792,6 +4340,9 @@ export const onCreateDepartment = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2815,6 +4366,7 @@ export const onCreateDepartment = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -2928,6 +4480,9 @@ export const onUpdateDepartment = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -2951,6 +4506,7 @@ export const onUpdateDepartment = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -3064,6 +4620,9 @@ export const onDeleteDepartment = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -3087,6 +4646,7 @@ export const onDeleteDepartment = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -3176,6 +4736,9 @@ export const onCreateImageObject = /* GraphQL */ `
               galleryProjectId
             }
             order
+            centerX
+            centerY
+            zoom
             createdAt
             updatedAt
             galleryImagesId
@@ -3218,6 +4781,18 @@ export const onCreateImageObject = /* GraphQL */ `
           link
           quote
           quoteAttribution
+          quotes {
+            items {
+              id
+              text
+              attribution
+              displayOrder
+              createdAt
+              updatedAt
+              projectQuotesId
+            }
+            nextToken
+          }
           collaborators
           size
           gridOrder
@@ -3242,6 +4817,7 @@ export const onCreateImageObject = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -3294,6 +4870,7 @@ export const onCreateImageObject = /* GraphQL */ `
             nextToken
           }
           displayOrder
+          previewLocation
           createdAt
           updatedAt
           projectLocationId
@@ -3306,6 +4883,9 @@ export const onCreateImageObject = /* GraphQL */ `
         galleryProjectId
       }
       order
+      centerX
+      centerY
+      zoom
       createdAt
       updatedAt
       galleryImagesId
@@ -3334,6 +4914,9 @@ export const onUpdateImageObject = /* GraphQL */ `
               galleryProjectId
             }
             order
+            centerX
+            centerY
+            zoom
             createdAt
             updatedAt
             galleryImagesId
@@ -3376,6 +4959,18 @@ export const onUpdateImageObject = /* GraphQL */ `
           link
           quote
           quoteAttribution
+          quotes {
+            items {
+              id
+              text
+              attribution
+              displayOrder
+              createdAt
+              updatedAt
+              projectQuotesId
+            }
+            nextToken
+          }
           collaborators
           size
           gridOrder
@@ -3400,6 +4995,7 @@ export const onUpdateImageObject = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -3452,6 +5048,7 @@ export const onUpdateImageObject = /* GraphQL */ `
             nextToken
           }
           displayOrder
+          previewLocation
           createdAt
           updatedAt
           projectLocationId
@@ -3464,6 +5061,9 @@ export const onUpdateImageObject = /* GraphQL */ `
         galleryProjectId
       }
       order
+      centerX
+      centerY
+      zoom
       createdAt
       updatedAt
       galleryImagesId
@@ -3492,6 +5092,9 @@ export const onDeleteImageObject = /* GraphQL */ `
               galleryProjectId
             }
             order
+            centerX
+            centerY
+            zoom
             createdAt
             updatedAt
             galleryImagesId
@@ -3534,6 +5137,18 @@ export const onDeleteImageObject = /* GraphQL */ `
           link
           quote
           quoteAttribution
+          quotes {
+            items {
+              id
+              text
+              attribution
+              displayOrder
+              createdAt
+              updatedAt
+              projectQuotesId
+            }
+            nextToken
+          }
           collaborators
           size
           gridOrder
@@ -3558,6 +5173,7 @@ export const onDeleteImageObject = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -3610,6 +5226,7 @@ export const onDeleteImageObject = /* GraphQL */ `
             nextToken
           }
           displayOrder
+          previewLocation
           createdAt
           updatedAt
           projectLocationId
@@ -3622,6 +5239,9 @@ export const onDeleteImageObject = /* GraphQL */ `
         galleryProjectId
       }
       order
+      centerX
+      centerY
+      zoom
       createdAt
       updatedAt
       galleryImagesId
@@ -3674,6 +5294,9 @@ export const onCreateSubcategory = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -3697,6 +5320,7 @@ export const onCreateSubcategory = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -3810,6 +5434,9 @@ export const onUpdateSubcategory = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -3833,6 +5460,7 @@ export const onUpdateSubcategory = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -3946,6 +5574,9 @@ export const onDeleteSubcategory = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -3969,6 +5600,7 @@ export const onDeleteSubcategory = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4082,6 +5714,9 @@ export const onCreateBuildingType = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4105,6 +5740,7 @@ export const onCreateBuildingType = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4179,6 +5815,9 @@ export const onUpdateBuildingType = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4202,6 +5841,7 @@ export const onUpdateBuildingType = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4276,6 +5916,9 @@ export const onDeleteBuildingType = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4299,6 +5942,7 @@ export const onDeleteBuildingType = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4373,6 +6017,9 @@ export const onCreateProjectType = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4396,6 +6043,7 @@ export const onCreateProjectType = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4470,6 +6118,9 @@ export const onUpdateProjectType = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4493,6 +6144,7 @@ export const onUpdateProjectType = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4567,6 +6219,9 @@ export const onDeleteProjectType = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4590,6 +6245,7 @@ export const onDeleteProjectType = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4660,6 +6316,41 @@ export const onCreateProjectDepartments = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -4673,6 +6364,9 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -4715,6 +6409,9 @@ export const onCreateProjectDepartments = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -4738,6 +6435,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -4769,6 +6467,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -4808,6 +6507,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -4847,6 +6547,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -4886,6 +6587,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -4906,6 +6608,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -4936,6 +6639,7 @@ export const onCreateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5030,6 +6734,41 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -5043,6 +6782,9 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -5085,6 +6827,9 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -5108,6 +6853,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -5139,6 +6885,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5178,6 +6925,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5217,6 +6965,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5256,6 +7005,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5276,6 +7026,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -5306,6 +7057,7 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5400,6 +7152,41 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -5413,6 +7200,9 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -5455,6 +7245,9 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -5478,6 +7271,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -5509,6 +7303,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5548,6 +7343,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5587,6 +7383,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5626,6 +7423,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5646,6 +7444,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -5676,6 +7475,7 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5770,6 +7570,41 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -5783,6 +7618,9 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -5825,6 +7663,9 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -5848,6 +7689,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -5879,6 +7721,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5918,6 +7761,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5957,6 +7801,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -5996,6 +7841,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6016,6 +7862,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -6046,6 +7893,7 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6140,6 +7988,41 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -6153,6 +8036,9 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -6195,6 +8081,9 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -6218,6 +8107,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -6249,6 +8139,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6288,6 +8179,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6327,6 +8219,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6366,6 +8259,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6386,6 +8280,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -6416,6 +8311,7 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6510,6 +8406,41 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -6523,6 +8454,9 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -6565,6 +8499,9 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -6588,6 +8525,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -6619,6 +8557,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6658,6 +8597,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6697,6 +8637,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6736,6 +8677,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6756,6 +8698,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -6786,6 +8729,7 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -6880,6 +8824,41 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -6893,6 +8872,9 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -6935,6 +8917,9 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -6958,6 +8943,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -6989,6 +8975,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7028,6 +9015,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7067,6 +9055,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7106,6 +9095,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7126,6 +9116,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -7156,6 +9147,7 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7226,6 +9218,41 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -7239,6 +9266,9 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -7281,6 +9311,9 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -7304,6 +9337,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -7335,6 +9369,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7374,6 +9409,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7413,6 +9449,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7452,6 +9489,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7472,6 +9510,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -7502,6 +9541,7 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7572,6 +9612,41 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -7585,6 +9660,9 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -7627,6 +9705,9 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -7650,6 +9731,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -7681,6 +9763,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7720,6 +9803,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7759,6 +9843,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7798,6 +9883,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7818,6 +9904,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -7848,6 +9935,7 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -7918,6 +10006,41 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -7931,6 +10054,9 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -7973,6 +10099,9 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -7996,6 +10125,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -8027,6 +10157,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8066,6 +10197,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8105,6 +10237,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8144,6 +10277,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8164,6 +10298,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -8194,6 +10329,7 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8264,6 +10400,41 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -8277,6 +10448,9 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -8319,6 +10493,9 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -8342,6 +10519,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -8373,6 +10551,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8412,6 +10591,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8451,6 +10631,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8490,6 +10671,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8510,6 +10692,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -8540,6 +10723,7 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8610,6 +10794,41 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
         link
         quote
         quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
         collaborators
         size
         gridOrder
@@ -8623,6 +10842,9 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               alt
               caption
               order
+              centerX
+              centerY
+              zoom
               createdAt
               updatedAt
               galleryImagesId
@@ -8665,6 +10887,9 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
             link
             quote
             quoteAttribution
+            quotes {
+              nextToken
+            }
             collaborators
             size
             gridOrder
@@ -8688,6 +10913,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               nextToken
             }
             displayOrder
+            previewLocation
             createdAt
             updatedAt
             projectLocationId
@@ -8719,6 +10945,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8758,6 +10985,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8797,6 +11025,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8836,6 +11065,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8856,6 +11086,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
           nextToken
         }
         displayOrder
+        previewLocation
         createdAt
         updatedAt
         projectLocationId
@@ -8886,6 +11117,7 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -8943,6 +11175,7 @@ export const onCreateDepartmentSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -9013,6 +11246,7 @@ export const onCreateDepartmentSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -9094,6 +11328,7 @@ export const onUpdateDepartmentSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -9164,6 +11399,7 @@ export const onUpdateDepartmentSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -9245,6 +11481,7 @@ export const onDeleteDepartmentSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
@@ -9315,6 +11552,7 @@ export const onDeleteDepartmentSubcategories = /* GraphQL */ `
               gridOrder
               status
               displayOrder
+              previewLocation
               createdAt
               updatedAt
               projectLocationId
