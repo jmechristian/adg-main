@@ -33,7 +33,7 @@ const Nav = () => {
           <a
             href={link.href}
             key={link.label}
-            className={`text-3xl font-brand italic hidden lg:!block ${
+            className={`text-2xl font-brand italic hidden lg:!block ${
               isDarkNav ? 'text-brand-gray' : 'text-white'
             } ${
               pathname === link.href ? 'border-b-2 pb-2 border-brand-gray' : ''
@@ -42,7 +42,7 @@ const Nav = () => {
             {link.label}
           </a>
         ))}
-        <div className='hidden lg:!block'>
+        <div className='hidden lg:!block max-w-[120px]'>
           {isDarkNav ? (
             <Image
               src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/dark-logo.png'
@@ -63,7 +63,7 @@ const Nav = () => {
           <a
             href={link.href}
             key={link.label}
-            className={`text-3xl font-brand italic hidden lg:!block ${
+            className={`text-2xl font-brand italic hidden lg:!block ${
               isDarkNav ? 'text-brand-gray' : 'text-white'
             }`}
           >

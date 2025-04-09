@@ -24,7 +24,7 @@ const Page = () => {
 
   return (
     <div className='w-full max-w-6xl mx-auto'>
-      <div className='h-64'></div>
+      <div className='h-44'></div>
       {loading ? (
         <div className='flex items-center justify-center min-h-screen'>
           <div className='w-32 h-32 relative'>

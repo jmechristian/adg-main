@@ -11,7 +11,7 @@ const Hero = () => {
     >
       <div className='w-full h-40 bg-gradient-to-b from-black to-transparent'></div>
       <div className='w-full max-w-6xl mx-auto z-20'>
-        <h1 className='text-white text-7xl font-brand font-light text-center leading-snug -mt-12'>
+        <h1 className='text-white text-6xl font-brand font-light text-center leading-tighter -mt-12'>
           A collective of luxury lifestylists{' '}
           <span className='italic'>elevating space, structure, and story.</span>
         </h1>

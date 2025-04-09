@@ -79,7 +79,7 @@ const ProjectFilter = ({ projects }) => {
                   departmentFilters.id === department.id
                     ? 'text-brand-brown'
                     : 'text-neutral-300'
-                } font-brand-book font-light tracking-wide uppercase text-xl`}
+                } font-brand-book font-light tracking-wide uppercase text-2xl`}
                 key={department.id}
                 onClick={() => {
                   setDepartmentFilters({
