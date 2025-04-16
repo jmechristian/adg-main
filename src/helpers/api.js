@@ -106,6 +106,16 @@ export const getPublishedProjects = async () => {
           }
         }
         gridOrder
+        featuredProjects {
+        items {
+          id
+          displayOrder
+          department {
+            name
+            id
+          }
+          }
+        }
         name
         id
         link

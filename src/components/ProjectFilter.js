@@ -1,10 +1,17 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  useCallback,
+} from 'react';
 import Image from 'next/image';
 import { getDepartments, getSubcategoriesByDepartment } from '@/helpers/api';
 import FilterItem from './FilterItem';
 import { useRouter } from 'next/navigation';
+
 const ProjectFilter = ({ projects }) => {
   const router = useRouter();
   const [departments, setDepartments] = useState([]);
@@ -13,7 +20,10 @@ const ProjectFilter = ({ projects }) => {
   const [typeFilters, setTypeFilters] = useState([]);
   const [subcategories, setSubcategories] = useState([]);
   const [subcategoryFilters, setSubcategoryFilters] = useState(null);
-  console.log(projects);
+  const [displayCount, setDisplayCount] = useState(12);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const PROJECTS_PER_PAGE = 12;
 
   useEffect(() => {
     const fetchDepartments = async () => {
@@ -33,39 +43,58 @@ const ProjectFilter = ({ projects }) => {
         departmentFilters.id
       );
       setSubcategories(subcategories);
-      console.log(subcategories);
     };
     departmentFilters && departmentFilters.id && fetchSubcategories();
   }, [departmentFilters]);
 
   const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      // If no filters are selected, show all projects
-      if (!departmentFilters?.id && !subcategoryFilters?.id) return true;
+    return projects
+      .filter((project) => {
+        if (!departmentFilters?.id && !subcategoryFilters?.id) return true;
 
-      // Check if project has the selected department
-      const hasDepartment = project.departments.items.some(
-        (dept) => dept.department.id === departmentFilters?.id
-      );
+        const hasDepartment = project.departments.items.some(
+          (dept) => dept.department.id === departmentFilters?.id
+        );
 
-      // Check if project has the selected subcategory
-      const hasSubcategory = project.subcategories.items.some(
-        (sub) => sub.subcategory.id === subcategoryFilters?.id
-      );
+        const hasSubcategory = project.subcategories.items.some(
+          (sub) => sub.subcategory.id === subcategoryFilters?.id
+        );
 
-      // If only department filter is selected
-      if (departmentFilters?.id && !subcategoryFilters?.id) {
-        return hasDepartment;
-      }
+        if (departmentFilters?.id && !subcategoryFilters?.id) {
+          return hasDepartment;
+        }
 
-      // If both filters are selected
-      if (departmentFilters?.id && subcategoryFilters?.id) {
-        return hasDepartment && hasSubcategory;
-      }
+        if (departmentFilters?.id && subcategoryFilters?.id) {
+          return hasDepartment && hasSubcategory;
+        }
 
-      return true;
-    });
+        return true;
+      })
+      .sort((a, b) => {
+        // Get the displayOrder from featuredProjects.items array
+        const aOrder =
+          a.featuredProjects?.items?.[0]?.displayOrder ??
+          Number.MAX_SAFE_INTEGER;
+        const bOrder =
+          b.featuredProjects?.items?.[0]?.displayOrder ??
+          Number.MAX_SAFE_INTEGER;
+        return aOrder - bOrder;
+      });
   }, [projects, departmentFilters, subcategoryFilters]);
+
+  const displayedProjects = useMemo(() => {
+    return filteredProjects.slice(0, displayCount);
+  }, [filteredProjects, displayCount]);
+
+  const handleLoadMore = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setDisplayCount((prev) => prev + PROJECTS_PER_PAGE);
+      setIsLoading(false);
+    }, 500);
+  };
+
+  const hasMoreProjects = displayedProjects.length < filteredProjects.length;
 
   return (
     <div className='w-full max-w-6xl mx-auto flex flex-col gap-10 pb-24'>
@@ -133,14 +162,11 @@ const ProjectFilter = ({ projects }) => {
       </div>
       <div className='w-full flex flex-col gap-6'>
         {(() => {
-          // Create a new array that will hold our layout pattern
           const layout = [];
 
-          // Process projects in groups of 8 (3 for first grid, 1 for full width, 3 for second grid, 1 for second full width)
-          for (let i = 0; i < filteredProjects.length; i += 8) {
-            const group = filteredProjects.slice(i, i + 8);
+          for (let i = 0; i < displayedProjects.length; i += 12) {
+            const group = displayedProjects.slice(i, i + 12);
 
-            // First grid: large on left, two small on right
             if (group[0] || group[1] || group[2]) {
               layout.push({
                 type: 'grid1',
@@ -148,7 +174,6 @@ const ProjectFilter = ({ projects }) => {
               });
             }
 
-            // First full width
             if (group[3]) {
               layout.push({
                 type: 'full',
@@ -156,7 +181,6 @@ const ProjectFilter = ({ projects }) => {
               });
             }
 
-            // Second grid: two small on left, large on right
             if (group[4] || group[5] || group[6]) {
               layout.push({
                 type: 'grid2',
@@ -164,16 +188,28 @@ const ProjectFilter = ({ projects }) => {
               });
             }
 
-            // Second full width
             if (group[7]) {
               layout.push({
                 type: 'full',
                 projects: [group[7]],
               });
             }
+
+            if (group[8] || group[9] || group[10]) {
+              layout.push({
+                type: 'grid1',
+                projects: [group[8], group[9], group[10]],
+              });
+            }
+
+            if (group[11]) {
+              layout.push({
+                type: 'full',
+                projects: [group[11]],
+              });
+            }
           }
 
-          // Render the layout
           return layout.map((item, index) => {
             if (item.type === 'grid1') {
               return (
@@ -181,7 +217,6 @@ const ProjectFilter = ({ projects }) => {
                   key={`grid1-${index}`}
                   className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
                 >
-                  {/* Large project on left */}
                   <div className='w-full col-span-8 h-full'>
                     <div
                       className='w-full h-full'
@@ -200,8 +235,6 @@ const ProjectFilter = ({ projects }) => {
                       )}
                     </div>
                   </div>
-
-                  {/* Two small projects on right */}
                   <div className='w-full col-span-4 flex flex-col gap-6'>
                     <div
                       className='w-full aspect-video'
@@ -262,7 +295,6 @@ const ProjectFilter = ({ projects }) => {
                   key={`grid2-${index}`}
                   className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
                 >
-                  {/* Two small projects on left */}
                   <div className='w-full col-span-4 flex flex-col gap-6'>
                     <div
                       className='w-full aspect-video'
@@ -297,8 +329,6 @@ const ProjectFilter = ({ projects }) => {
                       )}
                     </div>
                   </div>
-
-                  {/* Large project on right */}
                   <div className='w-full col-span-8 h-full'>
                     <div
                       className='w-full h-full'
@@ -320,10 +350,27 @@ const ProjectFilter = ({ projects }) => {
                 </div>
               );
             }
-
             return null;
           });
         })()}
+        {hasMoreProjects && (
+          <div className='w-full flex justify-center py-8'>
+            <button
+              onClick={handleLoadMore}
+              disabled={isLoading}
+              className='px-8 py-3 bg-brand-brown text-white font-brand-book tracking-wide uppercase hover:bg-opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
+            >
+              {isLoading ? (
+                <div className='flex items-center gap-2'>
+                  <div className='animate-spin rounded-full h-4 w-4 border-b-2 border-white'></div>
+                  <span>Loading...</span>
+                </div>
+              ) : (
+                'Load More'
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
