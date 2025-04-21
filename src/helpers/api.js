@@ -90,6 +90,15 @@ export const getPublishedProjects = async () => {
             }
           }
         }
+          subcategoryProjects {
+            items {
+              displayOrder
+              id
+              subcategory {
+                name
+              }
+            }
+        }
         displayOrder
         featured
         gallery {

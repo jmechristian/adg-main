@@ -245,6 +245,9 @@ export const onCreateFeaturedProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -461,6 +464,48 @@ export const onCreateFeaturedProject = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -759,6 +804,9 @@ export const onUpdateFeaturedProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -975,6 +1023,48 @@ export const onUpdateFeaturedProject = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -1273,6 +1363,9 @@ export const onDeleteFeaturedProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -1489,6 +1582,48 @@ export const onDeleteFeaturedProject = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -1836,6 +1971,9 @@ export const onCreateGallery = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -2052,6 +2190,48 @@ export const onCreateGallery = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -2283,6 +2463,9 @@ export const onUpdateGallery = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -2499,6 +2682,48 @@ export const onUpdateGallery = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -2730,6 +2955,9 @@ export const onDeleteGallery = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -2949,6 +3177,48 @@ export const onDeleteGallery = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         createdAt
         updatedAt
         projectLocationId
@@ -3073,6 +3343,9 @@ export const onCreateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -3254,6 +3527,17 @@ export const onCreateProject = /* GraphQL */ `
             }
             nextToken
           }
+          subcategoryProjects {
+            items {
+              id
+              displayOrder
+              createdAt
+              updatedAt
+              projectSubcategoryProjectsId
+              subcategorySubcategoryProjectsId
+            }
+            nextToken
+          }
           createdAt
           updatedAt
           projectLocationId
@@ -3335,6 +3619,9 @@ export const onCreateProject = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -3437,6 +3724,9 @@ export const onCreateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -3448,6 +3738,9 @@ export const onCreateProject = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -3532,6 +3825,9 @@ export const onCreateProject = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -3628,6 +3924,9 @@ export const onCreateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -3722,6 +4021,9 @@ export const onCreateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -3750,6 +4052,110 @@ export const onCreateProject = /* GraphQL */ `
           updatedAt
           projectFeaturedProjectsId
           departmentFeaturedProjectsId
+        }
+        nextToken
+      }
+      subcategoryProjects {
+        items {
+          id
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          subcategory {
+            id
+            name
+            projects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            departments {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectSubcategoryProjectsId
+          subcategorySubcategoryProjectsId
         }
         nextToken
       }
@@ -3873,6 +4279,9 @@ export const onUpdateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -4054,6 +4463,17 @@ export const onUpdateProject = /* GraphQL */ `
             }
             nextToken
           }
+          subcategoryProjects {
+            items {
+              id
+              displayOrder
+              createdAt
+              updatedAt
+              projectSubcategoryProjectsId
+              subcategorySubcategoryProjectsId
+            }
+            nextToken
+          }
           createdAt
           updatedAt
           projectLocationId
@@ -4135,6 +4555,9 @@ export const onUpdateProject = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -4237,6 +4660,9 @@ export const onUpdateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -4248,6 +4674,9 @@ export const onUpdateProject = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -4332,6 +4761,9 @@ export const onUpdateProject = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -4428,6 +4860,9 @@ export const onUpdateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -4522,6 +4957,9 @@ export const onUpdateProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -4550,6 +4988,110 @@ export const onUpdateProject = /* GraphQL */ `
           updatedAt
           projectFeaturedProjectsId
           departmentFeaturedProjectsId
+        }
+        nextToken
+      }
+      subcategoryProjects {
+        items {
+          id
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          subcategory {
+            id
+            name
+            projects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            departments {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectSubcategoryProjectsId
+          subcategorySubcategoryProjectsId
         }
         nextToken
       }
@@ -4673,6 +5215,9 @@ export const onDeleteProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -4854,6 +5399,17 @@ export const onDeleteProject = /* GraphQL */ `
             }
             nextToken
           }
+          subcategoryProjects {
+            items {
+              id
+              displayOrder
+              createdAt
+              updatedAt
+              projectSubcategoryProjectsId
+              subcategorySubcategoryProjectsId
+            }
+            nextToken
+          }
           createdAt
           updatedAt
           projectLocationId
@@ -4935,6 +5491,9 @@ export const onDeleteProject = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -5037,6 +5596,9 @@ export const onDeleteProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -5048,6 +5610,9 @@ export const onDeleteProject = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -5132,6 +5697,9 @@ export const onDeleteProject = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -5228,6 +5796,9 @@ export const onDeleteProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -5322,6 +5893,9 @@ export const onDeleteProject = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -5350,6 +5924,110 @@ export const onDeleteProject = /* GraphQL */ `
           updatedAt
           projectFeaturedProjectsId
           departmentFeaturedProjectsId
+        }
+        nextToken
+      }
+      subcategoryProjects {
+        items {
+          id
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          subcategory {
+            id
+            name
+            projects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            departments {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectSubcategoryProjectsId
+          subcategorySubcategoryProjectsId
         }
         nextToken
       }
@@ -5530,6 +6208,9 @@ export const onCreateQuote = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -5746,6 +6427,48 @@ export const onCreateQuote = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -5931,6 +6654,9 @@ export const onUpdateQuote = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -6147,6 +6873,48 @@ export const onUpdateQuote = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -6332,6 +7100,9 @@ export const onDeleteQuote = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -6551,6 +7322,48 @@ export const onDeleteQuote = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         createdAt
         updatedAt
         projectLocationId
@@ -6642,6 +7455,9 @@ export const onCreateDepartment = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -6695,6 +7511,9 @@ export const onCreateDepartment = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -6778,6 +7597,9 @@ export const onCreateDepartment = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -6893,6 +7715,9 @@ export const onUpdateDepartment = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -6946,6 +7771,9 @@ export const onUpdateDepartment = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -7029,6 +7857,9 @@ export const onUpdateDepartment = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -7144,6 +7975,9 @@ export const onDeleteDepartment = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -7197,6 +8031,9 @@ export const onDeleteDepartment = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -7280,6 +8117,9 @@ export const onDeleteDepartment = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -7488,6 +8328,17 @@ export const onCreateImageObject = /* GraphQL */ `
             }
             nextToken
           }
+          subcategoryProjects {
+            items {
+              id
+              displayOrder
+              createdAt
+              updatedAt
+              projectSubcategoryProjectsId
+              subcategorySubcategoryProjectsId
+            }
+            nextToken
+          }
           createdAt
           updatedAt
           projectLocationId
@@ -7676,6 +8527,17 @@ export const onUpdateImageObject = /* GraphQL */ `
               updatedAt
               projectFeaturedProjectsId
               departmentFeaturedProjectsId
+            }
+            nextToken
+          }
+          subcategoryProjects {
+            items {
+              id
+              displayOrder
+              createdAt
+              updatedAt
+              projectSubcategoryProjectsId
+              subcategorySubcategoryProjectsId
             }
             nextToken
           }
@@ -7870,6 +8732,17 @@ export const onDeleteImageObject = /* GraphQL */ `
             }
             nextToken
           }
+          subcategoryProjects {
+            items {
+              id
+              displayOrder
+              createdAt
+              updatedAt
+              projectSubcategoryProjectsId
+              subcategorySubcategoryProjectsId
+            }
+            nextToken
+          }
           createdAt
           updatedAt
           projectLocationId
@@ -7968,6 +8841,9 @@ export const onCreateSubcategory = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -7981,6 +8857,9 @@ export const onCreateSubcategory = /* GraphQL */ `
             projects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             departments {
               nextToken
             }
@@ -7990,6 +8869,110 @@ export const onCreateSubcategory = /* GraphQL */ `
           }
           createdAt
           updatedAt
+        }
+        nextToken
+      }
+      subcategoryProjects {
+        items {
+          id
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          subcategory {
+            id
+            name
+            projects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            departments {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectSubcategoryProjectsId
+          subcategorySubcategoryProjectsId
         }
         nextToken
       }
@@ -8018,6 +9001,9 @@ export const onCreateSubcategory = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -8115,6 +9101,9 @@ export const onUpdateSubcategory = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -8128,6 +9117,9 @@ export const onUpdateSubcategory = /* GraphQL */ `
             projects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             departments {
               nextToken
             }
@@ -8137,6 +9129,110 @@ export const onUpdateSubcategory = /* GraphQL */ `
           }
           createdAt
           updatedAt
+        }
+        nextToken
+      }
+      subcategoryProjects {
+        items {
+          id
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          subcategory {
+            id
+            name
+            projects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            departments {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectSubcategoryProjectsId
+          subcategorySubcategoryProjectsId
         }
         nextToken
       }
@@ -8165,6 +9261,9 @@ export const onUpdateSubcategory = /* GraphQL */ `
             id
             name
             projects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             departments {
@@ -8262,6 +9361,9 @@ export const onDeleteSubcategory = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -8275,6 +9377,9 @@ export const onDeleteSubcategory = /* GraphQL */ `
             projects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             departments {
               nextToken
             }
@@ -8284,6 +9389,110 @@ export const onDeleteSubcategory = /* GraphQL */ `
           }
           createdAt
           updatedAt
+        }
+        nextToken
+      }
+      subcategoryProjects {
+        items {
+          id
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          subcategory {
+            id
+            name
+            projects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            departments {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          displayOrder
+          createdAt
+          updatedAt
+          projectSubcategoryProjectsId
+          subcategorySubcategoryProjectsId
         }
         nextToken
       }
@@ -8314,6 +9523,9 @@ export const onDeleteSubcategory = /* GraphQL */ `
             projects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             departments {
               nextToken
             }
@@ -8332,642 +9544,10 @@ export const onDeleteSubcategory = /* GraphQL */ `
     }
   }
 `;
-export const onCreateBuildingType = /* GraphQL */ `
-  subscription OnCreateBuildingType {
-    onCreateBuildingType {
+export const onCreateSubcategoryProject = /* GraphQL */ `
+  subscription OnCreateSubcategoryProject {
+    onCreateSubcategoryProject {
       id
-      name
-      projects {
-        items {
-          id
-          projectID
-          buildingTypeID
-          project {
-            id
-            oldId
-            name
-            description
-            location {
-              id
-              name
-              address
-              description
-              latitude
-              longitude
-              createdAt
-              updatedAt
-            }
-            locationString
-            createdBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            lastUpdatedBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            featured
-            link
-            slug
-            quote
-            quoteAttribution
-            quotes {
-              nextToken
-            }
-            collaborators
-            size
-            gridOrder
-            status
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            departments {
-              nextToken
-            }
-            subcategories {
-              nextToken
-            }
-            building_type {
-              nextToken
-            }
-            project_type {
-              nextToken
-            }
-            displayOrder
-            previewLocation
-            featuredProjects {
-              nextToken
-            }
-            createdAt
-            updatedAt
-            projectLocationId
-            projectCreatedById
-            projectLastUpdatedById
-            projectGalleryId
-          }
-          buildingType {
-            id
-            name
-            projects {
-              nextToken
-            }
-            displayOrder
-            createdAt
-            updatedAt
-          }
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      displayOrder
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateBuildingType = /* GraphQL */ `
-  subscription OnUpdateBuildingType {
-    onUpdateBuildingType {
-      id
-      name
-      projects {
-        items {
-          id
-          projectID
-          buildingTypeID
-          project {
-            id
-            oldId
-            name
-            description
-            location {
-              id
-              name
-              address
-              description
-              latitude
-              longitude
-              createdAt
-              updatedAt
-            }
-            locationString
-            createdBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            lastUpdatedBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            featured
-            link
-            slug
-            quote
-            quoteAttribution
-            quotes {
-              nextToken
-            }
-            collaborators
-            size
-            gridOrder
-            status
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            departments {
-              nextToken
-            }
-            subcategories {
-              nextToken
-            }
-            building_type {
-              nextToken
-            }
-            project_type {
-              nextToken
-            }
-            displayOrder
-            previewLocation
-            featuredProjects {
-              nextToken
-            }
-            createdAt
-            updatedAt
-            projectLocationId
-            projectCreatedById
-            projectLastUpdatedById
-            projectGalleryId
-          }
-          buildingType {
-            id
-            name
-            projects {
-              nextToken
-            }
-            displayOrder
-            createdAt
-            updatedAt
-          }
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      displayOrder
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteBuildingType = /* GraphQL */ `
-  subscription OnDeleteBuildingType {
-    onDeleteBuildingType {
-      id
-      name
-      projects {
-        items {
-          id
-          projectID
-          buildingTypeID
-          project {
-            id
-            oldId
-            name
-            description
-            location {
-              id
-              name
-              address
-              description
-              latitude
-              longitude
-              createdAt
-              updatedAt
-            }
-            locationString
-            createdBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            lastUpdatedBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            featured
-            link
-            slug
-            quote
-            quoteAttribution
-            quotes {
-              nextToken
-            }
-            collaborators
-            size
-            gridOrder
-            status
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            departments {
-              nextToken
-            }
-            subcategories {
-              nextToken
-            }
-            building_type {
-              nextToken
-            }
-            project_type {
-              nextToken
-            }
-            displayOrder
-            previewLocation
-            featuredProjects {
-              nextToken
-            }
-            createdAt
-            updatedAt
-            projectLocationId
-            projectCreatedById
-            projectLastUpdatedById
-            projectGalleryId
-          }
-          buildingType {
-            id
-            name
-            projects {
-              nextToken
-            }
-            displayOrder
-            createdAt
-            updatedAt
-          }
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      displayOrder
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateProjectType = /* GraphQL */ `
-  subscription OnCreateProjectType {
-    onCreateProjectType {
-      id
-      name
-      projects {
-        items {
-          id
-          projectID
-          projectTypeID
-          project {
-            id
-            oldId
-            name
-            description
-            location {
-              id
-              name
-              address
-              description
-              latitude
-              longitude
-              createdAt
-              updatedAt
-            }
-            locationString
-            createdBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            lastUpdatedBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            featured
-            link
-            slug
-            quote
-            quoteAttribution
-            quotes {
-              nextToken
-            }
-            collaborators
-            size
-            gridOrder
-            status
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            departments {
-              nextToken
-            }
-            subcategories {
-              nextToken
-            }
-            building_type {
-              nextToken
-            }
-            project_type {
-              nextToken
-            }
-            displayOrder
-            previewLocation
-            featuredProjects {
-              nextToken
-            }
-            createdAt
-            updatedAt
-            projectLocationId
-            projectCreatedById
-            projectLastUpdatedById
-            projectGalleryId
-          }
-          projectType {
-            id
-            name
-            projects {
-              nextToken
-            }
-            displayOrder
-            createdAt
-            updatedAt
-          }
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      displayOrder
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateProjectType = /* GraphQL */ `
-  subscription OnUpdateProjectType {
-    onUpdateProjectType {
-      id
-      name
-      projects {
-        items {
-          id
-          projectID
-          projectTypeID
-          project {
-            id
-            oldId
-            name
-            description
-            location {
-              id
-              name
-              address
-              description
-              latitude
-              longitude
-              createdAt
-              updatedAt
-            }
-            locationString
-            createdBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            lastUpdatedBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            featured
-            link
-            slug
-            quote
-            quoteAttribution
-            quotes {
-              nextToken
-            }
-            collaborators
-            size
-            gridOrder
-            status
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            departments {
-              nextToken
-            }
-            subcategories {
-              nextToken
-            }
-            building_type {
-              nextToken
-            }
-            project_type {
-              nextToken
-            }
-            displayOrder
-            previewLocation
-            featuredProjects {
-              nextToken
-            }
-            createdAt
-            updatedAt
-            projectLocationId
-            projectCreatedById
-            projectLastUpdatedById
-            projectGalleryId
-          }
-          projectType {
-            id
-            name
-            projects {
-              nextToken
-            }
-            displayOrder
-            createdAt
-            updatedAt
-          }
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      displayOrder
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteProjectType = /* GraphQL */ `
-  subscription OnDeleteProjectType {
-    onDeleteProjectType {
-      id
-      name
-      projects {
-        items {
-          id
-          projectID
-          projectTypeID
-          project {
-            id
-            oldId
-            name
-            description
-            location {
-              id
-              name
-              address
-              description
-              latitude
-              longitude
-              createdAt
-              updatedAt
-            }
-            locationString
-            createdBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            lastUpdatedBy {
-              id
-              name
-              email
-              role
-              createdAt
-              updatedAt
-            }
-            featured
-            link
-            slug
-            quote
-            quoteAttribution
-            quotes {
-              nextToken
-            }
-            collaborators
-            size
-            gridOrder
-            status
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            departments {
-              nextToken
-            }
-            subcategories {
-              nextToken
-            }
-            building_type {
-              nextToken
-            }
-            project_type {
-              nextToken
-            }
-            displayOrder
-            previewLocation
-            featuredProjects {
-              nextToken
-            }
-            createdAt
-            updatedAt
-            projectLocationId
-            projectCreatedById
-            projectLastUpdatedById
-            projectGalleryId
-          }
-          projectType {
-            id
-            name
-            projects {
-              nextToken
-            }
-            displayOrder
-            createdAt
-            updatedAt
-          }
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      displayOrder
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateProjectDepartments = /* GraphQL */ `
-  subscription OnCreateProjectDepartments {
-    onCreateProjectDepartments {
-      id
-      projectID
-      departmentID
       project {
         id
         oldId
@@ -9128,6 +9708,9 @@ export const onCreateProjectDepartments = /* GraphQL */ `
             displayOrder
             previewLocation
             featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
               nextToken
             }
             createdAt
@@ -9346,6 +9929,2375 @@ export const onCreateProjectDepartments = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+        projectLocationId
+        projectCreatedById
+        projectLastUpdatedById
+        projectGalleryId
+      }
+      subcategory {
+        id
+        name
+        projects {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
+        departments {
+          items {
+            id
+            departmentID
+            subcategoryID
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        createdAt
+        updatedAt
+      }
+      displayOrder
+      createdAt
+      updatedAt
+      projectSubcategoryProjectsId
+      subcategorySubcategoryProjectsId
+    }
+  }
+`;
+export const onUpdateSubcategoryProject = /* GraphQL */ `
+  subscription OnUpdateSubcategoryProject {
+    onUpdateSubcategoryProject {
+      id
+      project {
+        id
+        oldId
+        name
+        description
+        location {
+          id
+          name
+          address
+          description
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        locationString
+        createdBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        lastUpdatedBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        featured
+        link
+        slug
+        quote
+        quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
+        collaborators
+        size
+        gridOrder
+        status
+        gallery {
+          id
+          images {
+            items {
+              id
+              url
+              alt
+              caption
+              order
+              centerX
+              centerY
+              zoom
+              createdAt
+              updatedAt
+              galleryImagesId
+            }
+            nextToken
+          }
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          createdAt
+          updatedAt
+          galleryProjectId
+        }
+        departments {
+          items {
+            id
+            projectID
+            departmentID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategories {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        building_type {
+          items {
+            id
+            projectID
+            buildingTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            buildingType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        project_type {
+          items {
+            id
+            projectID
+            projectTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            projectType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        previewLocation
+        featuredProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+            projectFeaturedProjectsId
+            departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+        projectLocationId
+        projectCreatedById
+        projectLastUpdatedById
+        projectGalleryId
+      }
+      subcategory {
+        id
+        name
+        projects {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
+        departments {
+          items {
+            id
+            departmentID
+            subcategoryID
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        createdAt
+        updatedAt
+      }
+      displayOrder
+      createdAt
+      updatedAt
+      projectSubcategoryProjectsId
+      subcategorySubcategoryProjectsId
+    }
+  }
+`;
+export const onDeleteSubcategoryProject = /* GraphQL */ `
+  subscription OnDeleteSubcategoryProject {
+    onDeleteSubcategoryProject {
+      id
+      project {
+        id
+        oldId
+        name
+        description
+        location {
+          id
+          name
+          address
+          description
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        locationString
+        createdBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        lastUpdatedBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        featured
+        link
+        slug
+        quote
+        quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
+        collaborators
+        size
+        gridOrder
+        status
+        gallery {
+          id
+          images {
+            items {
+              id
+              url
+              alt
+              caption
+              order
+              centerX
+              centerY
+              zoom
+              createdAt
+              updatedAt
+              galleryImagesId
+            }
+            nextToken
+          }
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          createdAt
+          updatedAt
+          galleryProjectId
+        }
+        departments {
+          items {
+            id
+            projectID
+            departmentID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategories {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        building_type {
+          items {
+            id
+            projectID
+            buildingTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            buildingType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        project_type {
+          items {
+            id
+            projectID
+            projectTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            projectType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        previewLocation
+        featuredProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+            projectFeaturedProjectsId
+            departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+        projectLocationId
+        projectCreatedById
+        projectLastUpdatedById
+        projectGalleryId
+      }
+      subcategory {
+        id
+        name
+        projects {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
+        departments {
+          items {
+            id
+            departmentID
+            subcategoryID
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        createdAt
+        updatedAt
+      }
+      displayOrder
+      createdAt
+      updatedAt
+      projectSubcategoryProjectsId
+      subcategorySubcategoryProjectsId
+    }
+  }
+`;
+export const onCreateBuildingType = /* GraphQL */ `
+  subscription OnCreateBuildingType {
+    onCreateBuildingType {
+      id
+      name
+      projects {
+        items {
+          id
+          projectID
+          buildingTypeID
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          buildingType {
+            id
+            name
+            projects {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      displayOrder
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateBuildingType = /* GraphQL */ `
+  subscription OnUpdateBuildingType {
+    onUpdateBuildingType {
+      id
+      name
+      projects {
+        items {
+          id
+          projectID
+          buildingTypeID
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          buildingType {
+            id
+            name
+            projects {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      displayOrder
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteBuildingType = /* GraphQL */ `
+  subscription OnDeleteBuildingType {
+    onDeleteBuildingType {
+      id
+      name
+      projects {
+        items {
+          id
+          projectID
+          buildingTypeID
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          buildingType {
+            id
+            name
+            projects {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      displayOrder
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateProjectType = /* GraphQL */ `
+  subscription OnCreateProjectType {
+    onCreateProjectType {
+      id
+      name
+      projects {
+        items {
+          id
+          projectID
+          projectTypeID
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          projectType {
+            id
+            name
+            projects {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      displayOrder
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateProjectType = /* GraphQL */ `
+  subscription OnUpdateProjectType {
+    onUpdateProjectType {
+      id
+      name
+      projects {
+        items {
+          id
+          projectID
+          projectTypeID
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          projectType {
+            id
+            name
+            projects {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      displayOrder
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteProjectType = /* GraphQL */ `
+  subscription OnDeleteProjectType {
+    onDeleteProjectType {
+      id
+      name
+      projects {
+        items {
+          id
+          projectID
+          projectTypeID
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          projectType {
+            id
+            name
+            projects {
+              nextToken
+            }
+            displayOrder
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      displayOrder
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateProjectDepartments = /* GraphQL */ `
+  subscription OnCreateProjectDepartments {
+    onCreateProjectDepartments {
+      id
+      projectID
+      departmentID
+      project {
+        id
+        oldId
+        name
+        description
+        location {
+          id
+          name
+          address
+          description
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        locationString
+        createdBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        lastUpdatedBy {
+          id
+          name
+          email
+          role
+          createdAt
+          updatedAt
+        }
+        featured
+        link
+        slug
+        quote
+        quoteAttribution
+        quotes {
+          items {
+            id
+            text
+            attribution
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectQuotesId
+          }
+          nextToken
+        }
+        collaborators
+        size
+        gridOrder
+        status
+        gallery {
+          id
+          images {
+            items {
+              id
+              url
+              alt
+              caption
+              order
+              centerX
+              centerY
+              zoom
+              createdAt
+              updatedAt
+              galleryImagesId
+            }
+            nextToken
+          }
+          project {
+            id
+            oldId
+            name
+            description
+            location {
+              id
+              name
+              address
+              description
+              latitude
+              longitude
+              createdAt
+              updatedAt
+            }
+            locationString
+            createdBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            lastUpdatedBy {
+              id
+              name
+              email
+              role
+              createdAt
+              updatedAt
+            }
+            featured
+            link
+            slug
+            quote
+            quoteAttribution
+            quotes {
+              nextToken
+            }
+            collaborators
+            size
+            gridOrder
+            status
+            gallery {
+              id
+              createdAt
+              updatedAt
+              galleryProjectId
+            }
+            departments {
+              nextToken
+            }
+            subcategories {
+              nextToken
+            }
+            building_type {
+              nextToken
+            }
+            project_type {
+              nextToken
+            }
+            displayOrder
+            previewLocation
+            featuredProjects {
+              nextToken
+            }
+            subcategoryProjects {
+              nextToken
+            }
+            createdAt
+            updatedAt
+            projectLocationId
+            projectCreatedById
+            projectLastUpdatedById
+            projectGalleryId
+          }
+          createdAt
+          updatedAt
+          galleryProjectId
+        }
+        departments {
+          items {
+            id
+            projectID
+            departmentID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        subcategories {
+          items {
+            id
+            projectID
+            subcategoryID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        building_type {
+          items {
+            id
+            projectID
+            buildingTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            buildingType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        project_type {
+          items {
+            id
+            projectID
+            projectTypeID
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            projectType {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        displayOrder
+        previewLocation
+        featuredProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            displayOrder
+            department {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+            projectFeaturedProjectsId
+            departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -9643,6 +12595,9 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -9859,6 +12814,48 @@ export const onUpdateProjectDepartments = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -10156,6 +13153,9 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -10372,6 +13372,48 @@ export const onDeleteProjectDepartments = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -10669,6 +13711,9 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -10888,6 +13933,48 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         createdAt
         updatedAt
         projectLocationId
@@ -10936,6 +14023,48 @@ export const onCreateProjectSubcategories = /* GraphQL */ `
             }
             createdAt
             updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -11140,6 +14269,9 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -11359,6 +14491,48 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         createdAt
         updatedAt
         projectLocationId
@@ -11407,6 +14581,48 @@ export const onUpdateProjectSubcategories = /* GraphQL */ `
             }
             createdAt
             updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -11611,6 +14827,9 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -11830,6 +15049,48 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         createdAt
         updatedAt
         projectLocationId
@@ -11878,6 +15139,48 @@ export const onDeleteProjectSubcategories = /* GraphQL */ `
             }
             createdAt
             updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -12082,6 +15385,9 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -12298,6 +15604,48 @@ export const onCreateProjectBuildingTypes = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -12529,6 +15877,9 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -12745,6 +16096,48 @@ export const onUpdateProjectBuildingTypes = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -12976,6 +16369,9 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -13192,6 +16588,48 @@ export const onDeleteProjectBuildingTypes = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -13423,6 +16861,9 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -13639,6 +17080,48 @@ export const onCreateProjectProjectTypes = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -13870,6 +17353,9 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -14086,6 +17572,48 @@ export const onUpdateProjectProjectTypes = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -14317,6 +17845,9 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
             featuredProjects {
               nextToken
             }
+            subcategoryProjects {
+              nextToken
+            }
             createdAt
             updatedAt
             projectLocationId
@@ -14533,6 +18064,48 @@ export const onDeleteProjectProjectTypes = /* GraphQL */ `
             updatedAt
             projectFeaturedProjectsId
             departmentFeaturedProjectsId
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }
@@ -14760,6 +18333,48 @@ export const onCreateDepartmentSubcategories = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         departments {
           items {
             id
@@ -14957,6 +18572,48 @@ export const onUpdateDepartmentSubcategories = /* GraphQL */ `
           }
           nextToken
         }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
+          }
+          nextToken
+        }
         departments {
           items {
             id
@@ -15151,6 +18808,48 @@ export const onDeleteDepartmentSubcategories = /* GraphQL */ `
             }
             createdAt
             updatedAt
+          }
+          nextToken
+        }
+        subcategoryProjects {
+          items {
+            id
+            project {
+              id
+              oldId
+              name
+              description
+              locationString
+              featured
+              link
+              slug
+              quote
+              quoteAttribution
+              collaborators
+              size
+              gridOrder
+              status
+              displayOrder
+              previewLocation
+              createdAt
+              updatedAt
+              projectLocationId
+              projectCreatedById
+              projectLastUpdatedById
+              projectGalleryId
+            }
+            subcategory {
+              id
+              name
+              displayOrder
+              createdAt
+              updatedAt
+            }
+            displayOrder
+            createdAt
+            updatedAt
+            projectSubcategoryProjectsId
+            subcategorySubcategoryProjectsId
           }
           nextToken
         }

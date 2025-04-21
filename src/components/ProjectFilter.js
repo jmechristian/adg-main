@@ -71,14 +71,55 @@ const ProjectFilter = ({ projects }) => {
         return true;
       })
       .sort((a, b) => {
-        // Get the displayOrder from featuredProjects.items array
-        const aOrder =
+        // If a subcategory filter is active, sort by that subcategory's displayOrder first
+        if (subcategoryFilters?.id) {
+          const aSubcategoryProject = a.subcategoryProjects?.items?.find(
+            (item) => item.subcategory?.name === subcategoryFilters.name
+          );
+          const bSubcategoryProject = b.subcategoryProjects?.items?.find(
+            (item) => item.subcategory?.name === subcategoryFilters.name
+          );
+
+          const aOrder =
+            aSubcategoryProject?.displayOrder ?? Number.MAX_SAFE_INTEGER;
+          const bOrder =
+            bSubcategoryProject?.displayOrder ?? Number.MAX_SAFE_INTEGER;
+
+          if (aOrder !== bOrder) {
+            return aOrder - bOrder;
+          }
+        }
+
+        // Then sort by featured projects
+        const aFeaturedOrder =
           a.featuredProjects?.items?.[0]?.displayOrder ??
           Number.MAX_SAFE_INTEGER;
-        const bOrder =
+        const bFeaturedOrder =
           b.featuredProjects?.items?.[0]?.displayOrder ??
           Number.MAX_SAFE_INTEGER;
-        return aOrder - bOrder;
+
+        if (aFeaturedOrder !== bFeaturedOrder) {
+          return aFeaturedOrder - bFeaturedOrder;
+        }
+
+        // If no subcategory filter, sort by subcategory name and then displayOrder
+        const aSubcategoryName =
+          a.subcategoryProjects?.items?.[0]?.subcategory?.name ?? '';
+        const bSubcategoryName =
+          b.subcategoryProjects?.items?.[0]?.subcategory?.name ?? '';
+
+        if (aSubcategoryName !== bSubcategoryName) {
+          return aSubcategoryName.localeCompare(bSubcategoryName);
+        }
+
+        const aSubcategoryOrder =
+          a.subcategoryProjects?.items?.[0]?.displayOrder ??
+          Number.MAX_SAFE_INTEGER;
+        const bSubcategoryOrder =
+          b.subcategoryProjects?.items?.[0]?.displayOrder ??
+          Number.MAX_SAFE_INTEGER;
+
+        return aSubcategoryOrder - bSubcategoryOrder;
       });
   }, [projects, departmentFilters, subcategoryFilters]);
 
@@ -126,7 +167,18 @@ const ProjectFilter = ({ projects }) => {
         <div className='flex flex-1 items-center gap-6'>
           {subcategories &&
             subcategories
-              .sort((a, b) => a.displayOrder - b.displayOrder)
+              .sort((a, b) => {
+                // First sort by subcategory displayOrder
+                const aOrder =
+                  a.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
+                const bOrder =
+                  b.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
+                if (aOrder !== bOrder) {
+                  return aOrder - bOrder;
+                }
+                // If displayOrder is the same, sort alphabetically by name
+                return a.subcategory.name.localeCompare(b.subcategory.name);
+              })
               .map((subcategory) => (
                 <div
                   key={subcategory.id}
@@ -222,6 +274,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full h-full'
                       onClick={() => {
                         if (item.projects[0]) {
+                          console.log(item.projects[0]);
                           router.push(
                             `/interiors/draft/${item.projects[0].id}`
                           );
@@ -240,6 +293,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[1]) {
+                          console.log(item.projects[1]);
                           router.push(
                             `/interiors/draft/${item.projects[1].id}`
                           );
@@ -256,6 +310,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[2]) {
+                          console.log(item.projects[2]);
                           router.push(
                             `/interiors/draft/${item.projects[2].id}`
                           );
@@ -281,6 +336,7 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full h-full aspect-[6/3]'
                       onClick={() => {
+                        console.log(item.projects[0]);
                         router.push(`/interiors/draft/${item.projects[0].id}`);
                       }}
                     >
@@ -300,6 +356,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[0]) {
+                          console.log(item.projects[0]);
                           router.push(
                             `/interiors/draft/${item.projects[0].id}`
                           );
@@ -316,6 +373,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[1]) {
+                          console.log(item.projects[1]);
                           router.push(
                             `/interiors/draft/${item.projects[1].id}`
                           );
@@ -334,6 +392,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full h-full'
                       onClick={() => {
                         if (item.projects[2]) {
+                          console.log(item.projects[2]);
                           router.push(
                             `/interiors/draft/${item.projects[2].id}`
                           );
