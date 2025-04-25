@@ -15,7 +15,6 @@ const Page = () => {
   useEffect(() => {
     const getProjects = async () => {
       const projects = await getPublishedProjects();
-      console.log(projects);
       setProjects(projects);
       setLoading(false);
     };

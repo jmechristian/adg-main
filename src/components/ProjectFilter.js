@@ -13,6 +13,7 @@ import FilterItem from './FilterItem';
 import { useRouter } from 'next/navigation';
 
 const ProjectFilter = ({ projects }) => {
+  // console.log(projects);
   const router = useRouter();
   const [departments, setDepartments] = useState([]);
   const [departmentFilters, setDepartmentFilters] = useState([]);
@@ -28,6 +29,7 @@ const ProjectFilter = ({ projects }) => {
   useEffect(() => {
     const fetchDepartments = async () => {
       const departments = await getDepartments();
+      console.log('departments', departments);
       setDepartments(departments);
       setDepartmentFilters({
         id: '0cd75086-b396-4c52-a907-5b52fb6aeedd',

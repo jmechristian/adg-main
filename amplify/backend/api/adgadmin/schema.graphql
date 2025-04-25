@@ -41,6 +41,8 @@ type FeaturedProject @model {
 type Gallery @model {
   id: ID!
   images: [ImageObject] @hasMany
+  gifs: [GifObject] @hasMany
+  videos: [VideoObject] @hasMany
   project: Project @belongsTo
 }
 
@@ -91,6 +93,7 @@ type Department @model {
     @manyToMany(relationName: "DepartmentSubcategories")
   displayOrder: Int
   featuredProjects: [FeaturedProject] @hasMany
+  subcategoriesProjects: [SubcategoryProject] @hasMany
 }
 
 type ImageObject @model {
@@ -103,6 +106,22 @@ type ImageObject @model {
   centerX: Float
   centerY: Float
   zoom: Float
+}
+
+type VideoObject @model {
+  id: ID!
+  url: String!
+  caption: String
+  gallery: Gallery @belongsTo
+  order: Int
+}
+
+type GifObject @model {
+  id: ID!
+  url: String!
+  caption: String
+  gallery: Gallery @belongsTo
+  order: Int
 }
 
 type Subcategory @model {
@@ -118,6 +137,7 @@ type SubcategoryProject @model {
   id: ID!
   project: Project @belongsTo
   subcategory: Subcategory @belongsTo
+  department: Department @belongsTo
   displayOrder: Int
 }
 

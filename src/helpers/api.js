@@ -40,10 +40,24 @@ export const getAllProjects = async () => {
 };
 
 export const getDepartments = async () => {
-  const response = await client.graphql({
-    query: listDepartments,
-  });
-  return response.data.listDepartments.items;
+  try {
+    const response = await client.graphql({
+      query: `query ListDepartments {
+        listDepartments {
+          items {
+            id
+            name
+            displayOrder
+          }
+        }
+      }`,
+    });
+
+    return response.data.listDepartments.items;
+  } catch (error) {
+    console.error('Error in getDepartments:', error);
+    throw error;
+  }
 };
 
 export const getSubcategoriesByDepartment = async (departmentId) => {
