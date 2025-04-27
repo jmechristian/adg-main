@@ -33,7 +33,7 @@ const Nav = () => {
           <a
             href={link.href}
             key={link.label}
-            className={`text-2xl font-brand italic hidden lg:!block ${
+            className={`text-2xl font-brand italic hidden lg:!block hover:border-b hover:border-brand-white transition-all duration-300 ${
               isDarkNav ? 'text-brand-gray' : 'text-white'
             } ${
               pathname === link.href ? 'border-b-2 pb-2 border-brand-gray' : ''
@@ -63,7 +63,7 @@ const Nav = () => {
           <a
             href={link.href}
             key={link.label}
-            className={`text-2xl font-brand italic hidden lg:!block ${
+            className={`text-2xl font-brand italic hidden lg:!block hover:border-b hover:border-brand-white transition-all duration-300 ${
               isDarkNav ? 'text-brand-gray' : 'text-white'
             }`}
           >
