@@ -193,33 +193,10 @@ export const createFeaturedProject = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -837,33 +814,10 @@ export const updateFeaturedProject = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -1481,33 +1435,10 @@ export const deleteFeaturedProject = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -2047,12 +1978,6 @@ export const createGallery = /* GraphQL */ `
             images {
               nextToken
             }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
             project {
               id
               oldId
@@ -2085,111 +2010,10 @@ export const createGallery = /* GraphQL */ `
           centerX
           centerY
           zoom
+          type
           createdAt
           updatedAt
           galleryImagesId
-        }
-        nextToken
-      }
-      gifs {
-        items {
-          id
-          url
-          caption
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          order
-          createdAt
-          updatedAt
-          galleryGifsId
-        }
-        nextToken
-      }
-      videos {
-        items {
-          id
-          url
-          caption
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          order
-          createdAt
-          updatedAt
-          galleryVideosId
         }
         nextToken
       }
@@ -2282,33 +2106,10 @@ export const createGallery = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -2682,12 +2483,6 @@ export const updateGallery = /* GraphQL */ `
             images {
               nextToken
             }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
             project {
               id
               oldId
@@ -2720,111 +2515,10 @@ export const updateGallery = /* GraphQL */ `
           centerX
           centerY
           zoom
+          type
           createdAt
           updatedAt
           galleryImagesId
-        }
-        nextToken
-      }
-      gifs {
-        items {
-          id
-          url
-          caption
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          order
-          createdAt
-          updatedAt
-          galleryGifsId
-        }
-        nextToken
-      }
-      videos {
-        items {
-          id
-          url
-          caption
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          order
-          createdAt
-          updatedAt
-          galleryVideosId
         }
         nextToken
       }
@@ -2917,33 +2611,10 @@ export const updateGallery = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -3317,12 +2988,6 @@ export const deleteGallery = /* GraphQL */ `
             images {
               nextToken
             }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
             project {
               id
               oldId
@@ -3355,111 +3020,10 @@ export const deleteGallery = /* GraphQL */ `
           centerX
           centerY
           zoom
+          type
           createdAt
           updatedAt
           galleryImagesId
-        }
-        nextToken
-      }
-      gifs {
-        items {
-          id
-          url
-          caption
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          order
-          createdAt
-          updatedAt
-          galleryGifsId
-        }
-        nextToken
-      }
-      videos {
-        items {
-          id
-          url
-          caption
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          order
-          createdAt
-          updatedAt
-          galleryVideosId
         }
         nextToken
       }
@@ -3552,33 +3116,10 @@ export const deleteGallery = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -4087,45 +3628,10 @@ export const createProject = /* GraphQL */ `
             centerX
             centerY
             zoom
+            type
             createdAt
             updatedAt
             galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
           }
           nextToken
         }
@@ -4185,12 +3691,6 @@ export const createProject = /* GraphQL */ `
           gallery {
             id
             images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
               nextToken
             }
             project {
@@ -5095,45 +4595,10 @@ export const updateProject = /* GraphQL */ `
             centerX
             centerY
             zoom
+            type
             createdAt
             updatedAt
             galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
           }
           nextToken
         }
@@ -5193,12 +4658,6 @@ export const updateProject = /* GraphQL */ `
           gallery {
             id
             images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
               nextToken
             }
             project {
@@ -6103,45 +5562,10 @@ export const deleteProject = /* GraphQL */ `
             centerX
             centerY
             zoom
+            type
             createdAt
             updatedAt
             galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
           }
           nextToken
         }
@@ -6201,12 +5625,6 @@ export const deleteProject = /* GraphQL */ `
           gallery {
             id
             images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
               nextToken
             }
             project {
@@ -7056,33 +6474,10 @@ export const createQuote = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -7537,33 +6932,10 @@ export const updateQuote = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -8018,33 +7390,10 @@ export const deleteQuote = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -9617,45 +8966,10 @@ export const createImageObject = /* GraphQL */ `
             centerX
             centerY
             zoom
+            type
             createdAt
             updatedAt
             galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
           }
           nextToken
         }
@@ -9715,12 +9029,6 @@ export const createImageObject = /* GraphQL */ `
           gallery {
             id
             images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
               nextToken
             }
             project {
@@ -9831,6 +9139,7 @@ export const createImageObject = /* GraphQL */ `
       centerX
       centerY
       zoom
+      type
       createdAt
       updatedAt
       galleryImagesId
@@ -9865,45 +9174,10 @@ export const updateImageObject = /* GraphQL */ `
             centerX
             centerY
             zoom
+            type
             createdAt
             updatedAt
             galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
           }
           nextToken
         }
@@ -9963,12 +9237,6 @@ export const updateImageObject = /* GraphQL */ `
           gallery {
             id
             images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
               nextToken
             }
             project {
@@ -10079,6 +9347,7 @@ export const updateImageObject = /* GraphQL */ `
       centerX
       centerY
       zoom
+      type
       createdAt
       updatedAt
       galleryImagesId
@@ -10113,45 +9382,10 @@ export const deleteImageObject = /* GraphQL */ `
             centerX
             centerY
             zoom
+            type
             createdAt
             updatedAt
             galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
           }
           nextToken
         }
@@ -10211,12 +9445,6 @@ export const deleteImageObject = /* GraphQL */ `
           gallery {
             id
             images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
               nextToken
             }
             project {
@@ -10327,1473 +9555,10 @@ export const deleteImageObject = /* GraphQL */ `
       centerX
       centerY
       zoom
+      type
       createdAt
       updatedAt
       galleryImagesId
-    }
-  }
-`;
-export const createVideoObject = /* GraphQL */ `
-  mutation CreateVideoObject(
-    $input: CreateVideoObjectInput!
-    $condition: ModelVideoObjectConditionInput
-  ) {
-    createVideoObject(input: $input, condition: $condition) {
-      id
-      url
-      caption
-      gallery {
-        id
-        images {
-          items {
-            id
-            url
-            alt
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            centerX
-            centerY
-            zoom
-            createdAt
-            updatedAt
-            galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
-          }
-          nextToken
-        }
-        project {
-          id
-          oldId
-          name
-          description
-          location {
-            id
-            name
-            address
-            description
-            latitude
-            longitude
-            createdAt
-            updatedAt
-          }
-          locationString
-          createdBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          lastUpdatedBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          featured
-          link
-          slug
-          quote
-          quoteAttribution
-          quotes {
-            items {
-              id
-              text
-              attribution
-              displayOrder
-              createdAt
-              updatedAt
-              projectQuotesId
-            }
-            nextToken
-          }
-          collaborators
-          size
-          gridOrder
-          status
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          departments {
-            items {
-              id
-              projectID
-              departmentID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          subcategories {
-            items {
-              id
-              projectID
-              subcategoryID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          building_type {
-            items {
-              id
-              projectID
-              buildingTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          project_type {
-            items {
-              id
-              projectID
-              projectTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          displayOrder
-          previewLocation
-          featuredProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectFeaturedProjectsId
-              departmentFeaturedProjectsId
-            }
-            nextToken
-          }
-          subcategoryProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectSubcategoryProjectsId
-              departmentSubcategoriesProjectsId
-              subcategorySubcategoryProjectsId
-            }
-            nextToken
-          }
-          createdAt
-          updatedAt
-          projectLocationId
-          projectCreatedById
-          projectLastUpdatedById
-          projectGalleryId
-        }
-        createdAt
-        updatedAt
-        galleryProjectId
-      }
-      order
-      createdAt
-      updatedAt
-      galleryVideosId
-    }
-  }
-`;
-export const updateVideoObject = /* GraphQL */ `
-  mutation UpdateVideoObject(
-    $input: UpdateVideoObjectInput!
-    $condition: ModelVideoObjectConditionInput
-  ) {
-    updateVideoObject(input: $input, condition: $condition) {
-      id
-      url
-      caption
-      gallery {
-        id
-        images {
-          items {
-            id
-            url
-            alt
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            centerX
-            centerY
-            zoom
-            createdAt
-            updatedAt
-            galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
-          }
-          nextToken
-        }
-        project {
-          id
-          oldId
-          name
-          description
-          location {
-            id
-            name
-            address
-            description
-            latitude
-            longitude
-            createdAt
-            updatedAt
-          }
-          locationString
-          createdBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          lastUpdatedBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          featured
-          link
-          slug
-          quote
-          quoteAttribution
-          quotes {
-            items {
-              id
-              text
-              attribution
-              displayOrder
-              createdAt
-              updatedAt
-              projectQuotesId
-            }
-            nextToken
-          }
-          collaborators
-          size
-          gridOrder
-          status
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          departments {
-            items {
-              id
-              projectID
-              departmentID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          subcategories {
-            items {
-              id
-              projectID
-              subcategoryID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          building_type {
-            items {
-              id
-              projectID
-              buildingTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          project_type {
-            items {
-              id
-              projectID
-              projectTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          displayOrder
-          previewLocation
-          featuredProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectFeaturedProjectsId
-              departmentFeaturedProjectsId
-            }
-            nextToken
-          }
-          subcategoryProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectSubcategoryProjectsId
-              departmentSubcategoriesProjectsId
-              subcategorySubcategoryProjectsId
-            }
-            nextToken
-          }
-          createdAt
-          updatedAt
-          projectLocationId
-          projectCreatedById
-          projectLastUpdatedById
-          projectGalleryId
-        }
-        createdAt
-        updatedAt
-        galleryProjectId
-      }
-      order
-      createdAt
-      updatedAt
-      galleryVideosId
-    }
-  }
-`;
-export const deleteVideoObject = /* GraphQL */ `
-  mutation DeleteVideoObject(
-    $input: DeleteVideoObjectInput!
-    $condition: ModelVideoObjectConditionInput
-  ) {
-    deleteVideoObject(input: $input, condition: $condition) {
-      id
-      url
-      caption
-      gallery {
-        id
-        images {
-          items {
-            id
-            url
-            alt
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            centerX
-            centerY
-            zoom
-            createdAt
-            updatedAt
-            galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
-          }
-          nextToken
-        }
-        project {
-          id
-          oldId
-          name
-          description
-          location {
-            id
-            name
-            address
-            description
-            latitude
-            longitude
-            createdAt
-            updatedAt
-          }
-          locationString
-          createdBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          lastUpdatedBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          featured
-          link
-          slug
-          quote
-          quoteAttribution
-          quotes {
-            items {
-              id
-              text
-              attribution
-              displayOrder
-              createdAt
-              updatedAt
-              projectQuotesId
-            }
-            nextToken
-          }
-          collaborators
-          size
-          gridOrder
-          status
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          departments {
-            items {
-              id
-              projectID
-              departmentID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          subcategories {
-            items {
-              id
-              projectID
-              subcategoryID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          building_type {
-            items {
-              id
-              projectID
-              buildingTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          project_type {
-            items {
-              id
-              projectID
-              projectTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          displayOrder
-          previewLocation
-          featuredProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectFeaturedProjectsId
-              departmentFeaturedProjectsId
-            }
-            nextToken
-          }
-          subcategoryProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectSubcategoryProjectsId
-              departmentSubcategoriesProjectsId
-              subcategorySubcategoryProjectsId
-            }
-            nextToken
-          }
-          createdAt
-          updatedAt
-          projectLocationId
-          projectCreatedById
-          projectLastUpdatedById
-          projectGalleryId
-        }
-        createdAt
-        updatedAt
-        galleryProjectId
-      }
-      order
-      createdAt
-      updatedAt
-      galleryVideosId
-    }
-  }
-`;
-export const createGifObject = /* GraphQL */ `
-  mutation CreateGifObject(
-    $input: CreateGifObjectInput!
-    $condition: ModelGifObjectConditionInput
-  ) {
-    createGifObject(input: $input, condition: $condition) {
-      id
-      url
-      caption
-      gallery {
-        id
-        images {
-          items {
-            id
-            url
-            alt
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            centerX
-            centerY
-            zoom
-            createdAt
-            updatedAt
-            galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
-          }
-          nextToken
-        }
-        project {
-          id
-          oldId
-          name
-          description
-          location {
-            id
-            name
-            address
-            description
-            latitude
-            longitude
-            createdAt
-            updatedAt
-          }
-          locationString
-          createdBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          lastUpdatedBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          featured
-          link
-          slug
-          quote
-          quoteAttribution
-          quotes {
-            items {
-              id
-              text
-              attribution
-              displayOrder
-              createdAt
-              updatedAt
-              projectQuotesId
-            }
-            nextToken
-          }
-          collaborators
-          size
-          gridOrder
-          status
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          departments {
-            items {
-              id
-              projectID
-              departmentID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          subcategories {
-            items {
-              id
-              projectID
-              subcategoryID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          building_type {
-            items {
-              id
-              projectID
-              buildingTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          project_type {
-            items {
-              id
-              projectID
-              projectTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          displayOrder
-          previewLocation
-          featuredProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectFeaturedProjectsId
-              departmentFeaturedProjectsId
-            }
-            nextToken
-          }
-          subcategoryProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectSubcategoryProjectsId
-              departmentSubcategoriesProjectsId
-              subcategorySubcategoryProjectsId
-            }
-            nextToken
-          }
-          createdAt
-          updatedAt
-          projectLocationId
-          projectCreatedById
-          projectLastUpdatedById
-          projectGalleryId
-        }
-        createdAt
-        updatedAt
-        galleryProjectId
-      }
-      order
-      createdAt
-      updatedAt
-      galleryGifsId
-    }
-  }
-`;
-export const updateGifObject = /* GraphQL */ `
-  mutation UpdateGifObject(
-    $input: UpdateGifObjectInput!
-    $condition: ModelGifObjectConditionInput
-  ) {
-    updateGifObject(input: $input, condition: $condition) {
-      id
-      url
-      caption
-      gallery {
-        id
-        images {
-          items {
-            id
-            url
-            alt
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            centerX
-            centerY
-            zoom
-            createdAt
-            updatedAt
-            galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
-          }
-          nextToken
-        }
-        project {
-          id
-          oldId
-          name
-          description
-          location {
-            id
-            name
-            address
-            description
-            latitude
-            longitude
-            createdAt
-            updatedAt
-          }
-          locationString
-          createdBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          lastUpdatedBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          featured
-          link
-          slug
-          quote
-          quoteAttribution
-          quotes {
-            items {
-              id
-              text
-              attribution
-              displayOrder
-              createdAt
-              updatedAt
-              projectQuotesId
-            }
-            nextToken
-          }
-          collaborators
-          size
-          gridOrder
-          status
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          departments {
-            items {
-              id
-              projectID
-              departmentID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          subcategories {
-            items {
-              id
-              projectID
-              subcategoryID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          building_type {
-            items {
-              id
-              projectID
-              buildingTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          project_type {
-            items {
-              id
-              projectID
-              projectTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          displayOrder
-          previewLocation
-          featuredProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectFeaturedProjectsId
-              departmentFeaturedProjectsId
-            }
-            nextToken
-          }
-          subcategoryProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectSubcategoryProjectsId
-              departmentSubcategoriesProjectsId
-              subcategorySubcategoryProjectsId
-            }
-            nextToken
-          }
-          createdAt
-          updatedAt
-          projectLocationId
-          projectCreatedById
-          projectLastUpdatedById
-          projectGalleryId
-        }
-        createdAt
-        updatedAt
-        galleryProjectId
-      }
-      order
-      createdAt
-      updatedAt
-      galleryGifsId
-    }
-  }
-`;
-export const deleteGifObject = /* GraphQL */ `
-  mutation DeleteGifObject(
-    $input: DeleteGifObjectInput!
-    $condition: ModelGifObjectConditionInput
-  ) {
-    deleteGifObject(input: $input, condition: $condition) {
-      id
-      url
-      caption
-      gallery {
-        id
-        images {
-          items {
-            id
-            url
-            alt
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            centerX
-            centerY
-            zoom
-            createdAt
-            updatedAt
-            galleryImagesId
-          }
-          nextToken
-        }
-        gifs {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryGifsId
-          }
-          nextToken
-        }
-        videos {
-          items {
-            id
-            url
-            caption
-            gallery {
-              id
-              createdAt
-              updatedAt
-              galleryProjectId
-            }
-            order
-            createdAt
-            updatedAt
-            galleryVideosId
-          }
-          nextToken
-        }
-        project {
-          id
-          oldId
-          name
-          description
-          location {
-            id
-            name
-            address
-            description
-            latitude
-            longitude
-            createdAt
-            updatedAt
-          }
-          locationString
-          createdBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          lastUpdatedBy {
-            id
-            name
-            email
-            role
-            createdAt
-            updatedAt
-          }
-          featured
-          link
-          slug
-          quote
-          quoteAttribution
-          quotes {
-            items {
-              id
-              text
-              attribution
-              displayOrder
-              createdAt
-              updatedAt
-              projectQuotesId
-            }
-            nextToken
-          }
-          collaborators
-          size
-          gridOrder
-          status
-          gallery {
-            id
-            images {
-              nextToken
-            }
-            gifs {
-              nextToken
-            }
-            videos {
-              nextToken
-            }
-            project {
-              id
-              oldId
-              name
-              description
-              locationString
-              featured
-              link
-              slug
-              quote
-              quoteAttribution
-              collaborators
-              size
-              gridOrder
-              status
-              displayOrder
-              previewLocation
-              createdAt
-              updatedAt
-              projectLocationId
-              projectCreatedById
-              projectLastUpdatedById
-              projectGalleryId
-            }
-            createdAt
-            updatedAt
-            galleryProjectId
-          }
-          departments {
-            items {
-              id
-              projectID
-              departmentID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          subcategories {
-            items {
-              id
-              projectID
-              subcategoryID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          building_type {
-            items {
-              id
-              projectID
-              buildingTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          project_type {
-            items {
-              id
-              projectID
-              projectTypeID
-              createdAt
-              updatedAt
-            }
-            nextToken
-          }
-          displayOrder
-          previewLocation
-          featuredProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectFeaturedProjectsId
-              departmentFeaturedProjectsId
-            }
-            nextToken
-          }
-          subcategoryProjects {
-            items {
-              id
-              displayOrder
-              createdAt
-              updatedAt
-              projectSubcategoryProjectsId
-              departmentSubcategoriesProjectsId
-              subcategorySubcategoryProjectsId
-            }
-            nextToken
-          }
-          createdAt
-          updatedAt
-          projectLocationId
-          projectCreatedById
-          projectLastUpdatedById
-          projectGalleryId
-        }
-        createdAt
-        updatedAt
-        galleryProjectId
-      }
-      order
-      createdAt
-      updatedAt
-      galleryGifsId
     }
   }
 `;
@@ -12751,33 +10516,10 @@ export const createSubcategoryProject = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -13518,33 +11260,10 @@ export const updateSubcategoryProject = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -14285,33 +12004,10 @@ export const deleteSubcategoryProject = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -15720,33 +13416,10 @@ export const createProjectDepartments = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -16363,33 +14036,10 @@ export const updateProjectDepartments = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -17006,33 +14656,10 @@ export const deleteProjectDepartments = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -17649,33 +15276,10 @@ export const createProjectSubcategories = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -18250,33 +15854,10 @@ export const updateProjectSubcategories = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -18851,33 +16432,10 @@ export const deleteProjectSubcategories = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -19452,33 +17010,10 @@ export const createProjectBuildingTypes = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -19979,33 +17514,10 @@ export const updateProjectBuildingTypes = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -20506,33 +18018,10 @@ export const deleteProjectBuildingTypes = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -21033,33 +18522,10 @@ export const createProjectProjectTypes = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -21560,33 +19026,10 @@ export const updateProjectProjectTypes = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }
@@ -22087,33 +19530,10 @@ export const deleteProjectProjectTypes = /* GraphQL */ `
               centerX
               centerY
               zoom
+              type
               createdAt
               updatedAt
               galleryImagesId
-            }
-            nextToken
-          }
-          gifs {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryGifsId
-            }
-            nextToken
-          }
-          videos {
-            items {
-              id
-              url
-              caption
-              order
-              createdAt
-              updatedAt
-              galleryVideosId
             }
             nextToken
           }

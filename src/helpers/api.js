@@ -210,6 +210,7 @@ export const getProjectById = async (id) => {
             id
             order
             url
+            type
           }
         }
       }
