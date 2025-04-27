@@ -70,9 +70,9 @@ export default function RootLayout({ children }) {
   ];
 
   return (
-    <html lang='en'>
+    <html lang='en' className='scroll-smooth'>
       <body className='relative min-h-screen'>
-        <div className='fixed top-5 right-5 w-16 h-16 rounded-full bg-black z-[100] flex items-center justify-center cursor-pointer hover:bg-brand-gray transition-all duration-300'>
+        {/* <div className='fixed top-5 right-5 w-16 h-16 rounded-full bg-black z-[100] flex items-center justify-center cursor-pointer hover:bg-brand-gray transition-all duration-300'>
           {isBoxedLayout ? (
             <MdCheckBoxOutlineBlank
               className='w-10 h-10 text-white'
@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
               onClick={setBoxedLayoutTrue}
             />
           )}
-        </div>
+        </div> */}
         <Nav />
         <main className='relative z-10 bg-white mb-96'>{children}</main>
         <footer className='w-full py-12 bg-brand-peach fixed bottom-0 left-0 right-0 z-0'>

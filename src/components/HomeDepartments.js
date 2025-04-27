@@ -7,24 +7,24 @@ const HomeDepartments = ({ department, content, callout, link, image }) => {
   const router = useRouter();
   return (
     <div
-      className='w-full py-20 px-6 relative flex flex-col justify-between items-center gap-40 bg-cover bg-center'
+      className='w-full py-10 px-6 relative flex flex-col justify-between items-center gap-40 bg-cover bg-center max-h-[548px]'
       style={{
         backgroundImage: `url(${image})`,
       }}
     >
       <div className='absolute inset-0 bg-black opacity-30'></div>
-      <div className='uppercase text-white font-brand-book text-center tracking-[0.6rem] z-10'>
+      <div className='uppercase text-white font-brand-book text-center tracking-[0.6rem] z-10 select-none'>
         {department ? department : ''}
       </div>
       <div className='flex flex-col gap-0'>
-        <div className='text-white max-w-sm mx-auto text-4xl font-brand font-light text-center leading-tight z-10'>
+        <div className='text-white max-w-sm mx-auto text-4xl font-brand font-light text-center leading-tight z-10 select-none'>
           {content}
         </div>
         <div className='flex items-center gap-4'>
           <div
             className={`${
               department ? 'text-brand-peach' : 'text-white'
-            } max-w-sm mx-auto text-4xl font-brand font-light text-center leading-tighter z-10 italic`}
+            } max-w-sm mx-auto text-4xl font-brand font-light text-center leading-tighter z-10 italic select-none`}
           >
             {callout}
           </div>

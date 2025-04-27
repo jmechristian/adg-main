@@ -2,9 +2,9 @@ import React from 'react';
 
 const HomeText = () => {
   return (
-    <div className='w-full max-w-5xl mx-auto'>
-      <h2 className='text-brand-gray text-3xl font-brand font-light text-center leading-tight py-6'>
-        <span className='font-bold'>
+    <div className='w-full max-w-4xl mx-auto scroll-mt-10' id='home-text'>
+      <h2 className='text-brand-gray text-3xl font-brand font-light text-center leading-snug px-5 pb-6 pt-4 mb-0.5 select-none'>
+        <span className='italic'>
           Akseizer Design Group is a dynamic team of interior designers,
           architects, brand strategists, craftsmen and builders.
         </span>{' '}
