@@ -93,7 +93,7 @@ const Page = () => {
 
   return (
     <div className='relative'>
-      <div className='h-24 lg:h-48'></div>
+      <div className='h-24 lg:h-36'></div>
       {loading ? (
         <ProjectSkeleton />
       ) : (
