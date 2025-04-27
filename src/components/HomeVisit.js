@@ -22,9 +22,9 @@ const HomeVisit = () => {
             Visit Our Studio
           </div>
         </div>
-        <div className='col-span-12 md:col-span-6'>
+        <div className='col-span-12 md:col-span-6 w-full h-full'>
           <div
-            className='w-full h-full bg-cover bg-center aspect-square'
+            className='w-full h-full bg-cover bg-center'
             style={{
               backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/visit-hero.png')`,
             }}
