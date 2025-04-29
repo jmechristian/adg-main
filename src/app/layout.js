@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
           )}
         </div> */}
         <Nav />
-        <main className='relative z-10 bg-white mb-96'>{children}</main>
+        <main className='relative z-10 bg-white mb-[349px]'>{children}</main>
         <footer className='w-full py-12 bg-brand-peach fixed bottom-0 left-0 right-0 z-0'>
           <div className='flex flex-col gap-4'>
             <div className='w-full max-w-6xl mx-auto grid grid-cols-4'>

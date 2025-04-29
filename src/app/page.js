@@ -11,7 +11,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <div className='w-full max-w-[1920px] mx-auto relative flex flex-col gap-16'>
+    <div className='w-full max-w-[2000px] mx-auto relative flex flex-col gap-16'>
       <Hero />
       <HomeText />
       <VariableHomeDepartments />

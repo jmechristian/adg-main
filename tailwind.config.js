@@ -9,6 +9,7 @@ module.exports = {
         'brand-gray': '#524f4f',
         'brand-peach': '#f5e5de',
         'brand-brown': '#b0a69c',
+        'brand-dark-peach': '#e3d9d1',
       },
       fontFamily: {
         'brand-book': 'Gotham Book',

@@ -33,10 +33,10 @@ const Nav = () => {
           <a
             href={link.href}
             key={link.label}
-            className={`text-2xl font-brand italic hidden lg:!block hover:border-b hover:border-brand-white transition-all duration-300 ${
+            className={`text-2xl font-brand italic hidden lg:!block hover:border-b hover:border-brand-gray transition-all duration-300 pb-1 ${
               isDarkNav ? 'text-brand-gray' : 'text-white'
             } ${
-              pathname === link.href ? 'border-b-2 pb-2 border-brand-gray' : ''
+              pathname === link.href ? 'border-b pb-1 border-brand-gray' : ''
             }`}
           >
             {link.label}
@@ -63,8 +63,10 @@ const Nav = () => {
           <a
             href={link.href}
             key={link.label}
-            className={`text-2xl font-brand italic hidden lg:!block hover:border-b hover:border-brand-white transition-all duration-300 ${
+            className={`text-2xl font-brand italic hidden lg:!block hover:border-b hover:border-brand-gray pb-1 transition-all duration-300 ${
               isDarkNav ? 'text-brand-gray' : 'text-white'
+            } ${
+              pathname === link.href ? 'border-b pb-1 border-brand-gray' : ''
             }`}
           >
             {link.label}
