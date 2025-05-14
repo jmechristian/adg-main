@@ -4,6 +4,7 @@ import {
   listProjects,
   listDepartments,
   listDepartmentSubcategories,
+  listInquirePages,
 } from '@/graphql/queries';
 
 // Handle both development and production environments
@@ -249,4 +250,54 @@ export const getProjectById = async (id) => {
     }`,
   });
   return response.data.getProject;
+};
+
+export const getInquirePage = async () => {
+  const res = await client.graphql({
+    query: listInquirePages,
+  });
+  return res.data.listInquirePages.items[0];
+};
+
+export const getStudioPage = async () => {
+  const customQuery = `
+    query MyQuery {
+      listStudioPages {
+        items {
+          hero
+          heroQuote
+          id
+          leadership {
+          items {
+            extra
+            hidden
+            id
+            image
+            name
+            order
+            title
+          }
+        }
+        staff {
+          items {
+            extra
+            hidden
+            id
+            image
+            name
+            order
+            title
+          }
+        }
+        title
+        updatedAt
+      }
+      }
+    }
+  `;
+
+  const res = await client.graphql({
+    query: customQuery,
+  });
+  return res.data.listStudioPages.items[0];
 };
