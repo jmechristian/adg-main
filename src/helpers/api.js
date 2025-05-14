@@ -301,3 +301,58 @@ export const getStudioPage = async () => {
   });
   return res.data.listStudioPages.items[0];
 };
+
+export const getServicesPage = async () => {
+  const customQuery = `
+    query MyQuery {
+      listServicesPages {
+        items {
+          createdAt
+          hero
+      heroQuote
+      id
+      title
+      updatedAt
+        departments {
+          items {
+            description
+            design {
+              items {
+                content
+                id
+                order
+              }
+            }
+            envision {
+              items {
+                content
+                id
+                order
+              }
+            }
+            execute {
+              items {
+                content
+                id
+                order
+              }
+            }
+            id
+            image
+            link
+            order
+            servicesPageDepartmentsId
+            split
+            title
+          }
+        }
+      }
+    }
+  }
+  `;
+
+  const res = await client.graphql({
+    query: customQuery,
+  });
+  return res.data.listServicesPages.items;
+};
