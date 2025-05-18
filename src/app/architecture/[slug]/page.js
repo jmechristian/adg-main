@@ -5,7 +5,7 @@ import { getProjectById } from '@/helpers/api';
 import {
   HeadingHero,
   TwoColIntro,
-  CascadingGallery,
+  TwoColGallery,
   ModalGallery,
 } from '@jmechristian/adg-component-library';
 import '@jmechristian/adg-component-library/styles.css';
@@ -155,24 +155,11 @@ const Page = () => {
                 />
               </div>
             </div>
-            <CascadingGallery
-              images={
-                project.gallery.images.items.length > 1
-                  ? project.gallery.images.items
-                      .sort((a, b) => (a.order || 0) - (b.order || 0))
-                      .slice(1)
-                  : []
-              }
-              quotes={
-                project.quotes?.items
-                  ? project.quotes.items.sort(
-                      (a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)
-                    )
-                  : []
-              }
-              setModalImage={(imageId) => {
-                handleModalImage(imageId);
-              }}
+            <TwoColGallery
+              images={project.gallery.images.items
+                .sort((a, b) => (a.order || 0) - (b.order || 0))
+                .slice(1)}
+              setModalImage={() => {}}
             />
           </div>
         )

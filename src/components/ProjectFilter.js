@@ -137,6 +137,29 @@ const ProjectFilter = ({ projects }) => {
     }, 500);
   };
 
+  const handleProjectClick = (project) => {
+    switch (project.departments.items[0].department.id) {
+      case '0cd75086-b396-4c52-a907-5b52fb6aeedd':
+        router.push(`/interiors/${project.id}`);
+        break;
+      case '0e20ac00-ec5f-464a-86d3-61ddc90e9aa7':
+        router.push(`/architecture/${project.id}`);
+        break;
+      case '4dfd71af-51a3-4af9-874f-da260e081f08':
+        router.push(`/branding/${project.id}`);
+        break;
+      case '6cd6cac5-1533-45e3-8e9a-d4e1472def9a':
+        router.push(`/residential/${project.id}`);
+        break;
+      case '763080b2-dddf-45e6-ab08-c540a84d8b07':
+        router.push(`/millwork/${project.id}`);
+        break;
+      default:
+        router.push(`/interiors/${project.id}`);
+        break;
+    }
+  };
+
   const hasMoreProjects = displayedProjects.length < filteredProjects.length;
 
   return (
@@ -276,10 +299,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full h-full'
                       onClick={() => {
                         if (item.projects[0]) {
-                          console.log(item.projects[0]);
-                          router.push(
-                            `/interiors/draft/${item.projects[0].id}`
-                          );
+                          handleProjectClick(item.projects[0]);
                         }
                       }}
                     >
@@ -295,10 +315,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[1]) {
-                          console.log(item.projects[1]);
-                          router.push(
-                            `/interiors/draft/${item.projects[1].id}`
-                          );
+                          handleProjectClick(item.projects[1]);
                         }
                       }}
                     >
@@ -312,10 +329,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[2]) {
-                          console.log(item.projects[2]);
-                          router.push(
-                            `/interiors/draft/${item.projects[2].id}`
-                          );
+                          handleProjectClick(item.projects[2]);
                         }
                       }}
                     >
@@ -338,8 +352,7 @@ const ProjectFilter = ({ projects }) => {
                     <div
                       className='w-full h-full aspect-[6/3]'
                       onClick={() => {
-                        console.log(item.projects[0]);
-                        router.push(`/interiors/draft/${item.projects[0].id}`);
+                        handleProjectClick(item.projects[0]);
                       }}
                     >
                       <FilterItem project={item.projects[0]} />
@@ -358,10 +371,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[0]) {
-                          console.log(item.projects[0]);
-                          router.push(
-                            `/interiors/draft/${item.projects[0].id}`
-                          );
+                          handleProjectClick(item.projects[0]);
                         }
                       }}
                     >
@@ -375,10 +385,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full aspect-video'
                       onClick={() => {
                         if (item.projects[1]) {
-                          console.log(item.projects[1]);
-                          router.push(
-                            `/interiors/draft/${item.projects[1].id}`
-                          );
+                          handleProjectClick(item.projects[1]);
                         }
                       }}
                     >
@@ -394,10 +401,7 @@ const ProjectFilter = ({ projects }) => {
                       className='w-full h-full'
                       onClick={() => {
                         if (item.projects[2]) {
-                          console.log(item.projects[2]);
-                          router.push(
-                            `/interiors/draft/${item.projects[2].id}`
-                          );
+                          handleProjectClick(item.projects[2]);
                         }
                       }}
                     >
