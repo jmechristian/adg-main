@@ -12,6 +12,7 @@ import {
 } from '@jmechristian/adg-component-library';
 import '@jmechristian/adg-component-library/styles.css';
 import useLayoutStore from '@/store/useLayoutStore';
+import RelatedProjects from '@/components/RelatedProjects';
 
 // Skeleton component for loading state
 const ProjectSkeleton = () => {
@@ -220,6 +221,23 @@ const Page = () => {
           </div>
           <div className='text-brand-brown'>
             <MdArrowUpward size={20} />
+          </div>
+        </div>
+      </div>
+      <div className='w-full bg-brand-peach py-8'>
+        <div className='max-w-6xl mx-auto'>
+          <div className='flex flex-col gap-5'>
+            <div className='font-brand text-3xl text-brand-brown font-light'>
+              Related Projects
+            </div>
+            <RelatedProjects
+              id={
+                project && project.subcategories?.items[0].subcategory.id
+                  ? project.subcategories?.items[0].subcategory.id
+                  : null
+              }
+              currentId={project && project.id}
+            />
           </div>
         </div>
       </div>

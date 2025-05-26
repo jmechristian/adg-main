@@ -17,6 +17,7 @@ module.exports = {
         'brand-book-bold': 'Gotham Bold',
         'brand-medium': 'Gotham Medium',
         brand: 'calluna',
+        'brand-serif': 'calluna',
       },
     },
   },
