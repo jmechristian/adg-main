@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@jmechristian/adg-component-library": "^1.0.64",
+    "@jmechristian/adg-component-library": "^1.0.65",
     "aws-amplify": "^6.13.6",
     "mapbox-gl": "^3.12.0",
     "next": "15.2.3",
