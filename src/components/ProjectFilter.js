@@ -30,7 +30,13 @@ const ProjectFilter = ({ projects }) => {
     const fetchDepartments = async () => {
       const departments = await getDepartments();
       console.log('departments', departments);
-      setDepartments(departments);
+      setDepartments(
+        departments.filter(
+          (d) =>
+            d.id !== '763080b2-dddf-45e6-ab08-c540a84d8b07' &&
+            d.id !== '6cd6cac5-1533-45e3-8e9a-d4e1472def9a'
+        )
+      );
       setDepartmentFilters({
         id: '0cd75086-b396-4c52-a907-5b52fb6aeedd',
         name: 'Interiors',
@@ -164,7 +170,7 @@ const ProjectFilter = ({ projects }) => {
 
   return (
     <div className='w-full max-w-6xl mx-auto flex flex-col gap-10 pb-24'>
-      <div className='w-full flex items-center justify-between'>
+      <div className='w-full flex items-center gap-24'>
         {departments &&
           departments
             .sort((a, b) => a.displayOrder - b.displayOrder)
@@ -188,7 +194,7 @@ const ProjectFilter = ({ projects }) => {
               </div>
             ))}
       </div>
-      <div className='w-full flex items-center justify-between border-b border-neutral-200 relative'>
+      <div className='w-full flex items-center gap-10 border-b border-neutral-200 relative'>
         <div className='flex flex-1 items-center gap-6'>
           {subcategories &&
             subcategories

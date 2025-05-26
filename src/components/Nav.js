@@ -2,11 +2,12 @@
 import React from 'react';
 import useLayoutStore from '@/store/useLayoutStore';
 import { MdDehaze } from 'react-icons/md';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 const Nav = () => {
   const { isDarkNav } = useLayoutStore();
   const pathname = usePathname();
+  const router = useRouter();
   const links = [
     {
       label: 'Projects',
@@ -42,7 +43,10 @@ const Nav = () => {
             {link.label}
           </a>
         ))}
-        <div className='hidden lg:!block max-w-[120px]'>
+        <div
+          className='hidden lg:!block max-w-[120px]'
+          onClick={() => router.push('/')}
+        >
           {isDarkNav ? (
             <Image
               src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/dark-logo.png'
@@ -72,7 +76,10 @@ const Nav = () => {
             {link.label}
           </a>
         ))}
-        <div className='max-w-[90px] lg:!hidden'>
+        <div
+          className='max-w-[90px] lg:!hidden'
+          onClick={() => router.push('/')}
+        >
           {isDarkNav ? (
             <Image
               src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/dark-logo.png'

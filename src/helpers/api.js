@@ -252,11 +252,82 @@ export const getProjectById = async (id) => {
   return response.data.getProject;
 };
 
+export const getProjectsBySubcategory = async (subcategoryId) => {
+  const response = await client.graphql({
+    query: `query MyQuery($subcategorySubcategoryProjectsId: ID!) {
+      listSubcategoryProjects(
+        filter: {subcategorySubcategoryProjectsId: {eq: $subcategorySubcategoryProjectsId}}
+        limit: 500
+      ) {
+        items {
+          project {
+            departments {
+              items {
+                department {
+                  id
+                  name
+                }
+              }
+            }
+            gallery {
+              images {
+                items {
+                  alt
+                  caption
+                  centerX
+                  centerY
+                  id
+                  order
+                  url
+                  type
+                }
+              }
+            }
+            id
+            locationString
+            name
+            previewLocation
+            
+            slug
+            status
+            subcategories {
+              items {
+                subcategory {
+                  name
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }`,
+    variables: {
+      subcategorySubcategoryProjectsId: subcategoryId,
+    },
+  });
+  return response.data.listSubcategoryProjects.items;
+};
+
 export const getInquirePage = async () => {
   const res = await client.graphql({
     query: listInquirePages,
   });
   return res.data.listInquirePages.items[0];
+};
+
+export const getSubcategoryName = async (subcategoryId) => {
+  const res = await client.graphql({
+    query: `query MyQuery($subcategoryId: ID!) {
+      getSubcategory(id: $subcategoryId) {
+        name
+      }
+    }`,
+    variables: {
+      subcategoryId: subcategoryId,
+    },
+  });
+  return res.data.getSubcategory.name;
 };
 
 export const getStudioPage = async () => {

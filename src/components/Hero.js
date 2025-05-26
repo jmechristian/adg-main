@@ -1,9 +1,15 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import useLayoutStore from '@/store/useLayoutStore';
 const Hero = () => {
   const router = useRouter();
+  const { setDarkNavFalse } = useLayoutStore();
+  useEffect(() => {
+    setDarkNavFalse();
+  }, []);
+
   return (
     <div
       className='w-full h-screen bg-black bg-center relative bg-no-repeat bg-cover flex flex-col justify-between items-center'

@@ -191,7 +191,7 @@ const Page = () => {
             projectName={project.name}
           />
         )}
-      <div className='items-center justify-between flex max-w-6xl mx-auto pb-8 w-full'>
+      <div className='items-center justify-between flex max-w-6xl mx-auto py-8 w-full'>
         <div className='flex items-center gap-2'>
           <div
             className='cursor-pointer text-brand-brown'
@@ -201,14 +201,10 @@ const Page = () => {
           </div>
           <div
             className='text-brand-brown font-serif font-light uppercase tracking-wider cursor-pointer'
-            onClick={() =>
-              router.push(
-                `/projects/category/${project.subcategories?.items[0].subcategory.id}`
-              )
-            }
+            onClick={() => router.push('/branding')}
           >
             View All{' '}
-            {project && project.subcategories?.items[0].subcategory.name}
+            {project && project.subcategories?.items[0].subcategory.name}s
           </div>
         </div>
         <div

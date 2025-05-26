@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { getProjectById } from '@/helpers/api';
+import { useRouter } from 'next/navigation';
 import {
   HeadingHero,
   TwoColIntro,
@@ -10,6 +11,7 @@ import {
 } from '@jmechristian/adg-component-library';
 import '@jmechristian/adg-component-library/styles.css';
 import useLayoutStore from '@/store/useLayoutStore';
+import { MdKeyboardBackspace, MdArrowUpward } from 'react-icons/md';
 
 // Skeleton component for loading state
 const ProjectSkeleton = () => {
@@ -62,7 +64,7 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const { setDarkNavTrue } = useLayoutStore();
   const [modalImage, setModalImage] = useState({ open: false, index: null });
-
+  const router = useRouter();
   useEffect(() => {
     setDarkNavTrue();
   }, [setDarkNavTrue]);
@@ -175,6 +177,34 @@ const Page = () => {
             projectName={project.name}
           />
         )}
+      <div className='items-center justify-between flex max-w-6xl mx-auto py-8 w-full'>
+        <div className='flex items-center gap-2'>
+          <div
+            className='cursor-pointer text-brand-brown'
+            onClick={() => router.back()}
+          >
+            <MdKeyboardBackspace size={20} />
+          </div>
+          <div
+            className='text-brand-brown font-serif font-light uppercase tracking-wider cursor-pointer'
+            onClick={() => router.push('/branding')}
+          >
+            View All{' '}
+            {project && project.subcategories?.items[0].subcategory.name}
+          </div>
+        </div>
+        <div
+          className='flex items-center gap-2  cursor-pointer'
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <div className='text-brand-brown font-serif font-light uppercase tracking-wider'>
+            Back to Top
+          </div>
+          <div className='text-brand-brown'>
+            <MdArrowUpward size={20} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

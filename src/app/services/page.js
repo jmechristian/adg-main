@@ -1,6 +1,7 @@
 'use client';
 import { getServicesPage } from '@/helpers/api';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   OverlayHero,
   DepartmentSummary,
@@ -11,7 +12,7 @@ import { useState } from 'react';
 const Services = () => {
   const [servicesPage, setServicesPage] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
+  const router = useRouter();
   useEffect(() => {
     getServicesPage()
       .then(setServicesPage)
@@ -55,6 +56,9 @@ const Services = () => {
                   envision={department.envision.items}
                   design={department.design.items}
                   execute={department.execute.items}
+                  link={
+                    department.link ? () => router.push(department.link) : null
+                  }
                 />
                 <div className='h-px bg-brand-brown my-16'></div>
               </div>
