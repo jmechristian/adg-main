@@ -169,8 +169,8 @@ const ProjectFilter = ({ projects }) => {
   const hasMoreProjects = displayedProjects.length < filteredProjects.length;
 
   return (
-    <div className='w-full max-w-6xl mx-auto flex flex-col gap-10 pb-24'>
-      <div className='w-full flex items-center gap-24'>
+    <div className='w-full max-w-6xl mx-auto flex flex-col gap-2 pb-24'>
+      <div className='w-full flex items-center gap-6'>
         {departments &&
           departments
             .sort((a, b) => a.displayOrder - b.displayOrder)
@@ -194,8 +194,8 @@ const ProjectFilter = ({ projects }) => {
               </div>
             ))}
       </div>
-      <div className='w-full flex items-center gap-10 border-b border-neutral-200 relative'>
-        <div className='flex flex-1 items-center gap-6'>
+      <div className='w-full flex items-center gap-10 border-y border-neutral-200 relative'>
+        <div className='flex flex-1 items-center gap-5 mt-3'>
           {subcategories &&
             subcategories
               .sort((a, b) => {
@@ -229,21 +229,24 @@ const ProjectFilter = ({ projects }) => {
                 </div>
               ))}
         </div>
-        <div className='flex items-center gap-2 border-l border-neutral-200 pl-4 pb-2 pr-1'>
-          <div className='cursor-pointer'>
+        <div
+          className='flex items-center gap-2 border-l border-neutral-200 pl-4 pb-2 pr-1 h-full'
+          onClick={() => router.push('/map')}
+        >
+          <div className='cursor-pointer mt-3'>
             <Image
               src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-icon.png'
               alt='Filter'
-              width={28}
-              height={28}
+              width={24}
+              height={24}
             />
           </div>
-          <div className='cursor-pointer text-brand-brown font-brand-book font-light tracking-wide text-lg'>
+          <div className='cursor-pointer text-brand-brown font-brand-book font-light tracking-wide text-lg mt-3'>
             Map
           </div>
         </div>
       </div>
-      <div className='w-full flex flex-col gap-6'>
+      <div className='w-full flex flex-col gap-6 mt-8'>
         {(() => {
           const layout = [];
 

@@ -427,3 +427,47 @@ export const getServicesPage = async () => {
   });
   return res.data.listServicesPages.items;
 };
+
+export const listProjectsWithLocations = async () => {
+  const customQuery = `
+    query MyQuery {
+  listProjects(limit: 300, filter: {status: {eq: PUBLISHED}}) {
+    items {
+      departments {
+        items {
+          department {
+            id
+            name
+          }
+        }
+      }
+      gallery {
+        images(limit: 1) {
+          items {
+            url
+          }
+        }
+      }
+      locationString
+      name
+      size
+      status
+      description
+      location {
+        address
+            id
+            latitude
+            longitude
+            name
+          }
+        }
+      }
+    }
+  
+  `;
+
+  const locations = await client.graphql({
+    query: customQuery,
+  });
+  return locations.data.listProjects.items;
+};
