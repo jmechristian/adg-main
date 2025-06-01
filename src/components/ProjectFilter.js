@@ -10,17 +10,24 @@ import React, {
 import Image from 'next/image';
 import { getDepartments, getSubcategoriesByDepartment } from '@/helpers/api';
 import FilterItem from './FilterItem';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const ProjectFilter = ({ projects }) => {
   // console.log(projects);
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [departments, setDepartments] = useState([]);
-  const [departmentFilters, setDepartmentFilters] = useState([]);
+  const [departmentFilters, setDepartmentFilters] = useState(() => {
+    const deptId = searchParams.get('department');
+    return deptId ? { id: deptId } : null;
+  });
   const [locationFilters, setLocationFilters] = useState([]);
   const [typeFilters, setTypeFilters] = useState([]);
   const [subcategories, setSubcategories] = useState([]);
-  const [subcategoryFilters, setSubcategoryFilters] = useState(null);
+  const [subcategoryFilters, setSubcategoryFilters] = useState(() => {
+    const subId = searchParams.get('subcategory');
+    return subId ? { id: subId } : null;
+  });
   const [displayCount, setDisplayCount] = useState(12);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,18 +36,26 @@ const ProjectFilter = ({ projects }) => {
   useEffect(() => {
     const fetchDepartments = async () => {
       const departments = await getDepartments();
-      console.log('departments', departments);
-      setDepartments(
-        departments.filter(
-          (d) =>
-            d.id !== '763080b2-dddf-45e6-ab08-c540a84d8b07' &&
-            d.id !== '6cd6cac5-1533-45e3-8e9a-d4e1472def9a'
-        )
+      const filteredDepts = departments.filter(
+        (d) =>
+          d.id !== '763080b2-dddf-45e6-ab08-c540a84d8b07' &&
+          d.id !== '6cd6cac5-1533-45e3-8e9a-d4e1472def9a'
       );
-      setDepartmentFilters({
-        id: '0cd75086-b396-4c52-a907-5b52fb6aeedd',
-        name: 'Interiors',
-      });
+      setDepartments(filteredDepts);
+
+      // If we have a department ID from URL, find its name
+      if (departmentFilters?.id) {
+        const dept = filteredDepts.find((d) => d.id === departmentFilters.id);
+        if (dept) {
+          setDepartmentFilters({ id: dept.id, name: dept.name });
+        }
+      } else {
+        // Default to Interiors if no department in URL
+        setDepartmentFilters({
+          id: '0cd75086-b396-4c52-a907-5b52fb6aeedd',
+          name: 'Interiors',
+        });
+      }
     };
     fetchDepartments();
   }, []);
@@ -51,9 +66,45 @@ const ProjectFilter = ({ projects }) => {
         departmentFilters.id
       );
       setSubcategories(subcategories);
+
+      // If we have a subcategory ID from URL, find its name
+      if (subcategoryFilters?.id) {
+        const sub = subcategories.find(
+          (s) => s.subcategory.id === subcategoryFilters.id
+        );
+        if (sub) {
+          setSubcategoryFilters({
+            id: sub.subcategory.id,
+            name: sub.subcategory.name,
+          });
+        }
+      }
     };
     departmentFilters && departmentFilters.id && fetchSubcategories();
   }, [departmentFilters]);
+
+  const updateFilters = (dept, sub) => {
+    const params = new URLSearchParams();
+    if (dept?.id) params.set('department', dept.id);
+    if (sub?.id) params.set('subcategory', sub.id);
+
+    // Update URL without full page reload
+    router.push(`?${params.toString()}`, { scroll: false });
+
+    setDepartmentFilters(dept);
+    setSubcategoryFilters(sub);
+  };
+
+  const handleDepartmentClick = (department) => {
+    updateFilters({ id: department.id, name: department.name }, null);
+  };
+
+  const handleSubcategoryClick = (subcategory) => {
+    updateFilters(departmentFilters, {
+      id: subcategory.subcategory.id,
+      name: subcategory.subcategory.name,
+    });
+  };
 
   const filteredProjects = useMemo(() => {
     return projects
@@ -182,13 +233,7 @@ const ProjectFilter = ({ projects }) => {
                     : 'text-neutral-300'
                 } font-brand-book font-light tracking-wide uppercase text-2xl`}
                 key={department.id}
-                onClick={() => {
-                  setDepartmentFilters({
-                    id: department.id,
-                    name: department.name,
-                  });
-                  setSubcategoryFilters(null);
-                }}
+                onClick={() => handleDepartmentClick(department)}
               >
                 {department.name}
               </div>
@@ -199,15 +244,11 @@ const ProjectFilter = ({ projects }) => {
           {subcategories &&
             subcategories
               .sort((a, b) => {
-                // First sort by subcategory displayOrder
                 const aOrder =
                   a.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
                 const bOrder =
                   b.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
-                if (aOrder !== bOrder) {
-                  return aOrder - bOrder;
-                }
-                // If displayOrder is the same, sort alphabetically by name
+                if (aOrder !== bOrder) return aOrder - bOrder;
                 return a.subcategory.name.localeCompare(b.subcategory.name);
               })
               .map((subcategory) => (
@@ -218,12 +259,7 @@ const ProjectFilter = ({ projects }) => {
                       ? 'text-brand-brown after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[3px] after:bg-brand-brown'
                       : 'text-neutral-300'
                   } font-brand-book font-light tracking-wide text-lg pb-2`}
-                  onClick={() =>
-                    setSubcategoryFilters({
-                      id: subcategory.subcategory.id,
-                      name: subcategory.subcategory.name,
-                    })
-                  }
+                  onClick={() => handleSubcategoryClick(subcategory)}
                 >
                   {subcategory.subcategory.name}
                 </div>
