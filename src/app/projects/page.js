@@ -1,8 +1,9 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { getPublishedProjects } from '@/helpers/api';
 import useLayoutStore from '@/store/useLayoutStore';
 import ProjectFilter from '@/components/ProjectFilter';
+
 const Page = () => {
   const { isDarkNav, setDarkNavTrue } = useLayoutStore();
   const [projects, setProjects] = useState([]);
@@ -38,7 +39,13 @@ const Page = () => {
         </div>
       ) : (
         <div className='flex flex-col gap-4'>
-          <ProjectFilter projects={projects} />
+          <Suspense
+            fallback={
+              <div className='w-full h-96 bg-neutral-100 animate-pulse rounded-lg' />
+            }
+          >
+            <ProjectFilter projects={projects} />
+          </Suspense>
         </div>
       )}
     </div>
