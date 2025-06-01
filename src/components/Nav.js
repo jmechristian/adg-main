@@ -28,7 +28,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className='w-full pb-20 absolute top-0 left-0 z-50 pt-4 lg:pt-6 px-4 lg:px-0 '>
+    <nav className='w-full absolute top-0 left-0 z-50 pt-4 lg:pt-6 px-4 lg:px-0 '>
       <div className='w-full max-w-5xl mx-auto flex items-center justify-between'>
         {links.slice(0, 2).map((link) => (
           <a
