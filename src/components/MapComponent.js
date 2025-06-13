@@ -224,7 +224,14 @@ const MapComponent = ({ locations }) => {
               });
             }}
           >
-            {icon}
+            <div className='flex items-center justify-center'>
+              <div
+                className='w-10 h-10 bg-contain bg-center bg-no-repeat'
+                style={{
+                  backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-pin.png')`,
+                }}
+              ></div>
+            </div>
           </div>
         </Marker>
       );
@@ -261,36 +268,34 @@ const MapComponent = ({ locations }) => {
           </svg>
         </button>
         <div className='w-fit flex items-center gap-3 absolute top-4 right-4 z-10'>
-          <div className=' flex gap-1.5'>
-            <div
+          <div className='flex gap-1.5'>
+            {/* <div
               onClick={() => toggleFilter('Akres')}
               className='cursor-pointer'
             >
               <AkresIcon active={activeFilters.includes('akres')} />
-            </div>
+            </div> */}
             <div
               onClick={() => toggleFilter('interiors')}
-              className='cursor-pointer'
+              className='cursor-pointer bg-brand-gray text-white px-4 py-1 rounded-md flex items-center justify-center'
             >
-              <InteriorsIcon active={activeFilters.includes('interiors')} />
+              <div className='font-brand-serif text-base'>Interiors</div>
             </div>
             <div
               onClick={() => toggleFilter('Architecture')}
-              className='cursor-pointer'
+              className='cursor-pointer bg-brand-gray text-white px-4 py-1 rounded-md flex items-center justify-center'
             >
-              <ArchitectureIcon
-                active={activeFilters.includes('architecture')}
-              />
+              <div className='font-brand-serif text-base'>Architecture</div>
             </div>
             <div
               onClick={() => toggleFilter('Branding')}
-              className='cursor-pointer'
+              className='cursor-pointer bg-brand-gray text-white px-4 py-1 rounded-md flex items-center justify-center'
             >
-              <BrandingIcon active={activeFilters.includes('branding')} />
+              <div className='font-brand-serif text-base'>Branding</div>
             </div>
           </div>
           <button
-            className=' bg-white px-4 py-2 rounded-md shadow-md hover:bg-gray-100'
+            className=' bg-white px-4 py-1 rounded-md hover:bg-gray-100'
             onClick={() => {
               mapRef.current?.flyTo({
                 center: [initialView.longitude, initialView.latitude],
@@ -302,7 +307,7 @@ const MapComponent = ({ locations }) => {
               setViewState(initialView);
             }}
           >
-            Reset View
+            <div className='font-brand-serif text-base'>Reset View</div>
           </button>
         </div>
         {markers}
