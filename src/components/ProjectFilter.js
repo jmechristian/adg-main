@@ -333,134 +333,153 @@ const ProjectFilter = ({ projects }) => {
           }
 
           return layout.map((item, index) => {
-            if (item.type === 'grid1') {
-              return (
-                <div
-                  key={`grid1-${index}`}
-                  className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
-                >
-                  <div className='w-full col-span-8 h-full'>
-                    <div
-                      className='w-full h-full'
-                      onClick={() => {
-                        if (item.projects[0]) {
+            // Mobile layout - single column
+            const mobileLayout = (
+              <div
+                key={`mobile-${index}`}
+                className='md:hidden flex flex-col gap-6'
+              >
+                {item.projects.map(
+                  (project, pIndex) =>
+                    project && (
+                      <div
+                        key={`mobile-project-${pIndex}`}
+                        className='w-full aspect-video'
+                        onClick={() => handleProjectClick(project)}
+                      >
+                        <FilterItem project={project} />
+                      </div>
+                    )
+                )}
+              </div>
+            );
+
+            // Desktop/tablet layout
+            const desktopLayout = (
+              <div key={`desktop-${index}`} className='hidden md:block'>
+                {item.type === 'grid1' && (
+                  <div className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'>
+                    <div className='w-full col-span-8 h-full'>
+                      <div
+                        className='w-full h-full'
+                        onClick={() => {
+                          if (item.projects[0]) {
+                            handleProjectClick(item.projects[0]);
+                          }
+                        }}
+                      >
+                        {item.projects[0] ? (
+                          <FilterItem project={item.projects[0]} />
+                        ) : (
+                          <div className='w-full h-full bg-white'></div>
+                        )}
+                      </div>
+                    </div>
+                    <div className='w-full col-span-4 flex flex-col gap-6'>
+                      <div
+                        className='w-full aspect-video'
+                        onClick={() => {
+                          if (item.projects[1]) {
+                            handleProjectClick(item.projects[1]);
+                          }
+                        }}
+                      >
+                        {item.projects[1] ? (
+                          <FilterItem project={item.projects[1]} />
+                        ) : (
+                          <div className='w-full h-full bg-white'></div>
+                        )}
+                      </div>
+                      <div
+                        className='w-full aspect-video'
+                        onClick={() => {
+                          if (item.projects[2]) {
+                            handleProjectClick(item.projects[2]);
+                          }
+                        }}
+                      >
+                        {item.projects[2] ? (
+                          <FilterItem project={item.projects[2]} />
+                        ) : (
+                          <div className='w-full h-full bg-white'></div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {item.type === 'full' && (
+                  <div className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'>
+                    <div className='w-full col-span-12'>
+                      <div
+                        className='w-full h-full aspect-[6/3]'
+                        onClick={() => {
                           handleProjectClick(item.projects[0]);
-                        }
-                      }}
-                    >
-                      {item.projects[0] ? (
+                        }}
+                      >
                         <FilterItem project={item.projects[0]} />
-                      ) : (
-                        <div className='w-full h-full bg-white'></div>
-                      )}
+                      </div>
                     </div>
                   </div>
-                  <div className='w-full col-span-4 flex flex-col gap-6'>
-                    <div
-                      className='w-full aspect-video'
-                      onClick={() => {
-                        if (item.projects[1]) {
-                          handleProjectClick(item.projects[1]);
-                        }
-                      }}
-                    >
-                      {item.projects[1] ? (
-                        <FilterItem project={item.projects[1]} />
-                      ) : (
-                        <div className='w-full h-full bg-white'></div>
-                      )}
+                )}
+                {item.type === 'grid2' && (
+                  <div className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'>
+                    <div className='w-full col-span-4 flex flex-col gap-6'>
+                      <div
+                        className='w-full aspect-video'
+                        onClick={() => {
+                          if (item.projects[0]) {
+                            handleProjectClick(item.projects[0]);
+                          }
+                        }}
+                      >
+                        {item.projects[0] ? (
+                          <FilterItem project={item.projects[0]} />
+                        ) : (
+                          <div className='w-full h-full bg-white'></div>
+                        )}
+                      </div>
+                      <div
+                        className='w-full aspect-video'
+                        onClick={() => {
+                          if (item.projects[1]) {
+                            handleProjectClick(item.projects[1]);
+                          }
+                        }}
+                      >
+                        {item.projects[1] ? (
+                          <FilterItem project={item.projects[1]} />
+                        ) : (
+                          <div className='w-full h-full bg-white'></div>
+                        )}
+                      </div>
                     </div>
-                    <div
-                      className='w-full aspect-video'
-                      onClick={() => {
-                        if (item.projects[2]) {
-                          handleProjectClick(item.projects[2]);
-                        }
-                      }}
-                    >
-                      {item.projects[2] ? (
-                        <FilterItem project={item.projects[2]} />
-                      ) : (
-                        <div className='w-full h-full bg-white'></div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            } else if (item.type === 'full') {
-              return (
-                <div
-                  key={`full-${index}`}
-                  className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
-                >
-                  <div className='w-full col-span-12'>
-                    <div
-                      className='w-full h-full aspect-[6/3]'
-                      onClick={() => {
-                        handleProjectClick(item.projects[0]);
-                      }}
-                    >
-                      <FilterItem project={item.projects[0]} />
-                    </div>
-                  </div>
-                </div>
-              );
-            } else if (item.type === 'grid2') {
-              return (
-                <div
-                  key={`grid2-${index}`}
-                  className='w-full grid md:grid-cols-2 lg:grid-cols-12 gap-6'
-                >
-                  <div className='w-full col-span-4 flex flex-col gap-6'>
-                    <div
-                      className='w-full aspect-video'
-                      onClick={() => {
-                        if (item.projects[0]) {
-                          handleProjectClick(item.projects[0]);
-                        }
-                      }}
-                    >
-                      {item.projects[0] ? (
-                        <FilterItem project={item.projects[0]} />
-                      ) : (
-                        <div className='w-full h-full bg-white'></div>
-                      )}
-                    </div>
-                    <div
-                      className='w-full aspect-video'
-                      onClick={() => {
-                        if (item.projects[1]) {
-                          handleProjectClick(item.projects[1]);
-                        }
-                      }}
-                    >
-                      {item.projects[1] ? (
-                        <FilterItem project={item.projects[1]} />
-                      ) : (
-                        <div className='w-full h-full bg-white'></div>
-                      )}
+                    <div className='w-full col-span-8 h-full'>
+                      <div
+                        className='w-full h-full'
+                        onClick={() => {
+                          if (item.projects[2]) {
+                            handleProjectClick(item.projects[2]);
+                          }
+                        }}
+                      >
+                        {item.projects[2] ? (
+                          <FilterItem project={item.projects[2]} />
+                        ) : (
+                          <div className='w-full h-full bg-white'></div>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className='w-full col-span-8 h-full'>
-                    <div
-                      className='w-full h-full'
-                      onClick={() => {
-                        if (item.projects[2]) {
-                          handleProjectClick(item.projects[2]);
-                        }
-                      }}
-                    >
-                      {item.projects[2] ? (
-                        <FilterItem project={item.projects[2]} />
-                      ) : (
-                        <div className='w-full h-full bg-white'></div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-            return null;
+                )}
+              </div>
+            );
+
+            return (
+              <div key={`layout-${index}`}>
+                {mobileLayout}
+                {desktopLayout}
+              </div>
+            );
           });
         })()}
         {hasMoreProjects && (
