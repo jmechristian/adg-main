@@ -100,10 +100,15 @@ const ProjectFilter = ({ projects }) => {
   };
 
   const handleSubcategoryClick = (subcategory) => {
-    updateFilters(departmentFilters, {
-      id: subcategory.subcategory.id,
-      name: subcategory.subcategory.name,
-    });
+    updateFilters(
+      departmentFilters,
+      subcategory
+        ? {
+            id: subcategory.subcategory.id,
+            name: subcategory.subcategory.name,
+          }
+        : null
+    );
   };
 
   const filteredProjects = useMemo(() => {
@@ -221,64 +226,156 @@ const ProjectFilter = ({ projects }) => {
 
   return (
     <div className='w-full max-w-6xl mx-auto flex flex-col gap-2 pb-24'>
-      <div className='w-full flex items-center gap-6'>
-        {departments &&
-          departments
-            .sort((a, b) => a.displayOrder - b.displayOrder)
-            .map((department) => (
-              <div
-                className={`cursor-pointer ${
-                  departmentFilters.id === department.id
-                    ? 'text-brand-brown'
-                    : 'text-neutral-300'
-                } font-brand-book font-light tracking-wide uppercase text-2xl`}
-                key={department.id}
-                onClick={() => handleDepartmentClick(department)}
-              >
-                {department.name}
-              </div>
-            ))}
-      </div>
-      <div className='w-full flex items-center gap-10 border-y border-neutral-200 relative'>
-        <div className='flex flex-1 items-center gap-5 mt-3'>
-          {subcategories &&
-            subcategories
-              .sort((a, b) => {
-                const aOrder =
-                  a.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
-                const bOrder =
-                  b.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
-                if (aOrder !== bOrder) return aOrder - bOrder;
-                return a.subcategory.name.localeCompare(b.subcategory.name);
-              })
-              .map((subcategory) => (
-                <div
-                  key={subcategory.id}
-                  className={`cursor-pointer relative ${
-                    subcategoryFilters?.id === subcategory.subcategory.id
-                      ? 'text-brand-brown after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[3px] after:bg-brand-brown'
-                      : 'text-neutral-300'
-                  } font-brand-book font-light tracking-wide text-lg pb-2`}
-                  onClick={() => handleSubcategoryClick(subcategory)}
-                >
-                  {subcategory.subcategory.name}
-                </div>
-              ))}
-        </div>
-        <div
-          className='flex items-center gap-2 border-l border-neutral-200 pl-4 pb-2 pr-1 h-full'
-          onClick={() => router.push('/map')}
-        >
-          <div className='cursor-pointer mt-3'>
+      <div className='w-full flex flex-col gap-6'>
+        {/* Mobile Dropdowns */}
+        <div className='md:hidden flex flex-col gap-4 px-4'>
+          <select
+            className='w-full p-3 border border-neutral-200 rounded-md font-brand-book text-lg'
+            value={departmentFilters?.id || ''}
+            onChange={(e) => {
+              const selectedDept = departments.find(
+                (d) => d.id === e.target.value
+              );
+              if (selectedDept) {
+                handleDepartmentClick(selectedDept);
+              }
+            }}
+          >
+            <option value=''>Select Department</option>
+            {departments &&
+              departments
+                .sort((a, b) => a.displayOrder - b.displayOrder)
+                .map((department) => (
+                  <option key={department.id} value={department.id}>
+                    {department.name}
+                  </option>
+                ))}
+          </select>
+
+          <select
+            className='w-full p-3 border border-neutral-200 rounded-md font-brand-book text-lg'
+            value={subcategoryFilters?.id || ''}
+            onChange={(e) => {
+              if (e.target.value === '') {
+                handleSubcategoryClick(null);
+              } else {
+                const selectedSub = subcategories.find(
+                  (s) => s.subcategory.id === e.target.value
+                );
+                if (selectedSub) {
+                  handleSubcategoryClick(selectedSub);
+                }
+              }
+            }}
+            disabled={!departmentFilters?.id}
+          >
+            <option value=''>All</option>
+            {subcategories &&
+              subcategories
+                .sort((a, b) => {
+                  const aOrder =
+                    a.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
+                  const bOrder =
+                    b.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
+                  if (aOrder !== bOrder) return aOrder - bOrder;
+                  return a.subcategory.name.localeCompare(b.subcategory.name);
+                })
+                .map((subcategory) => (
+                  <option
+                    key={subcategory.subcategory.id}
+                    value={subcategory.subcategory.id}
+                  >
+                    {subcategory.subcategory.name}
+                  </option>
+                ))}
+          </select>
+
+          <button
+            className='w-full flex items-center justify-center gap-2 p-3 border border-neutral-200 rounded-md font-brand-book text-lg text-brand-brown'
+            onClick={() => router.push('/map')}
+          >
             <Image
               src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-icon.png'
-              alt='Filter'
+              alt='Map'
               width={24}
               height={24}
             />
+            <span>View Map</span>
+          </button>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className='hidden md:block'>
+          <div className='w-full flex items-center gap-6 mb-1.5'>
+            {departments &&
+              departments
+                .sort((a, b) => a.displayOrder - b.displayOrder)
+                .map((department) => (
+                  <div
+                    className={`cursor-pointer ${
+                      departmentFilters.id === department.id
+                        ? 'text-brand-brown'
+                        : 'text-neutral-300'
+                    } font-brand-book font-light tracking-wide uppercase text-2xl`}
+                    key={department.id}
+                    onClick={() => handleDepartmentClick(department)}
+                  >
+                    {department.name}
+                  </div>
+                ))}
           </div>
-          <div className='cursor-pointer text-brand-brown font-brand-book font-light tracking-wide text-lg mt-3'>
-            Map
+          <div className='w-full flex items-center gap-10 border-y border-neutral-200 relative'>
+            <div className='flex flex-1 items-center gap-5 mt-3'>
+              <div
+                className={`cursor-pointer relative ${
+                  !subcategoryFilters?.id
+                    ? 'text-brand-brown after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[3px] after:bg-brand-brown'
+                    : 'text-neutral-300'
+                } font-brand-book font-light tracking-wide text-lg pb-2`}
+                onClick={() => handleSubcategoryClick(null)}
+              >
+                All
+              </div>
+              {subcategories &&
+                subcategories
+                  .sort((a, b) => {
+                    const aOrder =
+                      a.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
+                    const bOrder =
+                      b.subcategory.displayOrder ?? Number.MAX_SAFE_INTEGER;
+                    if (aOrder !== bOrder) return aOrder - bOrder;
+                    return a.subcategory.name.localeCompare(b.subcategory.name);
+                  })
+                  .map((subcategory) => (
+                    <div
+                      key={subcategory.id}
+                      className={`cursor-pointer relative ${
+                        subcategoryFilters?.id === subcategory.subcategory.id
+                          ? 'text-brand-brown after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[3px] after:bg-brand-brown'
+                          : 'text-neutral-300'
+                      } font-brand-book font-light tracking-wide text-lg pb-2`}
+                      onClick={() => handleSubcategoryClick(subcategory)}
+                    >
+                      {subcategory.subcategory.name}
+                    </div>
+                  ))}
+            </div>
+            <div
+              className='flex items-center gap-2 border-l border-neutral-200 pl-4 pb-2 pr-1 h-full'
+              onClick={() => router.push('/map')}
+            >
+              <div className='cursor-pointer mt-3'>
+                <Image
+                  src='https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-icon.png'
+                  alt='Filter'
+                  width={24}
+                  height={24}
+                />
+              </div>
+              <div className='cursor-pointer text-brand-brown font-brand-book font-light tracking-wide text-lg mt-3'>
+                Map
+              </div>
+            </div>
           </div>
         </div>
       </div>
