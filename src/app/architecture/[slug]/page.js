@@ -162,7 +162,9 @@ const Page = () => {
               images={project.gallery.images.items
                 .sort((a, b) => (a.order || 0) - (b.order || 0))
                 .slice(1)}
-              setModalImage={() => {}}
+              setModalImage={(imageId) => {
+                handleModalImage(imageId);
+              }}
             />
           </div>
         )
