@@ -180,7 +180,7 @@ const Page = () => {
             projectName={project.name}
           />
         )}
-      <div className='items-center justify-between flex max-w-6xl mx-auto pb-8 w-full'>
+      <div className='items-center justify-between flex max-w-6xl mx-auto pb-8 w-full px-4 lg:px-0'>
         <div className='flex items-center gap-2'>
           <div
             className='cursor-pointer text-brand-brown'

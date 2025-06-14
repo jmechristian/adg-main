@@ -92,7 +92,7 @@ const RelatedProjects = ({ id, currentId }) => {
         <div className='w-full grid grid-cols-3 gap-6'>
           {getCurrentPageProjects().map((project) => (
             <div
-              key={project.id}
+              key={project.project.id}
               className='w-full aspect-video cursor-pointer'
               onClick={() => handleProjectClick(project.project)}
             >
