@@ -6,6 +6,7 @@ import AkresIcon from './shared/AkresIcon';
 import InteriorsIcon from './shared/InteriorsIcon';
 import ArchitectureIcon from './shared/ArchitectureIcon';
 import BrandingIcon from './shared/BrandingIcon';
+import { useRouter } from 'next/navigation';
 
 const LocationSidebar = ({
   isSidebarOpen,
@@ -118,22 +119,47 @@ const MapComponent = ({ locations }) => {
     }
   };
 
-  const LocationModal = ({ location, onClose }) => (
-    <div
-      className={`absolute w-[550px] flex items-center ${
-        isSidebarOpen ? 'right-10' : 'left-10'
-      } z-50`}
-    >
-      <div className='bg-white rounded-lg p-6 min-w-96 max-w-lg w-full'>
-        <div className='space-y-3'>
-          <div className='flex justify-between items-center pb-3 border-b border-gray-300'>
-            <div className='flex flex-col gap-0'>
-              <div className='text-sm text-gray-500'>
-                {location.departments.items[0].department.name}
+  const LocationModal = ({ location, onClose }) => {
+    const router = useRouter();
+    const handleProjectClick = (project) => {
+      switch (project.departments.items[0].department.id) {
+        case '0cd75086-b396-4c52-a907-5b52fb6aeedd':
+          router.push(`/interiors/${project.id}`);
+          break;
+        case '0e20ac00-ec5f-464a-86d3-61ddc90e9aa7':
+          router.push(`/architecture/${project.id}`);
+          break;
+        case '4dfd71af-51a3-4af9-874f-da260e081f08':
+          router.push(`/branding/${project.id}`);
+          break;
+        case '6cd6cac5-1533-45e3-8e9a-d4e1472def9a':
+          router.push(`/residential/${project.id}`);
+          break;
+        case '763080b2-dddf-45e6-ab08-c540a84d8b07':
+          router.push(`/millwork/${project.id}`);
+          break;
+        default:
+          router.push(`/interiors/${project.id}`);
+          break;
+      }
+    };
+
+    return (
+      <div
+        className={`absolute w-[550px] flex items-center ${
+          isSidebarOpen ? 'right-10' : 'left-10'
+        } z-50`}
+      >
+        <div className='bg-white rounded-lg p-6 min-w-96 max-w-lg w-full'>
+          <div className='space-y-3'>
+            <div className='flex justify-between items-center pb-3 border-b border-gray-300'>
+              <div className='flex flex-col gap-0'>
+                <div className='text-sm text-gray-500'>
+                  {location.departments.items[0].department.name}
+                </div>
+                <h2 className='text-xl font-bold'>{location.name}</h2>
               </div>
-              <h2 className='text-xl font-bold'>{location.name}</h2>
-            </div>
-            <div>
+              {/* <div>
               {location.status === 'DRAFT' ? (
                 <div className='text-sm text-gray-600 bg-yellow-200 py-2 px-4 rounded-md font-brand-bold uppercase'>
                   Draft
@@ -143,35 +169,37 @@ const MapComponent = ({ locations }) => {
                   Active
                 </div>
               )}
+            </div> */}
             </div>
-          </div>
 
-          <div className='flex flex-col gap-1 mt-2'>
-            <span className='font-brand-bold text-xs text-gray-500'>
+            <div className='flex flex-col gap-1 mt-2'>
+              {/* <span className='font-brand-bold text-xs text-gray-500'>
               Address:
-            </span>{' '}
-            <span className='text-sm'>
+            </span>{' '} */}
+              {/* <span className='text-sm'>
               {location.location.address || 'N/A'}
-            </span>
-          </div>
-          <div className='text-sm line-clamp-6 mb-3'>
-            {location.description}
-          </div>
-          <div className='flex items-center gap-5 justify-end pt-3 border-t border-gray-300'>
-            <div
-              className='text-sm text-gray-700 cursor-pointer'
-              onClick={onClose}
-            >
-              Close
+            </span> */}
             </div>
-            <div className='text-sm  bg-brand text-white py-2 px-4 rounded-md'>
-              Edit Project
+            <div className='text-sm mb-3'>{location.description}</div>
+            <div className='flex items-center gap-5 justify-end pt-3 border-t border-gray-300'>
+              <div
+                className='text-sm text-gray-700 cursor-pointer'
+                onClick={onClose}
+              >
+                Close
+              </div>
+              <div
+                className='text-sm  bg-brand-gray text-white py-2 px-4 rounded-md'
+                onClick={() => handleProjectClick(location)}
+              >
+                View Project
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const filteredLocations = useMemo(() => {
     let filtered = locations;

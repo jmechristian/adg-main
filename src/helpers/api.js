@@ -433,6 +433,7 @@ export const listProjectsWithLocations = async () => {
     query MyQuery {
   listProjects(limit: 300, filter: {status: {eq: PUBLISHED}}) {
     items {
+      id
       departments {
         items {
           department {
