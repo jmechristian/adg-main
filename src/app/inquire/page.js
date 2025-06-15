@@ -190,7 +190,7 @@ const Inquire = () => {
           </div>
         </div>
         <div className='w-full bg-brand-light-peach py-16'>
-          <div className='grid grid-cols-12 gap-4'>
+          <div className='lg:!grid lg:!grid-cols-12 gap-4 flex flex-col px-4 lg:!px-0'>
             <div className='col-span-4'>
               <div className='flex flex-col gap-4 max-w-sm mx-auto'>
                 <div className='text-4xl font-serif'>Inquire</div>
@@ -200,7 +200,7 @@ const Inquire = () => {
               </div>
             </div>
 
-            <div className='col-span-8 w-full px-16'>
+            <div className='col-span-8 w-full lg:!px-16'>
               <div className=' grid grid-cols-2 gap-10'>
                 <div className='flex flex-col gap-3'>
                   <div className='text-brand-brown font-brand-book uppercase'>
