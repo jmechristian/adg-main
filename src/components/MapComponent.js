@@ -6,6 +6,7 @@ import AkresIcon from './shared/AkresIcon';
 import InteriorsIcon from './shared/InteriorsIcon';
 import ArchitectureIcon from './shared/ArchitectureIcon';
 import BrandingIcon from './shared/BrandingIcon';
+import MapPin from './shared/MapPin';
 import { useRouter } from 'next/navigation';
 
 const LocationSidebar = ({
@@ -254,12 +255,7 @@ const MapComponent = ({ locations }) => {
             }}
           >
             <div className='flex items-center justify-center'>
-              <div
-                className='w-12 h-12 bg-contain bg-center bg-no-repeat'
-                style={{
-                  backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-pin.png')`,
-                }}
-              ></div>
+              <MapPin />
             </div>
           </div>
         </Marker>
