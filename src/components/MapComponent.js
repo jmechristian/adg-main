@@ -82,7 +82,7 @@ const MapComponent = ({ locations }) => {
     longitude: -77.04450762033883,
     latitude: 38.899095654430454,
     zoom: 12.12900133803287,
-    pitch: 60,
+    pitch: 65,
     bearing: 0,
   };
 
@@ -231,6 +231,7 @@ const MapComponent = ({ locations }) => {
           key={location.location.id}
           longitude={location.location.longitude}
           latitude={location.location.latitude}
+          anchor='bottom'
         >
           <div
             onClick={(e) => {
