@@ -78,10 +78,11 @@ const LocationSidebar = ({
 
 const MapComponent = ({ locations }) => {
   const initialView = {
-    longitude: -77.0307193335218,
-    latitude: 38.87225889119998,
-    zoom: 12,
+    longitude: -77.04450762033883,
+    latitude: 38.899095654430454,
+    zoom: 12.12900133803287,
     pitch: 60,
+    bearing: 0,
   };
 
   const [viewState, setViewState] = useState(initialView);
@@ -254,7 +255,7 @@ const MapComponent = ({ locations }) => {
           >
             <div className='flex items-center justify-center'>
               <div
-                className='w-10 h-10 bg-contain bg-center bg-no-repeat'
+                className='w-12 h-12 bg-contain bg-center bg-no-repeat'
                 style={{
                   backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/map-pin.png')`,
                 }}
@@ -271,7 +272,10 @@ const MapComponent = ({ locations }) => {
       <Map
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
         initialViewState={viewState}
-        onMove={(evt) => setViewState(evt.viewState)}
+        onMove={(evt) => {
+          setViewState(evt.viewState);
+          // console.log(evt.viewState);
+        }}
         style={{ width: '100%', height: '100%' }}
         mapStyle='mapbox://styles/adg-branding/cl47jmywy003p15rmjzucu62i'
         ref={mapRef}
