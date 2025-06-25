@@ -5,6 +5,7 @@ import {
   listDepartments,
   listDepartmentSubcategories,
   listInquirePages,
+  getHomePageFeature,
 } from '@/graphql/queries';
 
 // Handle both development and production environments
@@ -471,4 +472,58 @@ export const listProjectsWithLocations = async () => {
     query: customQuery,
   });
   return locations.data.listProjects.items;
+};
+
+export const getHomePage = async () => {
+  const customQuery = `
+    query MyQuery {
+      listHomePages {
+    items {
+      hero
+      heroQuote
+      id
+      introText
+      studioImage
+      studioLink
+      studioText
+      title
+      features {
+        items {
+          callout
+          homePageFeaturesId
+          id
+          image
+          link
+          linkText
+          order
+          title
+        }
+      }
+      featureProjects {
+      items {
+        id
+        order
+        projectImage
+        projectLink
+        projectLocation
+        projectTitle
+      }
+    }
+    }
+  }
+    }
+  `;
+
+  const res = await client.graphql({
+    query: customQuery,
+  });
+  return res.data.listHomePages.items[0];
+};
+
+export const getHomePageFeatureItem = async ({ id }) => {
+  const res = await client.graphql({
+    query: getHomePageFeature,
+    variables: { id: id },
+  });
+  return res.data.getHomePageFeature;
 };

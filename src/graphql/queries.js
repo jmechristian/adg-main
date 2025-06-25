@@ -6766,6 +6766,187 @@ export const listInquirePages = /* GraphQL */ `
     }
   }
 `;
+export const getHomePageFeature = /* GraphQL */ `
+  query GetHomePageFeature($id: ID!) {
+    getHomePageFeature(id: $id) {
+      id
+      title
+      image
+      link
+      linkText
+      callout
+      order
+      createdAt
+      updatedAt
+      homePageFeaturesId
+    }
+  }
+`;
+export const listHomePageFeatures = /* GraphQL */ `
+  query ListHomePageFeatures(
+    $filter: ModelHomePageFeatureFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHomePageFeatures(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        image
+        link
+        linkText
+        callout
+        order
+        createdAt
+        updatedAt
+        homePageFeaturesId
+      }
+      nextToken
+    }
+  }
+`;
+export const getHomePage = /* GraphQL */ `
+  query GetHomePage($id: ID!) {
+    getHomePage(id: $id) {
+      id
+      title
+      hero
+      heroQuote
+      introText
+      features {
+        items {
+          id
+          title
+          image
+          link
+          linkText
+          callout
+          order
+          createdAt
+          updatedAt
+          homePageFeaturesId
+        }
+        nextToken
+      }
+      featureProjects {
+        items {
+          id
+          projectTitle
+          projectLink
+          projectImage
+          projectLocation
+          order
+          createdAt
+          updatedAt
+          homePageFeatureProjectsId
+        }
+        nextToken
+      }
+      studioText
+      studioLink
+      studioImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listHomePages = /* GraphQL */ `
+  query ListHomePages(
+    $filter: ModelHomePageFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHomePages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        hero
+        heroQuote
+        introText
+        features {
+          items {
+            id
+            title
+            image
+            link
+            linkText
+            callout
+            order
+            createdAt
+            updatedAt
+            homePageFeaturesId
+          }
+          nextToken
+        }
+        featureProjects {
+          items {
+            id
+            projectTitle
+            projectLink
+            projectImage
+            projectLocation
+            order
+            createdAt
+            updatedAt
+            homePageFeatureProjectsId
+          }
+          nextToken
+        }
+        studioText
+        studioLink
+        studioImage
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getHomePageFeatureProject = /* GraphQL */ `
+  query GetHomePageFeatureProject($id: ID!) {
+    getHomePageFeatureProject(id: $id) {
+      id
+      projectTitle
+      projectLink
+      projectImage
+      projectLocation
+      order
+      createdAt
+      updatedAt
+      homePageFeatureProjectsId
+    }
+  }
+`;
+export const listHomePageFeatureProjects = /* GraphQL */ `
+  query ListHomePageFeatureProjects(
+    $filter: ModelHomePageFeatureProjectFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHomePageFeatureProjects(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        projectTitle
+        projectLink
+        projectImage
+        projectLocation
+        order
+        createdAt
+        updatedAt
+        homePageFeatureProjectsId
+      }
+      nextToken
+    }
+  }
+`;
 export const getProjectDepartments = /* GraphQL */ `
   query GetProjectDepartments($id: ID!) {
     getProjectDepartments(id: $id) {

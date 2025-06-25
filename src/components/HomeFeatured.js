@@ -3,7 +3,7 @@ import React from 'react';
 
 const HomeFeatured = () => {
   return (
-    <div className='w-full bg-brand-peach grid grid-cols-12'>
+    <div className='w-full bg-brand-peach grid grid-cols-12 max-w-[2000px] mx-auto'>
       <div
         className='col-span-12 md:col-span-7 h-full w-full bg-cover bg-center'
         style={{

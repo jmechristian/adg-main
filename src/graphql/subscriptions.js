@@ -13840,6 +13840,234 @@ export const onDeleteInquirePage = /* GraphQL */ `
     }
   }
 `;
+export const onCreateHomePageFeature = /* GraphQL */ `
+  subscription OnCreateHomePageFeature {
+    onCreateHomePageFeature {
+      id
+      title
+      image
+      link
+      linkText
+      callout
+      order
+      createdAt
+      updatedAt
+      homePageFeaturesId
+    }
+  }
+`;
+export const onUpdateHomePageFeature = /* GraphQL */ `
+  subscription OnUpdateHomePageFeature {
+    onUpdateHomePageFeature {
+      id
+      title
+      image
+      link
+      linkText
+      callout
+      order
+      createdAt
+      updatedAt
+      homePageFeaturesId
+    }
+  }
+`;
+export const onDeleteHomePageFeature = /* GraphQL */ `
+  subscription OnDeleteHomePageFeature {
+    onDeleteHomePageFeature {
+      id
+      title
+      image
+      link
+      linkText
+      callout
+      order
+      createdAt
+      updatedAt
+      homePageFeaturesId
+    }
+  }
+`;
+export const onCreateHomePage = /* GraphQL */ `
+  subscription OnCreateHomePage {
+    onCreateHomePage {
+      id
+      title
+      hero
+      heroQuote
+      introText
+      features {
+        items {
+          id
+          title
+          image
+          link
+          linkText
+          callout
+          order
+          createdAt
+          updatedAt
+          homePageFeaturesId
+        }
+        nextToken
+      }
+      featureProjects {
+        items {
+          id
+          projectTitle
+          projectLink
+          projectImage
+          projectLocation
+          order
+          createdAt
+          updatedAt
+          homePageFeatureProjectsId
+        }
+        nextToken
+      }
+      studioText
+      studioLink
+      studioImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateHomePage = /* GraphQL */ `
+  subscription OnUpdateHomePage {
+    onUpdateHomePage {
+      id
+      title
+      hero
+      heroQuote
+      introText
+      features {
+        items {
+          id
+          title
+          image
+          link
+          linkText
+          callout
+          order
+          createdAt
+          updatedAt
+          homePageFeaturesId
+        }
+        nextToken
+      }
+      featureProjects {
+        items {
+          id
+          projectTitle
+          projectLink
+          projectImage
+          projectLocation
+          order
+          createdAt
+          updatedAt
+          homePageFeatureProjectsId
+        }
+        nextToken
+      }
+      studioText
+      studioLink
+      studioImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteHomePage = /* GraphQL */ `
+  subscription OnDeleteHomePage {
+    onDeleteHomePage {
+      id
+      title
+      hero
+      heroQuote
+      introText
+      features {
+        items {
+          id
+          title
+          image
+          link
+          linkText
+          callout
+          order
+          createdAt
+          updatedAt
+          homePageFeaturesId
+        }
+        nextToken
+      }
+      featureProjects {
+        items {
+          id
+          projectTitle
+          projectLink
+          projectImage
+          projectLocation
+          order
+          createdAt
+          updatedAt
+          homePageFeatureProjectsId
+        }
+        nextToken
+      }
+      studioText
+      studioLink
+      studioImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateHomePageFeatureProject = /* GraphQL */ `
+  subscription OnCreateHomePageFeatureProject {
+    onCreateHomePageFeatureProject {
+      id
+      projectTitle
+      projectLink
+      projectImage
+      projectLocation
+      order
+      createdAt
+      updatedAt
+      homePageFeatureProjectsId
+    }
+  }
+`;
+export const onUpdateHomePageFeatureProject = /* GraphQL */ `
+  subscription OnUpdateHomePageFeatureProject {
+    onUpdateHomePageFeatureProject {
+      id
+      projectTitle
+      projectLink
+      projectImage
+      projectLocation
+      order
+      createdAt
+      updatedAt
+      homePageFeatureProjectsId
+    }
+  }
+`;
+export const onDeleteHomePageFeatureProject = /* GraphQL */ `
+  subscription OnDeleteHomePageFeatureProject {
+    onDeleteHomePageFeatureProject {
+      id
+      projectTitle
+      projectLink
+      projectImage
+      projectLocation
+      order
+      createdAt
+      updatedAt
+      homePageFeatureProjectsId
+    }
+  }
+`;
 export const onCreateProjectDepartments = /* GraphQL */ `
   subscription OnCreateProjectDepartments {
     onCreateProjectDepartments {

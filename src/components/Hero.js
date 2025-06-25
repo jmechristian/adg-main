@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import useLayoutStore from '@/store/useLayoutStore';
-const Hero = () => {
+const Hero = ({ hero, heroQuote, id }) => {
   const router = useRouter();
   const { setDarkNavFalse } = useLayoutStore();
   useEffect(() => {
@@ -14,16 +14,15 @@ const Hero = () => {
     <div
       className='w-full h-screen bg-black bg-center relative bg-no-repeat bg-cover flex flex-col justify-between items-center'
       style={{
-        backgroundImage:
-          "url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/adg-hero.webp')",
+        backgroundImage: `url(${hero})`,
       }}
     >
       <div className='w-full h-40 bg-gradient-to-b from-black to-transparent'></div>
       <div className='w-full max-w-6xl mx-auto z-20'>
-        <h1 className='text-white text-6xl font-brand font-light text-center leading-tighter -mt-12 select-none'>
-          A collective of luxury lifestylists{' '}
-          <span className='italic'>elevating space, structure, and story.</span>
-        </h1>
+        <div
+          className='text-white text-6xl !font-brand font-light text-center leading-tighter -mt-12 select-none'
+          dangerouslySetInnerHTML={{ __html: heroQuote }}
+        ></div>
       </div>
       <div className='w-full pb-12 flex items-center justify-center relative z-50'>
         <div
@@ -38,7 +37,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-15 z-10'></div>
+      <div className='absolute top-0 left-0 w-full h-full bg-black !bg-opacity-15 !z-10'></div>
     </div>
   );
 };

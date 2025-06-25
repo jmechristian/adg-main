@@ -1,24 +1,24 @@
+'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
-const HomeVisit = () => {
+const HomeVisit = ({ studioText, studioLink, studioImage, id }) => {
+  const router = useRouter();
   return (
     <div className='w-full max-w-6xl mx-auto pb-16'>
       <div className='grid grid-cols-12 gap-20 items-center'>
         <div className='col-span-12 md:col-span-6 flex flex-col gap-10'>
           <div className='text-brand-gray text-2xl font-brand font-light'>
-            With a diverse portfolio spanning multi-family, hospitality,
-            high-end residential, and commercial spaces,{' '}
-            <span className='italic'>
-              ADG creates immersive environments that blend artistry, function,
-              and innovation.
-            </span>
+            <div
+              dangerouslySetInnerHTML={{ __html: studioText }}
+              className='studio-text'
+            ></div>
           </div>
-          <div className='text-brand-gray text-2xl font-brand font-light'>
-            Operating from a dynamic studio in Alexandria, Virginia, our
-            award-winning team delivers a distinctive visual language that
-            elevates every project.
-          </div>
-          <div className='text-brand-gray font-brand-book uppercase bg-brand-peach px-10 py-6 w-fit'>
+
+          <div
+            onClick={() => router.push(studioLink)}
+            className='text-brand-gray font-brand-book uppercase bg-brand-peach px-10 py-6 w-fit cursor-pointer'
+          >
             Visit Our Studio
           </div>
         </div>
@@ -26,7 +26,7 @@ const HomeVisit = () => {
           <div
             className='w-full h-full bg-cover bg-center'
             style={{
-              backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/visit-hero.png')`,
+              backgroundImage: `url(${studioImage})`,
             }}
           ></div>
         </div>
