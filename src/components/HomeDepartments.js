@@ -25,10 +25,11 @@ const HomeDepartments = ({ id }) => {
 
   return (
     <div
-      className='w-full py-10 px-6 relative flex flex-col justify-between items-center gap-40 bg-cover bg-center max-h-[548px]'
+      className='w-full py-10 px-6 relative flex flex-col justify-between items-center gap-40 bg-cover bg-center max-h-[548px] cursor-pointer select-none'
       style={{
         backgroundImage: `url(${isImage})`,
       }}
+      onClick={() => router.push(isLink)}
     >
       <div className='absolute inset-0 bg-black opacity-30'></div>
       <div className='uppercase text-white font-brand-book text-center tracking-[0.6rem] z-10 select-none'>
