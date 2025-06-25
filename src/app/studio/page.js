@@ -92,9 +92,14 @@ export default function Studio() {
                       className='w-full bg-cover bg-center aspect-[9/11]'
                       style={{ backgroundImage: `url(${person.image})` }}
                     ></div>
-                    <div className='flex flex-col gap-1'>
-                      <div className='text-brand-gray text-2xl font-brand font-light leading-none'>
-                        {person.name}
+                    <div className='flex flex-col gap-1.5'>
+                      <div className='flex items-start justify-between'>
+                        <div className='text-brand-gray text-2xl font-brand font-light leading-none'>
+                          {person.name}
+                        </div>
+                        <div className='text-brand-brown text-xs font-brand-book uppercase font-light pt-1'>
+                          {person.extra}
+                        </div>
                       </div>
                       <div className='text-brand-brown text-xs font-brand-book uppercase font-light'>
                         {person.title}
@@ -114,9 +119,14 @@ export default function Studio() {
                       className='w-full bg-cover bg-center aspect-[9/11]'
                       style={{ backgroundImage: `url(${person.image})` }}
                     ></div>
-                    <div className='flex flex-col gap-1'>
-                      <div className='text-brand-gray text-2xl font-brand font-light leading-none'>
-                        {person.name}
+                    <div className='flex flex-col gap-1.5'>
+                      <div className='flex items-start justify-between'>
+                        <div className='text-brand-gray text-2xl font-brand font-light leading-none'>
+                          {person.name}
+                        </div>
+                        <div className='text-brand-brown text-xs font-brand-book uppercase font-light leading-none pt-1'>
+                          {person.extra}
+                        </div>
                       </div>
                       <div className='text-brand-brown text-xs font-brand-book uppercase font-light'>
                         {person.title}
