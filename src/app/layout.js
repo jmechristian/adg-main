@@ -57,15 +57,15 @@ export default function RootLayout({ children }) {
     },
     {
       label: 'Millwork & Cabinetry',
-      href: '/millwork',
+      href: '/services',
     },
     {
       label: 'Construction Services',
-      href: '/construction',
+      href: '/services',
     },
     {
       label: 'Residential Design',
-      href: '/residential',
+      href: '/services',
     },
   ];
 
@@ -116,13 +116,15 @@ export default function RootLayout({ children }) {
               <div className='col-span-4 md:col-span-1'>
                 <div className='flex flex-col gap-2 justify-center'>
                   {departmentLinks.map((link) => (
-                    <Link
-                      href={link.href}
+                    <div
+                      onClick={() => {
+                        window.location.href = link.href;
+                      }}
                       key={link.label}
-                      className='text-brand-gray font-brand-book'
+                      className='text-brand-gray font-brand-book cursor-pointer'
                     >
                       {link.label}
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>

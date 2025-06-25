@@ -58,7 +58,9 @@ const Services = () => {
                   design={department.design.items}
                   execute={department.execute.items}
                   link={
-                    department.link ? () => router.push(department.link) : null
+                    department.link
+                      ? () => (window.location.href = department.link)
+                      : null
                   }
                 />
                 <div className='h-px bg-brand-brown my-16'></div>
