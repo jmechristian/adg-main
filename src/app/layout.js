@@ -103,13 +103,15 @@ export default function RootLayout({ children }) {
               <div className='col-span-4 md:col-span-1'>
                 <div className='flex flex-col gap-2'>
                   {footerLinks.map((link) => (
-                    <Link
-                      href={link.href}
+                    <div
+                      onClick={() => {
+                        window.location.href = link.href;
+                      }}
                       key={link.label}
-                      className='text-brand-gray font-brand-book uppercase'
+                      className='text-brand-gray font-brand-book uppercase cursor-pointer'
                     >
                       {link.label}
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>
