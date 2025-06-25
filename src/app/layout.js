@@ -150,11 +150,11 @@ export default function RootLayout({ children }) {
                       Info@DesignADG.com
                     </div>
                   </div>
-                  <div className='flex items-center gap-3'>
+                  {/* <div className='flex items-center gap-3'>
                     <FaFacebook className='w-6 h-6 text-brand-gray' />
                     <FaInstagram className='w-6 h-6 text-brand-gray' />
                     <FaLinkedin className='w-6 h-6 text-brand-gray' />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
