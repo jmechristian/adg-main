@@ -1,12 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { getHomePageFeatureItem } from '@/helpers/api';
 
 const HomeDepartments = ({ id }) => {
   const router = useRouter();
-
+  const pathname = usePathname();
   const [isDepartment, setDepartment] = useState('');
   const [isContent, setContent] = useState('');
   const [isCallout, setCallout] = useState('');
@@ -29,7 +29,9 @@ const HomeDepartments = ({ id }) => {
       style={{
         backgroundImage: `url(${isImage})`,
       }}
-      onClick={() => router.push(isLink)}
+      onClick={() => {
+        window.location.href = `${isLink}`;
+      }}
     >
       <div className='absolute inset-0 bg-black opacity-30'></div>
       <div className='uppercase text-white font-brand-book text-center tracking-[0.6rem] z-10 select-none'>
@@ -51,7 +53,7 @@ const HomeDepartments = ({ id }) => {
       </div>
       <div
         className='flex items-center gap-2 z-10 cursor-pointer'
-        onClick={() => router.push(isLink)}
+        // onClick={() => router.push(isLink)}
       >
         <div className='text-white font-light font-brand uppercase tracking-[0.5rem]'>
           View More

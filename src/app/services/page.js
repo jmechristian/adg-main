@@ -12,6 +12,7 @@ import { useState } from 'react';
 const Services = () => {
   const [servicesPage, setServicesPage] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  console.log(servicesPage);
   const router = useRouter();
   useEffect(() => {
     getServicesPage()

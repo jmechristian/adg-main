@@ -48,8 +48,8 @@ const Page = () => {
           >
             <ProjectFilter
               projects={projects}
-              departmentId='0cd75086-b396-4c52-a907-5b52fb6aeedd'
-              departmentName='interiors'
+              departmentId='4dfd71af-51a3-4af9-874f-da260e081f08'
+              departmentName='branding'
             />
           </Suspense>
         </div>

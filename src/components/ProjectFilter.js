@@ -12,7 +12,7 @@ import { getDepartments, getSubcategoriesByDepartment } from '@/helpers/api';
 import FilterItem from './FilterItem';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-const ProjectFilter = ({ projects }) => {
+const ProjectFilter = ({ projects, departmentId, departmentName }) => {
   // console.log(projects);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -49,6 +49,8 @@ const ProjectFilter = ({ projects }) => {
         if (dept) {
           setDepartmentFilters({ id: dept.id, name: dept.name });
         }
+      } else if (departmentId) {
+        setDepartmentFilters({ id: departmentId, name: departmentName });
       } else {
         // Default to Interiors if no department in URL
         setDepartmentFilters({
@@ -97,6 +99,7 @@ const ProjectFilter = ({ projects }) => {
 
   const handleDepartmentClick = (department) => {
     updateFilters({ id: department.id, name: department.name }, null);
+    console.log(department);
   };
 
   const handleSubcategoryClick = (subcategory) => {

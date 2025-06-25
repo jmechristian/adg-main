@@ -7,7 +7,6 @@ export const metadata = {
 };
 export default async function Home() {
   const data = await getHomePage();
-  console.log(data);
   return (
     <div className='w-full'>
       <HomeWrapper homePage={data} />
