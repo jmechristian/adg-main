@@ -203,9 +203,7 @@ const Page = () => {
           <div
             className='text-brand-brown font-serif font-light uppercase tracking-wider cursor-pointer'
             onClick={() =>
-              router.push(
-                `/projects/category/${project.subcategories?.items[0].subcategory.id}`
-              )
+              (window.location.href = `/projects/category/${project.subcategories?.items[0].subcategory.id}`)
             }
           >
             View All{' '}
