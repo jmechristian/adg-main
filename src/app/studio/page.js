@@ -50,9 +50,9 @@ export default function Studio() {
               </div>
               <div className='text-brand-gray text-2xl font-brand font-light leading-normal'>
                 <span className='font-medium'>
-                  Led by Founding Principal Jeff Akseizer,
-                </span>{' '}
-                Akseizer Design Group (ADG) is a visionary studio of interior
+                  Led by Founding Principal Jeff Akseizer
+                </span>
+                , Akseizer Design Group (ADG) is a visionary studio of interior
                 designers, architects, brand strategists, and builders united by
                 a passion for creating immersive, forward-thinking environments.
                 Headquartered in Alexandria, Virginia, our award-winning team
