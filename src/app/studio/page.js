@@ -49,20 +49,24 @@ export default function Studio() {
                 About Us
               </div>
               <div className='text-brand-gray text-2xl font-brand font-light leading-normal'>
-                Akseizer Design Group (ADG) is a dynamic team of interior
-                designers, architects, brand strategists, and builders dedicated
-                to crafting immersive, innovative spaces. Based in Alexandria,
-                Virginia, our award-winning team has completed over 1,000
-                projects across multi-family, hospitality, commercial, and
-                residential sectors, always delivering with meticulous attention
-                to detail.
+                <span className='font-medium'>
+                  Led by Founding Principal Jeff Akseizer, Akseizer Design Group
+                  (ADG)
+                </span>{' '}
+                is a visionary studio of interior designers, architects, brand
+                strategists, and builders united by a passion for creating
+                immersive, forward-thinking environments. Headquartered in
+                Alexandria, Virginia, our award-winning team has delivered over
+                1,000 projects nationwide across the multi-family, hospitality,
+                commercial, and residential sectors—each defined by thoughtful
+                detail and refined execution.
               </div>
             </div>
             <div className='col-span-12 md:col-span-6 w-full h-full'>
               <div
                 className='w-full h-full bg-cover bg-center'
                 style={{
-                  backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/studio-building.webp')`,
+                  backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/Jeff+Headshots_003_2.webp')`,
                 }}
               ></div>
             </div>
