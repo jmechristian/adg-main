@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 const HomeVisit = ({ studioText, studioLink, studioImage, id }) => {
   const router = useRouter();
   return (
-    <div className='w-full max-w-6xl mx-auto pb-16'>
+    <div className='w-full max-w-6xl mx-auto pb-16 px-4 md:!px-0'>
       <div className='grid grid-cols-12 gap-20 items-center'>
         <div className='col-span-12 md:col-span-6 flex flex-col gap-10'>
           <div className='text-brand-gray text-2xl font-brand font-light'>
