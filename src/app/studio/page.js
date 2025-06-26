@@ -110,7 +110,7 @@ export default function Studio() {
             </div>
           </div>
           <div className='w-full bg-brand-dark-peach py-16 flex flex-col gap-6'>
-            <div className='w-full max-w-5xl mx-auto grid grid-cols-1 md:!grid-cols-4 gap-10 px-16 md:!px-0 overflow-hidden'>
+            <div className='w-full max-w-5xl mx-auto grid grid-cols-1 md:!grid-cols-4 gap-10 px-12 md:!px-0 overflow-hidden'>
               {studioPage?.staff.items
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((person) => (
