@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { MdCheckBoxOutlineBlank, MdAspectRatio } from 'react-icons/md';
+import { useEffect } from 'react';
 import useLayoutStore from '@/store/useLayoutStore';
 import Nav from '@/components/Nav';
 // export const metadata = {
@@ -15,6 +16,19 @@ import Nav from '@/components/Nav';
 export default function RootLayout({ children }) {
   const { isBoxedLayout, setBoxedLayoutTrue, setBoxedLayoutFalse } =
     useLayoutStore();
+
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
   const footerLinks = [
     {
       label: 'Home',
@@ -71,7 +85,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang='en' className='scroll-smooth'>
-      <body className='relative min-h-screen'>
+      <body className='relative min-h-screen select-none'>
         {/* <div className='fixed top-5 right-5 w-16 h-16 rounded-full bg-black z-[100] flex items-center justify-center cursor-pointer hover:bg-brand-gray transition-all duration-300'>
           {isBoxedLayout ? (
             <MdCheckBoxOutlineBlank
