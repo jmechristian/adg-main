@@ -42,15 +42,16 @@ export default function Studio() {
             content={studioPage?.heroQuote}
           />
         </div>
-        <div className='w-full max-w-5xl mx-auto pb-16'>
-          <div className='grid grid-cols-12 gap-20 items-center'>
-            <div className='col-span-12 md:col-span-6 flex flex-col gap-4'>
+        <div className='w-full max-w-5xl mx-auto pb-16 px-4 md:!px-0'>
+          <div className='grid grid-cols-1 md:!grid-cols-12 gap-20 items-center overflow-hidden'>
+            <div className='col-span-1 md:!col-span-6 flex flex-col gap-4'>
               <div className='text-brand-gray text-4xl font-brand font-light'>
                 About Us
               </div>
               <div className='text-brand-gray text-2xl font-brand font-light leading-normal'>
+                Led by{' '}
                 <span className='font-medium'>
-                  Led by Founding Principal Jeff Akseizer
+                  Founding Principal Jeff Akseizer
                 </span>
                 , Akseizer Design Group (ADG) is a visionary studio of interior
                 designers, architects, brand strategists, and builders united by
@@ -61,15 +62,15 @@ export default function Studio() {
                 sectors—each defined by thoughtful detail and refined execution.
               </div>
             </div>
-            <div className='col-span-12 md:col-span-6 w-full h-full'>
+            <div className='col-span-1 md:!col-span-6 w-full h-full'>
               <div
-                className='w-full h-full bg-cover bg-center'
+                className='w-full h-full bg-cover bg-center aspect-[4/3]'
                 style={{
                   backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/Jeff+Headshots_003_2.webp')`,
                 }}
               ></div>
             </div>
-            <div className='col-span-12 md:col-span-12 w-full h-full'>
+            <div className='col-span-1 md:!col-span-12 w-full h-full'>
               <div className='text-brand-brown text-4xl font-brand text-center font-light italic leading-normal max-w-4xl mx-auto'>
                 Each space we craft tells a story, brought to life through a
                 distinctive visual language that elevates the everyday.
@@ -78,11 +79,11 @@ export default function Studio() {
           </div>
         </div>
         <div className='w-full bg-brand-peach/50 pt-16 -mt-16'>
-          <div className='w-full max-w-5xl mx-auto flex flex-col gap-6 pb-16'>
+          <div className='w-full max-w-5xl mx-auto flex flex-col gap-6 pb-16 px-4 md:!px-0'>
             <div className='text-brand-gray text-4xl font-brand font-light italic'>
               Our Team
             </div>
-            <div className='grid grid-cols-4 gap-10'>
+            <div className='grid grid-cols-1 md:!grid-cols-4 gap-10 px-10 md:!px-0 overflow-hidden'>
               {studioPage?.leadership.items
                 .sort((a, b) => a.order - b.order)
                 .map((person) => (
@@ -109,7 +110,7 @@ export default function Studio() {
             </div>
           </div>
           <div className='w-full bg-brand-dark-peach py-16 flex flex-col gap-6'>
-            <div className='w-full max-w-5xl mx-auto grid grid-cols-4 gap-10'>
+            <div className='w-full max-w-5xl mx-auto grid grid-cols-1 md:!grid-cols-4 gap-10 px-16 md:!px-0 overflow-hidden'>
               {studioPage?.staff.items
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((person) => (
