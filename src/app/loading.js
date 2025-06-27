@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className='w-full max-w-[2000px] mx-auto relative flex flex-col gap-16 min-h-screen'>
+    <div className='w-full max-w-7xl mx-auto relative flex flex-col gap-16 min-h-screen pt-40'>
       <div className='animate-pulse'>
         {/* Hero placeholder */}
         <div className='h-96 bg-gray-200 rounded-lg mb-16'></div>

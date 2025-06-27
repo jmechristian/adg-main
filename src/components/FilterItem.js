@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getFullImageUrl } from '@/helpers/api';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const FilterItem = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -9,7 +10,11 @@ const FilterItem = ({ project }) => {
     project.gallery.images.items.sort((a, b) => a.order - b.order)[0];
   return (
     project && (
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
         className='w-full h-full bg-cover bg-center bg-no-repeat relative cursor-pointer'
         style={{
           backgroundImage: `url(${
@@ -30,7 +35,7 @@ const FilterItem = ({ project }) => {
             </div>
           </>
         )}
-      </div>
+      </motion.div>
     )
   );
 };

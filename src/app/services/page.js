@@ -8,7 +8,7 @@ import {
 } from '@jmechristian/adg-component-library';
 import '@jmechristian/adg-component-library/styles.css';
 import { useState } from 'react';
-
+import { AnimatePresence, motion } from 'framer-motion';
 const Services = () => {
   const [servicesPage, setServicesPage] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -22,20 +22,42 @@ const Services = () => {
 
   if (isLoading) {
     return (
-      <div className='space-y-4 p-4'>
-        {[...Array(3)].map((_, i) => (
-          <div key={i} className='animate-pulse'>
-            <div className='h-8 bg-gray-200 rounded w-1/3 mb-2'></div>
-            <div className='h-4 bg-gray-200 rounded w-full mb-2'></div>
-            <div className='h-4 bg-gray-200 rounded w-5/6'></div>
+      <div className='w-full max-w-7xl mx-auto relative flex flex-col gap-16 min-h-screen pt-40'>
+        <div className='animate-pulse'>
+          {/* Hero placeholder */}
+          <div className='h-96 bg-gray-200 rounded-lg mb-16'></div>
+
+          {/* Text placeholder */}
+          <div className='space-y-4 mb-16'>
+            <div className='h-4 bg-gray-200 rounded w-3/4'></div>
+            <div className='h-4 bg-gray-200 rounded w-1/2'></div>
           </div>
-        ))}
+
+          {/* Departments placeholder */}
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16'>
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className='h-64 bg-gray-200 rounded-lg'></div>
+            ))}
+          </div>
+
+          {/* Featured placeholder */}
+          <div className='h-96 bg-gray-200 rounded-lg mb-16'></div>
+
+          {/* Visit placeholder */}
+          <div className='h-64 bg-gray-200 rounded-lg'></div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className='w-full max-w-[2000px] mx-auto pb-16 overflow-x-hidden'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      className='w-full max-w-[2000px] mx-auto pb-16 overflow-x-hidden'
+    >
       <div className='flex flex-col gap-16'>
         <div id='services-hero'>
           <OverlayHero
@@ -68,7 +90,7 @@ const Services = () => {
             ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

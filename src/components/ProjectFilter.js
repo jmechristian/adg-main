@@ -1,16 +1,10 @@
 'use client';
-
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useRef,
-  useCallback,
-} from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { getDepartments, getSubcategoriesByDepartment } from '@/helpers/api';
 import FilterItem from './FilterItem';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const ProjectFilter = ({ projects, departmentId, departmentName }) => {
   // console.log(projects);
@@ -228,7 +222,13 @@ const ProjectFilter = ({ projects, departmentId, departmentName }) => {
   const hasMoreProjects = displayedProjects.length < filteredProjects.length;
 
   return (
-    <div className='w-full max-w-6xl mx-auto flex flex-col gap-2 pb-24'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+      className='w-full max-w-6xl mx-auto flex flex-col gap-2 pb-24'
+    >
       <div className='w-full flex flex-col gap-6'>
         {/* Mobile Dropdowns */}
         <div className='md:hidden flex flex-col gap-4 px-4'>
@@ -601,7 +601,7 @@ const ProjectFilter = ({ projects, departmentId, departmentName }) => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

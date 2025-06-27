@@ -7,10 +7,17 @@ import VariableHomeDepartments from '@/components/VariableHomeDepartments';
 import SecondVariableHomeDepartments from '@/components/SecondVariableHomeDepartments';
 import { HomeSlider } from '@jmechristian/adg-component-library';
 import '@jmechristian/adg-component-library/styles.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const HomeWrapper = ({ homePage }) => {
   return (
-    <div className='w-full max-w-[2000px] mx-auto relative flex !flex-col !gap-16'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      className='w-full max-w-[2000px] mx-auto relative flex !flex-col !gap-16'
+    >
       <Hero
         hero={homePage?.hero || ''}
         heroQuote={homePage?.heroQuote || ''}
@@ -26,7 +33,7 @@ const HomeWrapper = ({ homePage }) => {
         studioImage={homePage?.studioImage || ''}
         id={homePage?.id}
       />
-    </div>
+    </motion.div>
   );
 };
 
