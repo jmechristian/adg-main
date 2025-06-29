@@ -85,6 +85,23 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang='en' className='scroll-smooth'>
+      <head>
+        {/* Google Analytics */}
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID'
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_MEASUREMENT_ID');
+            `,
+          }}
+        />
+      </head>
       <body className='relative min-h-screen select-none'>
         {/* <div className='fixed top-5 right-5 w-16 h-16 rounded-full bg-black z-[100] flex items-center justify-center cursor-pointer hover:bg-brand-gray transition-all duration-300'>
           {isBoxedLayout ? (
