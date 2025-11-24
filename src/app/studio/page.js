@@ -88,7 +88,7 @@ export default function Studio() {
               <div
                 className='w-full h-full bg-cover bg-center aspect-[4/3]'
                 style={{
-                  backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/Jeff+Headshots_003_2.webp')`,
+                  backgroundImage: `url('https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/jeff-new.png')`,
                 }}
               ></div>
             </div>
