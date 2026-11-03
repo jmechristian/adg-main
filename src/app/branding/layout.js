@@ -1,9 +1,12 @@
-export const metadata = {
+import { buildMetadata } from '@/helpers/seo';
+
+export const metadata = buildMetadata({
   title: 'Branding | Akseizer Design Group',
   description:
-    'Learn about Akseizer Design Group, a visionary studio of interior designers, architects, brand strategists, and builders.',
-};
+    'Explore branding and marketing projects by Akseizer Design Group.',
+  path: '/branding',
+});
 
-export default function StudioLayout({ children }) {
+export default function BrandingLayout({ children }) {
   return children;
 }
