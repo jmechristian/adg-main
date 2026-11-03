@@ -7,7 +7,7 @@ import {
 export const SITE_NAME = 'Akseizer Design Group';
 export const SITE_URL = 'https://www.designadg.com';
 export const DEFAULT_SEO_IMAGE =
-  'https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/designadg-seo-sm.png';
+  'https://adgadmin170407-dev.s3.us-east-1.amazonaws.com/designadg-seo-sm-1.png';
 export const DEFAULT_DESCRIPTION =
   'Akseizer Design Group is a dynamic team of interior designers, architects, brand strategists, and builders.';
 
